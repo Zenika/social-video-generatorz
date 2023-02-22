@@ -1,0 +1,31 @@
+.title {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.underline {
+    display: block;
+    width: 400px;
+    height: 3px;
+    background: darkgoldenrod;
+    margin: 10px auto;
+    border-radius: var(--border-radius);
+}
+
+.homeBtn {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.homeBtn:hover {
+    background: white;
+    color: black;
+    border: 2px solid black;
+}
