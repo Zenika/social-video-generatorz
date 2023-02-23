@@ -1,6 +1,9 @@
 # Social video generator
 
-> This project is here to help you create video the easy way. With a simple interface, the goal is to allow you to quickly create custom videos and reusable templates for all types of communications you need.
+Today, videos are much more in the spotlight through social media. Because it's much more attractive and also because it keeps the user's in attention 
+
+But creating videos for all your communications can be technical and time consuming.
+> This project is here to help you create videos the easy way. With a simple interface, the goal is to allow you to quickly create custom videos and reusable templates for all types of communications you need.
 
 This github project use [Remotion library](https://www.remotion.dev/) to generate video, take a look at the [remotion doc](https://www.remotion.dev/docs/) in order to understand how to use it
 
