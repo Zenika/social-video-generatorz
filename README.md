@@ -29,6 +29,19 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Create and Generate video
+To see the **preview** of the composition, you can run :
+```bash
+pnpm remotion preview src/index.ts.
+```
+It will display a preview page of your video and you will be able to work with this interface.
+
+To **generate** the video, you can run : 
+```bash
+pnpm remotion render src/index.ts <compositionName> myVideo.mp4
+```
+It will build the video under the name passed at the end.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
