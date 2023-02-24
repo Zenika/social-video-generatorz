@@ -23,5 +23,11 @@
     "react-dom": "18.2.0",
     "remotion": "3.3.45",
     "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.4.13",
+    "cssnano": "5.1.15",
+    "postcss": "8.4.21",
+    "postcss-nested": "^6.0.1"
   }
 }
