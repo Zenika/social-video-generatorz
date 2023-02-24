@@ -1,50 +1,49 @@
 .main {
-  padding: 6rem;
-  min-height: 100vh;
+	padding: 6rem;
+	min-height: 100vh;
 }
 
 .center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 4rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	padding: 4rem 0;
 }
 
 .logo,
 .thirteen {
-  position: relative;
+	position: relative;
 }
 
 .thirteen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 75px;
-  height: 75px;
-  padding: 25px 10px;
-  margin-left: 16px;
-  transform: translateZ(0);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: 0px 2px 8px -1px #0000001a;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 75px;
+	height: 75px;
+	padding: 25px 10px;
+	margin-left: 16px;
+	transform: translateZ(0);
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	box-shadow: 0px 2px 8px -1px #0000001a;
 }
 
 .generateBtn {
-  background: black;
-  color: white;
-  padding: 10px 20px;
-  border-radius: var(--border-radius);
-  display: block;
-  width: max-content;
-  margin: 0 auto;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
+	background: black;
+	color: white;
+	padding: 10px 20px;
+	border-radius: var(--border-radius);
+	display: block;
+	width: max-content;
+	margin: 0 auto;
+	border: 2px solid transparent;
+	transition: all 0.3s ease;
 
-    &:hover {
-      background: white;
-      color: black;
-      border: 2px solid black;
-    }
+	&:hover {
+		background: white;
+		color: black;
+		border: 2px solid black;
+	}
 }
-

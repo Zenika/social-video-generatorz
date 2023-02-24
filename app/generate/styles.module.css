@@ -1,22 +1,22 @@
 .title {
-    margin-top: 50px;
-    text-align: center;
+	margin: 50px auto;
+	text-align: center;
 }
 
 .homeBtn {
-    background: black;
-    color: white;
-    padding: 10px 20px;
-    border-radius: var(--border-radius);
-    display: block;
-    width: max-content;
-    margin: 0 auto;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
+	background: black;
+	color: white;
+	padding: 10px 20px;
+	border-radius: var(--border-radius);
+	display: block;
+	width: max-content;
+	margin: 0 auto;
+	border: 2px solid transparent;
+	transition: all 0.3s ease;
 
-        &:hover {
-            background: white;
-            color: black;
-            border: 2px solid black;
-        }
+	&:hover {
+		background: white;
+		color: black;
+		border: 2px solid black;
+	}
 }
