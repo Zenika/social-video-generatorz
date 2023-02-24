@@ -40,10 +40,11 @@
   margin: 0 auto;
   border: 2px solid transparent;
   transition: all 0.3s ease;
+
+    &:hover {
+      background: white;
+      color: black;
+      border: 2px solid black;
+    }
 }
 
-.generateBtn:hover {
-  background: white;
-  color: black;
-  border: 2px solid black;
-}

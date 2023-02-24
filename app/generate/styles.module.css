@@ -3,15 +3,6 @@
     text-align: center;
 }
 
-.underline {
-    display: block;
-    width: 400px;
-    height: 3px;
-    background: darkgoldenrod;
-    margin: 10px auto;
-    border-radius: var(--border-radius);
-}
-
 .homeBtn {
     background: black;
     color: white;
