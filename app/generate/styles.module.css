@@ -22,10 +22,10 @@
     margin: 0 auto;
     border: 2px solid transparent;
     transition: all 0.3s ease;
-}
 
-.homeBtn:hover {
-    background: white;
-    color: black;
-    border: 2px solid black;
+        &:hover {
+            background: white;
+            color: black;
+            border: 2px solid black;
+        }
 }
