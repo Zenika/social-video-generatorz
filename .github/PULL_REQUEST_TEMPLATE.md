@@ -25,5 +25,5 @@ Example:
 - Go to home page
 - Click on the element X
 - You should see ...
-If your PR is not changing the Application, for example you change github action workflow, paste link of your test executions logs to let everyone review them.
+If your PR is not changing the Application, for example you change GitHub action workflow, paste link of your test executions logs to let everyone review them.
 -->
