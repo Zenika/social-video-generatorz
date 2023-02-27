@@ -1,7 +1,3 @@
-🔖 **US :** Closes #
-
----
-
 ## 🤔 Why?
 
 <!--
@@ -26,7 +22,7 @@ You could also self comment your diff to help reviewer understand them.
 Explain here how reviewer can validate your PR.
 Link the preview page and explain the user flow.
 Example:
-- Go to home
+- Go to home page
 - Click on the element X
 - You should see ...
 If your PR is not changing the Application, for example you change github action workflow, paste link of your test executions logs to let everyone review them.
