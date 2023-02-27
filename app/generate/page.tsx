@@ -8,7 +8,7 @@ import {Monogram} from '@/src/LogoZenika/Monogram';
 export default function Page() {
 	return (
 		<main className={styles.generate}>
-			<h1 data-testid="title-id">This page is to GENERATE videos</h1>
+			<h1>This page is to GENERATE videos</h1>
 			<Player
 				controls
 				// autoPlay
