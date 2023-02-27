@@ -29,21 +29,3 @@
 	overflow: hidden;
 	box-shadow: 0px 2px 8px -1px #0000001a;
 }
-
-.generateBtn {
-	background: black;
-	color: white;
-	padding: 10px 20px;
-	border-radius: var(--border-radius);
-	display: block;
-	width: max-content;
-	margin: 0 auto;
-	border: 2px solid transparent;
-	transition: all 0.3s ease;
-
-	&:hover {
-		background: white;
-		color: black;
-		border: 2px solid black;
-	}
-}
