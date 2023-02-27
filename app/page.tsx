@@ -19,7 +19,7 @@ export default function Home() {
 				</div>
 			</div>
 
-			<Link className={styles.generateBtn} href="/generate">
+			<Link className="btn" href="/generate">
 				Generate
 			</Link>
 		</main>
