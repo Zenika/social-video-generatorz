@@ -22,8 +22,6 @@ export const Monogram = () => {
 					justifyContent: 'center',
 					alignItems: 'center',
 					backgroundColor: 'black',
-					fontSize: 100,
-					color: 'white',
 				}}
 			>
 				<div
