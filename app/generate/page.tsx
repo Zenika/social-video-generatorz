@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Page() {
 	return (
 		<main className={styles.generate}>
-			<h1>This page is to GENERATE videos</h1>
+			<h1>This page is to GENERATE videos !</h1>
 			{/*<Player*/}
 			{/*	controls*/}
 			{/*	// autoPlay*/}
