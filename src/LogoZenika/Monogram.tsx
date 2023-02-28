@@ -28,6 +28,7 @@ export const Monogram = () => {
 					style={{
 						transform: `translateY(${translate}px)`,
 					}}
+					data-testid="test-monogram"
 				>
 					<Img
 						width={200}
