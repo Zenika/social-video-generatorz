@@ -30,11 +30,11 @@ export const LogoDate: React.FC<{date: string}> = ({date}) => {
 				style={{
 					position: 'absolute',
 					width: '5px',
-					height: '100px',
+					height: '80px',
 					border: 'none',
 					background: 'white',
 					left: '50%',
-					bottom: '30px',
+					bottom: 60,
 					transform: 'translateX(-50%)',
 					opacity,
 				}}
@@ -47,7 +47,7 @@ export const LogoDate: React.FC<{date: string}> = ({date}) => {
 					gridTemplateColumns: `repeat(2, 1fr)`,
 					padding: '0 70px',
 					gridGap: '60px',
-					bottom: 0,
+					bottom: 40,
 				}}
 			>
 				<div
@@ -61,7 +61,7 @@ export const LogoDate: React.FC<{date: string}> = ({date}) => {
 						opacity,
 					}}
 				>
-					<Img src={staticFile('/logo_z.svg')} width={330} />
+					<Img src={staticFile('/logo_z.svg')} width={200} />
 				</div>
 				<div
 					style={{
@@ -72,7 +72,7 @@ export const LogoDate: React.FC<{date: string}> = ({date}) => {
 				>
 					<Lottie
 						style={{
-							width: '180px',
+							width: '130px',
 							filter: 'none',
 						}}
 						playbackRate={1.5}

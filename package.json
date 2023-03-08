@@ -10,6 +10,7 @@
 	"dependencies": {
 		"@next/font": "13.1.6",
 		"@remotion/cli": "3.3.45",
+		"@remotion/google-fonts": "^3.3.63",
 		"@remotion/lottie": "^3.3.63",
 		"@remotion/player": "3.3.45",
 		"@types/node": "18.14.0",
