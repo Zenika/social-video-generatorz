@@ -8,14 +8,18 @@ import {
 	useVideoConfig,
 } from 'remotion';
 
-export const Logo: React.FC<{src: string}> = ({src}) => {
+export const Logo: React.FC<{src: string; width: number; top: number}> = ({
+	src,
+	width,
+	top,
+}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
 	const slideTop = spring({
 		frame,
 		from: -200,
-		to: 80,
+		to: top,
 		fps,
 		durationInFrames: 20,
 	});
@@ -27,7 +31,7 @@ export const Logo: React.FC<{src: string}> = ({src}) => {
 				top: slideTop,
 			}}
 		>
-			<Img src={staticFile(src)} width={650} />
+			<Img src={staticFile(src)} width={width} />
 		</AbsoluteFill>
 	);
 };

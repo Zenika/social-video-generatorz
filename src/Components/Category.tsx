@@ -1,13 +1,6 @@
 import React from 'react';
 import {CategoryProps} from '../Types';
-import {
-	AbsoluteFill,
-	Img,
-	spring,
-	staticFile,
-	useCurrentFrame,
-	useVideoConfig,
-} from 'remotion';
+import {Img, staticFile} from 'remotion';
 
 export const Category: React.FC<CategoryProps> = ({
 	style,
@@ -15,22 +8,15 @@ export const Category: React.FC<CategoryProps> = ({
 	size = '150px',
 	icon,
 }) => {
-	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
-
-	const slideLeft = spring({frame, fps, from: 770, to: 670});
-	const opacity = spring({frame, from: 0, to: 1, fps, durationInFrames: 30});
-
 	return (
-		<AbsoluteFill
+		<div
 			style={{
+				position: 'absolute',
+				display: 'flex',
 				alignItems: 'center',
 				width: 'max-content',
 				height: 'max-content',
 				gap: '20px',
-				top: 350,
-				left: slideLeft,
-				opacity,
 				...style,
 			}}
 		>
@@ -59,10 +45,11 @@ export const Category: React.FC<CategoryProps> = ({
 			<span
 				style={{
 					textShadow: '0 0 15px rgba(0,0,0,0.6)',
+					fontWeight: 600,
 				}}
 			>
 				{name}
 			</span>
-		</AbsoluteFill>
+		</div>
 	);
 };

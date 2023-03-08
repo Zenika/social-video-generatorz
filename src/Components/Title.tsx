@@ -1,15 +1,15 @@
 import React from 'react';
 import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
-export const Title: React.FC<{title: string; style: React.CSSProperties}> = ({
-	title,
-	style,
-}) => {
+export const Title: React.FC<{
+	title: string;
+	style: React.CSSProperties;
+	top: number;
+}> = ({title, style, top}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
 	const durationInFrames = 30;
-	const slideTop = spring({frame, fps, from: 780, to: 800, durationInFrames});
 	const opacity = spring({frame, from: 0, to: 1, fps, durationInFrames});
 
 	return (
@@ -17,10 +17,11 @@ export const Title: React.FC<{title: string; style: React.CSSProperties}> = ({
 			style={{
 				textAlign: 'center',
 				padding: '0 50px',
-				top: slideTop,
 				height: 'max-content',
 				transformOrigin: 'center',
+				fontWeight: 600,
 				opacity,
+				top,
 				...style,
 			}}
 		>
