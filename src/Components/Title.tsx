@@ -8,17 +8,19 @@ export const Title: React.FC<{title: string; style: React.CSSProperties}> = ({
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
-	const scale = spring({frame, from: 0, to: 1, fps, durationInFrames: 30});
+	const durationInFrames = 30;
+	const slideTop = spring({frame, fps, from: 780, to: 800, durationInFrames});
+	const opacity = spring({frame, from: 0, to: 1, fps, durationInFrames});
 
 	return (
 		<AbsoluteFill
 			style={{
 				textAlign: 'center',
 				padding: '0 50px',
-				top: 800,
+				top: slideTop,
 				height: 'max-content',
-				transform: `scale(${scale})`,
 				transformOrigin: 'center',
+				opacity,
 				...style,
 			}}
 		>

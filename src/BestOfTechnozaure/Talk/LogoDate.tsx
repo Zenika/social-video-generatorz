@@ -16,7 +16,7 @@ export const LogoDate: React.FC<{date: string}> = ({date}) => {
 
 	const illustrationDate = useLottie('lf20_ak90tqhe');
 
-	const durationInFrames = 30;
+	const durationInFrames = 40;
 	const drop = spring({frame, from: -20, to: 0, fps, durationInFrames});
 	const opacity = spring({frame, from: 0, to: 1, fps, durationInFrames});
 
