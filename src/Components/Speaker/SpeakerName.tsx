@@ -5,7 +5,7 @@ export const SpeakerName: React.FC<{name: string}> = ({name}) => {
 		<p
 			style={{
 				fontSize: '2.8rem',
-				fontWeight: '600',
+				fontWeight: '500',
 				textShadow: '0 0 15px rgba(0,0,0,0.6)',
 			}}
 		>
