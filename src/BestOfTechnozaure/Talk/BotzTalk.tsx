@@ -27,10 +27,10 @@ export const BotzTalk: React.FC<BotzTalkProps> = ({
 			<Sequence name="Logo">
 				<Logo src="/BestOfTz/BOTZ_LOGO.png" />
 			</Sequence>
-			<Sequence name="Speaker">
+			<Sequence name="Speaker" from={15}>
 				<Speaker picture={speaker.picture} name={speaker.name} />
 			</Sequence>
-			<Sequence name="Category">
+			<Sequence name="Category" from={10}>
 				<Category
 					name={category.name}
 					icon={category.icon}
@@ -38,10 +38,10 @@ export const BotzTalk: React.FC<BotzTalkProps> = ({
 					size={100}
 				/>
 			</Sequence>
-			<Sequence name="Title">
+			<Sequence name="Title" from={60}>
 				<Title title={title} style={{fontSize: '3.4rem'}} />
 			</Sequence>
-			<Sequence name="Detail">
+			<Sequence name="Detail" from={90}>
 				<LogoDate date={date} />
 			</Sequence>
 		</AbsoluteFill>
