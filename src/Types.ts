@@ -11,3 +11,10 @@ export interface CategoryProps {
 	size?: number;
 	style?: React.CSSProperties;
 }
+
+export interface IconTextProps {
+	text: string;
+	icon: string;
+	size?: number;
+	style?: React.CSSProperties;
+}

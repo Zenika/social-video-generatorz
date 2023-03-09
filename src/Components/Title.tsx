@@ -1,17 +1,11 @@
 import React from 'react';
-import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill} from 'remotion';
 
 export const Title: React.FC<{
 	title: string;
 	style: React.CSSProperties;
 	top: number;
 }> = ({title, style, top}) => {
-	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
-
-	const durationInFrames = 30;
-	const opacity = spring({frame, from: 0, to: 1, fps, durationInFrames});
-
 	return (
 		<AbsoluteFill
 			style={{
@@ -19,8 +13,7 @@ export const Title: React.FC<{
 				padding: '0 50px',
 				height: 'max-content',
 				transformOrigin: 'center',
-				fontWeight: 600,
-				opacity,
+				fontWeight: 700,
 				top,
 				...style,
 			}}

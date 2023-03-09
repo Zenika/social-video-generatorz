@@ -31,7 +31,11 @@ export const Logo: React.FC<{src: string; width: number; top: number}> = ({
 				top: slideTop,
 			}}
 		>
-			<Img src={staticFile(src)} width={width} />
+			<Img
+				src={staticFile(src)}
+				width={width}
+				style={{transformOrigin: 'center'}}
+			/>
 		</AbsoluteFill>
 	);
 };

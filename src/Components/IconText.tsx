@@ -1,10 +1,10 @@
 import React from 'react';
-import {CategoryProps} from '../Types';
+import {IconTextProps} from '../Types';
 import {Img, staticFile} from 'remotion';
 
-export const Category: React.FC<CategoryProps> = ({
+export const IconText: React.FC<IconTextProps> = ({
 	style,
-	name,
+	text,
 	size = '150px',
 	icon,
 }) => {
@@ -14,9 +14,9 @@ export const Category: React.FC<CategoryProps> = ({
 				position: 'absolute',
 				display: 'flex',
 				alignItems: 'center',
-				width: '100%',
+				width: 'max-content',
 				height: 'max-content',
-				gap: '20px',
+				gap: '100px',
 				...style,
 			}}
 		>
@@ -28,9 +28,6 @@ export const Category: React.FC<CategoryProps> = ({
 					width: size,
 					height: size,
 					borderRadius: '50%',
-					border: '7px solid #BF1D67',
-					background: 'white',
-					padding: '10px',
 				}}
 			>
 				<Img
@@ -43,12 +40,11 @@ export const Category: React.FC<CategoryProps> = ({
 			</div>
 			<span
 				style={{
-					display: 'block',
 					textShadow: '0 0 15px rgba(0,0,0,0.6)',
 					fontWeight: 600,
 				}}
 			>
-				{name}
+				{text}
 			</span>
 		</div>
 	);

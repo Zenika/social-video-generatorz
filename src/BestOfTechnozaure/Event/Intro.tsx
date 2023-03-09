@@ -1,17 +1,36 @@
-import {CategoryProps} from '../../Types';
 import {loadFont} from '@remotion/google-fonts/Nunito';
-import {AbsoluteFill, Sequence} from 'remotion';
+import {
+	AbsoluteFill,
+	Sequence,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 import {Logo} from '../../Components/Logo';
 import {Title} from '../../Components/Title';
 import {Website} from './Website';
-import {Categories} from './Categories';
+import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
+import {FadeOut} from '../../Components/Animations/Fade/FadeOut';
+import {Location} from './Location';
 
 const {fontFamily} = loadFont();
 
-export const Intro: React.FC<{title: string; categories: CategoryProps[]}> = ({
+export const Intro: React.FC<{title: string; city: string}> = ({
 	title,
-	categories,
+	city,
 }) => {
+	const frame = useCurrentFrame();
+	const {fps} = useVideoConfig();
+
+	const durationInFrames = 30;
+	const sizeDown = spring({
+		frame: frame - 70,
+		from: 650,
+		to: 250,
+		fps,
+		durationInFrames,
+	});
+
 	return (
 		<AbsoluteFill
 			style={{
@@ -23,13 +42,27 @@ export const Intro: React.FC<{title: string; categories: CategoryProps[]}> = ({
 				<Website url="www.zenika.com" />
 			</Sequence>
 			<Sequence name="Logo">
-				<Logo src="/BestOfTz/BOTZ_LOGO.png" width={450} top={60} />
+				<Logo src="/BestOfTz/BOTZ_LOGO.png" width={sizeDown} top={60} />
 			</Sequence>
 			<Sequence name="Title" from={10}>
-				<Title title={title} style={{fontSize: '2.8rem'}} top={260} />
+				<FadeIn durationInFrames={20}>
+					<FadeOut startAt={70} durationInFrames={20}>
+						<Title
+							title={title}
+							style={{
+								fontSize: '2.6rem',
+								textTransform: 'uppercase',
+								width: '80%',
+								left: '50%',
+								transform: 'translateX(-50%)',
+							}}
+							top={325}
+						/>
+					</FadeOut>
+				</FadeIn>
 			</Sequence>
-			<Sequence name="Categories" from={20}>
-				<Categories categories={categories} />
+			<Sequence name="Dans les locaux">
+				<Location city={city} />
 			</Sequence>
 		</AbsoluteFill>
 	);
