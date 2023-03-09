@@ -30,6 +30,8 @@ export const RemotionRoot: React.FC = () => {
 							name: 'Mickaël Alves',
 							picture:
 								'https://pbs.twimg.com/profile_images/1452247219709566977/5Xzmgun-_400x400.jpg',
+							role: 'Consultant frontend',
+							location: 'lyon',
 						},
 						category: {
 							name: 'CRAFTMANSHIP',
