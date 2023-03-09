@@ -3,6 +3,7 @@ import {Monogram} from './LogoZenika/Monogram';
 import {Composition, Folder} from 'remotion';
 import {Intro} from './BestOfTechnozaure/Event/Intro';
 import {BotzEvent} from './BestOfTechnozaure/Event/BotzEvent';
+import {Tribes} from './BestOfTechnozaure/Event/Tribes';
 
 const defaultPropsWithSpeaker = {
 	title:
@@ -36,11 +37,22 @@ export const RemotionRoot: React.FC = () => {
 						id="Intro"
 						component={Intro}
 						width={1200}
-						height={700}
+						height={1200}
 						fps={30}
 						durationInFrames={150}
 						defaultProps={{
-							title: 'L’évenement imaginé par les Techs pour les Techs',
+							title: 'Venez assister à des conférences techs',
+							city: 'lyon',
+						}}
+					/>
+					<Composition
+						id="Categories"
+						component={Tribes}
+						width={1200}
+						height={1200}
+						fps={30}
+						durationInFrames={150}
+						defaultProps={{
 							categories: [
 								{
 									name: 'Green IT',
@@ -55,7 +67,7 @@ export const RemotionRoot: React.FC = () => {
 									icon: '/BestOfTz/icons/Cloud.svg',
 								},
 								{
-									name: 'Craftmanship',
+									name: 'Craftsmanship',
 									icon: '/BestOfTz/icons/Dev.svg',
 								},
 							],
@@ -65,11 +77,12 @@ export const RemotionRoot: React.FC = () => {
 						id="BotzEvent"
 						component={BotzEvent}
 						width={1200}
-						height={700}
+						height={1200}
 						fps={30}
 						durationInFrames={300}
 						defaultProps={{
 							title: 'L’évenement imaginé par les Techs pour les Techs',
+							city: 'lyon',
 							categories: [
 								{
 									name: 'Green IT',
@@ -84,7 +97,7 @@ export const RemotionRoot: React.FC = () => {
 									icon: '/BestOfTz/icons/Cloud.svg',
 								},
 								{
-									name: 'Craftmanship',
+									name: 'Craftsmanship',
 									icon: '/BestOfTz/icons/Dev.svg',
 								},
 							],
