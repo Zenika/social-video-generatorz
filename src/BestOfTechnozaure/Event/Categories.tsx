@@ -2,6 +2,8 @@ import React from 'react';
 import {CategoryProps} from '../../Types';
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Category} from '../../Components/Category';
+import {SlideTop} from '../../Components/Animations/Slide/SlideTop';
+import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
 
 export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 	categories,
@@ -14,11 +16,11 @@ export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 			style={{
 				position: 'absolute',
 				width: '100%',
-				height: '30%',
 				display: 'grid',
-				gridTemplateColumns: `repeat(${categories.length}, 1fr)`,
+				gridTemplateColumns: `repeat(${categories.length / 2}, 1fr)`,
+				rowGap: 132,
 				padding: '0 70px',
-				bottom: 80,
+				top: 350,
 			}}
 		>
 			{categories.map((category, id) => {
@@ -47,19 +49,30 @@ export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 							position: 'relative',
 							display: 'flex',
 							justifyContent: 'center',
+							height: 275,
 						}}
 					>
-						<Category
-							name={category.name}
-							icon={category.icon}
-							style={{
-								flexDirection: 'column',
-								fontSize: '1.8rem',
-								top: slideTop,
-								opacity,
-							}}
-							size={130}
-						/>
+						<SlideTop
+							from={-90}
+							to={0}
+							durationInFrames={durationInFrames}
+							delay={id * delayFact}
+						>
+							<FadeIn
+								startAt={id * delayFact}
+								durationInFrames={durationInFrames}
+							>
+								<Category
+									name={category.name}
+									icon={category.icon}
+									style={{
+										flexDirection: 'column',
+										fontSize: '2.6rem',
+									}}
+									size={200}
+								/>
+							</FadeIn>
+						</SlideTop>
 					</div>
 				);
 			})}
