@@ -1,16 +1,23 @@
+import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {IconText} from '../../Components/IconText';
 
-export const Location: React.FC<{city: string}> = ({city}) => {
+export const Location: React.FC<{
+	text: string;
+	location: string;
+	iconUrl: string;
+	style?: React.CSSProperties;
+}> = ({text, location, style, iconUrl}) => {
 	return (
 		<AbsoluteFill
 			style={{
 				alignItems: 'center',
+				...style,
 			}}
 		>
 			<IconText
-				text={`Dans les locaux de Zenika @${city}`}
-				icon="/mono_zenika.svg"
+				text={`${text} @${location}`}
+				icon={iconUrl}
 				style={{
 					flexDirection: 'column',
 					fontSize: '2.6rem',
