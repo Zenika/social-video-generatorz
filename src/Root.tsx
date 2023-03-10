@@ -4,21 +4,7 @@ import {Composition, Folder} from 'remotion';
 import {Intro} from './BestOfTechnozaure/Event/Intro';
 import {BotzEvent} from './BestOfTechnozaure/Event/BotzEvent';
 import {Tribes} from './BestOfTechnozaure/Event/Tribes';
-
-const defaultPropsWithSpeaker = {
-	title:
-		'Live-coding : d’une archi 3 couches à une archi hexagonale, grâce au TDD',
-	date: '09 novembre 2023',
-	speaker: {
-		name: 'Mickaël Alves',
-		picture:
-			'https://pbs.twimg.com/profile_images/1452247219709566977/5Xzmgun-_400x400.jpg',
-	},
-	category: {
-		name: 'CRAFTMANSHIP',
-		icon: '/BestOfTz/icons/Dev.svg',
-	},
-};
+import {Contact} from './BestOfTechnozaure/Event/Contact';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -77,18 +63,46 @@ export const RemotionRoot: React.FC = () => {
 						}}
 					/>
 					<Composition
+						id="Contact"
+						component={Contact}
+						width={1200}
+						height={1200}
+						fps={30}
+						durationInFrames={70}
+						defaultProps={{
+							contact: {
+								name: 'Lucas Audart',
+								picture:
+									'https://ca.slack-edge.com/T02ARLB3P-U02H7C4H6PJ-eb62023feb1e-512',
+								role: 'Consultant frontend',
+								location: 'lyon',
+								mail: 'lucas.audart@zenika.com',
+								phone: '06 57 29 32 64',
+							},
+						}}
+					/>
+					<Composition
 						id="BotzEvent"
 						component={BotzEvent}
 						width={1200}
 						height={1200}
 						fps={30}
-						durationInFrames={260}
+						durationInFrames={330}
 						defaultProps={{
 							title: 'L’évenement imaginé par les Techs pour les Techs',
 							city: 'lyon',
 							date: '28 Novembre 2023',
 							time: '17h00',
 							onlinePlatform: 'workadventure',
+							contact: {
+								name: 'Lucas Audart',
+								picture:
+									'https://ca.slack-edge.com/T02ARLB3P-U02H7C4H6PJ-eb62023feb1e-512',
+								role: 'Consultant frontend',
+								location: 'lyon',
+								mail: 'lucas.audart@zenika.com',
+								phone: '06 57 29 32 64',
+							},
 							categories: [
 								{
 									name: 'Green IT',
