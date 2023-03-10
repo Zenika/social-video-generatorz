@@ -6,7 +6,7 @@ import {SpeakerProps} from '../../Types';
 import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
 import {Speaker} from '../../Components/Speaker/Speaker';
 import {Divider} from '../../Components/Divider';
-import {DoublesText} from '../../Components/DoublesText';
+import {DoubleText} from '../../Components/DoubleText';
 import {SlideTop} from '../../Components/Animations/Slide/SlideTop';
 
 const {fontFamily} = loadFont();
@@ -15,16 +15,11 @@ export const Contact: React.FC<{
 	contact: SpeakerProps;
 }> = ({contact}) => {
 	return (
-		<AbsoluteFill
-			style={{
-				color: 'white',
-				fontFamily,
-			}}
-		>
+		<AbsoluteFill>
 			<Sequence name="Title Contact">
 				<FadeIn durationInFrames={30}>
 					<Title
-						title="Pou plus d'informations"
+						title="Pour plus d'informations"
 						style={{
 							fontSize: '2.2rem',
 							textTransform: 'uppercase',
@@ -54,7 +49,7 @@ export const Contact: React.FC<{
 			<Sequence name="Contact informations" from={10}>
 				<SlideTop from={830} to={930} durationInFrames={30}>
 					<FadeIn durationInFrames={30}>
-						<DoublesText firstText={contact.mail} secondText={contact.phone} />
+						<DoubleText firstText={contact.mail} secondText={contact.phone} />
 					</FadeIn>
 				</SlideTop>
 			</Sequence>
