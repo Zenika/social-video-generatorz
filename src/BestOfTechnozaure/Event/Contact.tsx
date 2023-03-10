@@ -34,6 +34,9 @@ export const Contact: React.FC<{
 					name={contact.name}
 					location={contact.location}
 					role={contact.role}
+					style={{
+						top: 350,
+					}}
 				/>
 			</Sequence>
 			<Sequence name="Divider" from={10}>
