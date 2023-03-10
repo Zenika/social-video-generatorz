@@ -1,20 +1,15 @@
 import React from 'react';
 import {loadFont} from '@remotion/google-fonts/Nunito';
 
-import {
-	AbsoluteFill,
-	Sequence,
-	spring,
-	useCurrentFrame,
-	useVideoConfig,
-} from 'remotion';
+import {AbsoluteFill, Sequence} from 'remotion';
 import {Background} from '../../Components/Background';
-import {CategoryProps, SpeakerProps} from '../../Types';
+import {SpeakerProps} from '../../Types';
 import {Speaker} from '../../Components/Speaker/Speaker';
 import {Title} from '../../Components/Title';
 import {Logo} from '../../Components/Logo';
 import {LogoDate} from './LogoDate';
 import {Website} from '../../Components/Website';
+import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
 
 const {fontFamily} = loadFont();
 
@@ -22,35 +17,9 @@ export interface BotzTalkProps {
 	title: string;
 	date: string;
 	speaker: SpeakerProps;
-	category: CategoryProps;
 }
 
-export const BotzTalk: React.FC<BotzTalkProps> = ({
-	title,
-	date,
-	speaker,
-	category,
-}) => {
-	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
-
-	const durationInFrames = 30;
-	const delay = 10;
-	const slideLeft = spring({
-		frame: frame - delay,
-		fps,
-		from: 770,
-		to: 670,
-		durationInFrames,
-	});
-	const opacity = spring({
-		frame: frame - 10,
-		from: 0,
-		to: 1,
-		fps,
-		durationInFrames,
-	});
-
+export const BotzTalk: React.FC<BotzTalkProps> = ({title, date, speaker}) => {
 	return (
 		<AbsoluteFill style={{color: 'white', fontFamily}}>
 			<Background url="/BestOfTz/background_carre.png" />
@@ -64,10 +33,15 @@ export const BotzTalk: React.FC<BotzTalkProps> = ({
 					name={speaker.name}
 					role={speaker.role}
 					location={speaker.location}
+					style={{
+						top: 300,
+					}}
 				/>
 			</Sequence>
 			<Sequence name="Title" from={40}>
-				<Title title={title} style={{fontSize: '3.6rem'}} top={800} />
+				<FadeIn durationInFrames={30}>
+					<Title title={title} style={{fontSize: '3.6rem'}} top={800} />
+				</FadeIn>
 			</Sequence>
 			<Sequence name="Detail" from={60}>
 				<LogoDate date={date} />
