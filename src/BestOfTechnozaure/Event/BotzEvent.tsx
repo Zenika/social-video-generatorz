@@ -1,10 +1,11 @@
 import React from 'react';
-import {CategoryProps} from '../../Types';
+import {CategoryProps, SpeakerProps} from '../../Types';
 import {loadFont} from '@remotion/google-fonts/Nunito';
 import {AbsoluteFill, interpolate, Sequence, useCurrentFrame} from 'remotion';
 import {Background} from '../../Components/Background';
 import {Intro} from './Intro';
 import {Tribes} from './Tribes';
+import {Contact} from './Contact';
 
 export interface BotzEventProps {
 	title: string;
@@ -12,6 +13,7 @@ export interface BotzEventProps {
 	time: string;
 	city: string;
 	onlinePlatform: string;
+	contact: SpeakerProps;
 	categories: CategoryProps[];
 }
 
@@ -23,6 +25,7 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 	time,
 	city,
 	onlinePlatform,
+	contact,
 	categories,
 }) => {
 	const frame = useCurrentFrame();
@@ -48,6 +51,9 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 			</Sequence>
 			<Sequence name="Categories" from={140} durationInFrames={120}>
 				<Tribes categories={categories} />
+			</Sequence>
+			<Sequence name="Contact" from={260} durationInFrames={70}>
+				<Contact contact={contact} />
 			</Sequence>
 		</AbsoluteFill>
 	);
