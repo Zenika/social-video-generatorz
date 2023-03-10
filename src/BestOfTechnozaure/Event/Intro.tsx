@@ -29,22 +29,16 @@ export const Intro: React.FC<{
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
-	const durationInFrames = 30;
 	const sizeDown = spring({
 		frame: frame - 100,
 		from: 650,
 		to: 250,
 		fps,
-		durationInFrames,
+		durationInFrames: 30,
 	});
 
 	return (
-		<AbsoluteFill
-			style={{
-				color: 'white',
-				fontFamily,
-			}}
-		>
+		<AbsoluteFill>
 			<Sequence name="Website">
 				<Website url="www.zenika.com" />
 			</Sequence>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 
-export const DoublesText: React.FC<{
+export const DoubleText: React.FC<{
 	firstText?: string;
 	secondText?: string;
 }> = ({firstText, secondText}) => {
