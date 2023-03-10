@@ -8,9 +8,10 @@ import {Tribes} from './Tribes';
 
 export interface BotzEventProps {
 	title: string;
-	date?: string;
-	time?: string;
+	date: string;
+	time: string;
 	city: string;
+	onlinePlatform: string;
 	categories: CategoryProps[];
 }
 
@@ -21,11 +22,12 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 	date,
 	time,
 	city,
+	onlinePlatform,
 	categories,
 }) => {
 	const frame = useCurrentFrame();
 
-	const gradient = interpolate(frame, [120, 160], [0.1, -0.08], {
+	const gradient = interpolate(frame, [120, 150], [0.1, -0.08], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
@@ -36,9 +38,15 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 				gradientAngle={gradient}
 			/>
 			<Sequence name="Intro">
-				<Intro title={title} city={city} />
+				<Intro
+					title={title}
+					city={city}
+					date={date}
+					time={time}
+					onlinePlatform={onlinePlatform}
+				/>
 			</Sequence>
-			<Sequence name="Categories" from={100}>
+			<Sequence name="Categories" from={140}>
 				<Tribes categories={categories} />
 			</Sequence>
 		</AbsoluteFill>
