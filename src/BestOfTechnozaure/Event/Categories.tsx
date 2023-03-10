@@ -1,9 +1,10 @@
 import React from 'react';
 import {CategoryProps} from '../../Types';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from 'remotion';
 import {Category} from '../../Components/Category';
 import {SlideTop} from '../../Components/Animations/Slide/SlideTop';
 import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
+import {FadeOut} from '../../Components/Animations/Fade/FadeOut';
 
 export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 	categories,
@@ -25,23 +26,7 @@ export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 		>
 			{categories.map((category, id) => {
 				const durationInFrames = 30;
-				const delayFact = 5;
-
-				const slideTop = spring({
-					frame: frame - id * delayFact,
-					fps,
-					from: -90,
-					to: 0,
-					durationInFrames,
-				});
-
-				const opacity = spring({
-					frame: frame - id * delayFact,
-					from: 0,
-					to: 1,
-					fps,
-					durationInFrames,
-				});
+				const delay = id * 5;
 
 				return (
 					<div
@@ -56,21 +41,27 @@ export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 							from={-90}
 							to={0}
 							durationInFrames={durationInFrames}
-							delay={id * delayFact}
+							delay={delay}
 						>
-							<FadeIn
-								startAt={id * delayFact}
-								durationInFrames={durationInFrames}
-							>
-								<Category
-									name={category.name}
-									icon={category.icon}
-									style={{
-										flexDirection: 'column',
-										fontSize: '2.6rem',
-									}}
-									size={200}
-								/>
+							<FadeIn startAt={delay} durationInFrames={durationInFrames}>
+								<SlideTop
+									from={0}
+									to={-90}
+									durationInFrames={durationInFrames}
+									delay={80 + delay}
+								>
+									<FadeOut startAt={80 + delay} durationInFrames={15}>
+										<Category
+											name={category.name}
+											icon={category.icon}
+											style={{
+												flexDirection: 'column',
+												fontSize: '2.6rem',
+											}}
+											size={200}
+										/>
+									</FadeOut>
+								</SlideTop>
 							</FadeIn>
 						</SlideTop>
 					</div>

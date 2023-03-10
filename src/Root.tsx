@@ -82,7 +82,7 @@ export const RemotionRoot: React.FC = () => {
 						width={1200}
 						height={1200}
 						fps={30}
-						durationInFrames={300}
+						durationInFrames={260}
 						defaultProps={{
 							title: 'L’évenement imaginé par les Techs pour les Techs',
 							city: 'lyon',

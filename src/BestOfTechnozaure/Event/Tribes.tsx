@@ -5,6 +5,7 @@ import {Categories} from './Categories';
 import React from 'react';
 import {CategoryProps} from '../../Types';
 import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
+import {FadeOut} from '../../Components/Animations/Fade/FadeOut';
 
 const {fontFamily} = loadFont();
 
@@ -18,19 +19,21 @@ export const Tribes: React.FC<{
 				fontFamily,
 			}}
 		>
-			<Sequence name="Title Categories" from={10}>
+			<Sequence name="Title Categories">
 				<FadeIn durationInFrames={20}>
-					<Title
-						title="VENEZ ASSISTER À DES CONFÉRENCES TECH"
-						style={{
-							fontSize: '2.2rem',
-							textTransform: 'uppercase',
-						}}
-						top={215}
-					/>
+					<FadeOut startAt={105} durationInFrames={15}>
+						<Title
+							title="VENEZ ASSISTER À DES CONFÉRENCES TECH"
+							style={{
+								fontSize: '2.2rem',
+								textTransform: 'uppercase',
+							}}
+							top={215}
+						/>
+					</FadeOut>
 				</FadeIn>
 			</Sequence>
-			<Sequence name="Categories" from={30}>
+			<Sequence name="Categories" from={10}>
 				<Categories categories={categories} />
 			</Sequence>
 		</AbsoluteFill>
