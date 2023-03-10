@@ -1,23 +1,23 @@
 import React from 'react';
-import {SpeakerProps} from '../../Types';
 import {SpeakerInfos} from './SpeakerInfos';
 import {SpeakerPicture} from './SpeakerPicture';
 import {AbsoluteFill} from 'remotion';
 import {FadeIn} from '../Animations/Fade/FadeIn';
 import {SlideTop} from '../Animations/Slide/SlideTop';
 
-export const Speaker: React.FC<SpeakerProps> = ({
-	name,
-	picture,
-	location,
-	role,
-}) => {
+export const Speaker: React.FC<{
+	name: string;
+	picture: string;
+	location?: string;
+	role?: string;
+	style?: React.CSSProperties;
+}> = ({name, picture, location, role, style}) => {
 	return (
 		<AbsoluteFill
 			style={{
 				alignItems: 'center',
-				top: 350,
 				gap: 20,
+				...style,
 			}}
 		>
 			<SlideTop from={-100} to={0} durationInFrames={20}>
