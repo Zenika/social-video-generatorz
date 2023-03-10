@@ -13,12 +13,7 @@ export const Tribes: React.FC<{
 	categories: CategoryProps[];
 }> = ({categories}) => {
 	return (
-		<AbsoluteFill
-			style={{
-				color: 'white',
-				fontFamily,
-			}}
-		>
+		<AbsoluteFill>
 			<Sequence name="Title Categories">
 				<FadeIn durationInFrames={20}>
 					<FadeOut startAt={70} durationInFrames={15}>

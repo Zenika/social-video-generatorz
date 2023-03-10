@@ -1,31 +1,10 @@
 import React from 'react';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
 export const SpeakerInfos: React.FC<{
 	name: string;
 	role?: string;
 	location?: string;
 }> = ({name, role, location}) => {
-	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
-
-	const durationInFrames = 30;
-	const delay = 5;
-	const slideTop = spring({
-		frame: frame - delay,
-		fps,
-		from: -50,
-		to: 0,
-		durationInFrames,
-	});
-	const opacity = spring({
-		frame: frame - delay,
-		fps,
-		from: 0,
-		to: 1,
-		durationInFrames,
-	});
-
 	return (
 		<div
 			style={{
