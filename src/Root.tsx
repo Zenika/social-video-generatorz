@@ -39,10 +39,13 @@ export const RemotionRoot: React.FC = () => {
 						width={1200}
 						height={1200}
 						fps={30}
-						durationInFrames={150}
+						durationInFrames={140}
 						defaultProps={{
 							title: 'Venez assister à des conférences techs',
 							city: 'lyon',
+							date: '28 Novembre 2023',
+							time: '17h00',
+							onlinePlatform: 'workadventure',
 						}}
 					/>
 					<Composition
@@ -51,7 +54,7 @@ export const RemotionRoot: React.FC = () => {
 						width={1200}
 						height={1200}
 						fps={30}
-						durationInFrames={150}
+						durationInFrames={110}
 						defaultProps={{
 							categories: [
 								{
@@ -83,6 +86,9 @@ export const RemotionRoot: React.FC = () => {
 						defaultProps={{
 							title: 'L’évenement imaginé par les Techs pour les Techs',
 							city: 'lyon',
+							date: '28 Novembre 2023',
+							time: '17h00',
+							onlinePlatform: 'workadventure',
 							categories: [
 								{
 									name: 'Green IT',
