@@ -143,10 +143,6 @@ export const RemotionRoot: React.FC = () => {
 							role: 'Consultant frontend',
 							location: 'lyon',
 						},
-						category: {
-							name: 'CRAFTMANSHIP',
-							icon: '/BestOfTz/icons/Dev.svg',
-						},
 					}}
 				/>
 			</Folder>
