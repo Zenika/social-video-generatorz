@@ -31,7 +31,7 @@ export const Intro: React.FC<{
 
 	const durationInFrames = 30;
 	const sizeDown = spring({
-		frame: frame - 140,
+		frame: frame - 100,
 		from: 650,
 		to: 250,
 		fps,
@@ -53,7 +53,7 @@ export const Intro: React.FC<{
 			</Sequence>
 			<Sequence name="Title" from={10}>
 				<FadeIn durationInFrames={20}>
-					<FadeOut startAt={110} durationInFrames={20}>
+					<FadeOut startAt={100} durationInFrames={20}>
 						<Title
 							title={title}
 							style={{
@@ -68,10 +68,10 @@ export const Intro: React.FC<{
 					</FadeOut>
 				</FadeIn>
 			</Sequence>
-			<Sequence name="Dans les locaux" from={10}>
+			<Sequence name="Dans les locaux" from={5}>
 				<SlideTop from={200} to={525} durationInFrames={30}>
 					<FadeIn durationInFrames={30}>
-						<FadeOut startAt={50} durationInFrames={15}>
+						<FadeOut startAt={50} durationInFrames={20}>
 							<Location
 								iconUrl="/mono_zenika.svg"
 								text="Dans les locaux Zenika"
@@ -81,7 +81,7 @@ export const Intro: React.FC<{
 					</FadeIn>
 				</SlideTop>
 			</Sequence>
-			<Sequence name="Divider" from={20}>
+			<Sequence name="Divider" from={10}>
 				<FadeIn durationInFrames={20}>
 					<FadeOut startAt={100} durationInFrames={15}>
 						<Divider
@@ -94,8 +94,8 @@ export const Intro: React.FC<{
 				</FadeIn>
 			</Sequence>
 			<Sequence name="Details" from={20}>
-				<SlideTop delay={100} from={1025} to={1100} durationInFrames={30}>
-					<FadeOut startAt={100} durationInFrames={5}>
+				<SlideTop delay={80} from={1025} to={1100} durationInFrames={30}>
+					<FadeOut startAt={80} durationInFrames={5}>
 						<Details
 							date={date}
 							time={time}
@@ -109,8 +109,8 @@ export const Intro: React.FC<{
 				</SlideTop>
 			</Sequence>
 			<Sequence name="Ou en ligne">
-				<FadeIn startAt={80} durationInFrames={15}>
-					<FadeOut startAt={120} durationInFrames={15}>
+				<FadeIn startAt={70} durationInFrames={15}>
+					<FadeOut startAt={100} durationInFrames={20}>
 						<Location
 							iconUrl="/BestOfTz/workadventure.png"
 							text="Ou en ligne sur"

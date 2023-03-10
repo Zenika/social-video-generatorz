@@ -46,11 +46,11 @@ export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 							<FadeIn startAt={delay} durationInFrames={durationInFrames}>
 								<SlideTop
 									from={0}
-									to={-90}
+									to={90}
 									durationInFrames={durationInFrames}
-									delay={80 + delay}
+									delay={60 + delay}
 								>
-									<FadeOut startAt={80 + delay} durationInFrames={15}>
+									<FadeOut startAt={60 + delay} durationInFrames={15}>
 										<Category
 											name={category.name}
 											icon={category.icon}
