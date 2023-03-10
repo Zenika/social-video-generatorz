@@ -4,10 +4,12 @@ import {useLottie} from './hooks/useLotttie';
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
 export const Details: React.FC<{
-	date: string;
-	time: string;
-	location: string;
-}> = ({date, time, location}) => {
+	date?: string;
+	time?: string;
+	location?: string;
+	iconScaleFactor?: number;
+	style?: React.CSSProperties;
+}> = ({date, time, location, iconScaleFactor = 1, style}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
@@ -26,71 +28,74 @@ export const Details: React.FC<{
 	return (
 		<div
 			style={{
-				fontWeight: 700,
-				fontSize: '25px',
 				color: 'white',
 				position: 'absolute',
-				bottom: '3rem',
 				display: 'flex',
 				width: '100%',
 				justifyContent: 'center',
 				alignItems: 'center',
-				flexWrap: 'wrap',
-				columnGap: '7rem',
+				gap: '7rem',
+				...style,
 			}}
 		>
-			<div
-				style={{
-					display: 'flex',
-					justifyContent: 'flex-end',
-					alignItems: 'center',
-					gap: '1rem',
-					flex: '1 0 20%',
-				}}
-			>
-				<Lottie
+			{date && (
+				<div
 					style={{
-						width: '110px',
-						filter: 'none',
-					}}
-					playbackRate={1.5}
-					animationData={illustrationDate}
-				/>
-				<span
-					style={{
-						position: 'relative',
-						bottom: drop,
-						opacity,
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						gap: '1rem',
 					}}
 				>
-					{date}
-				</span>
-			</div>
-			<div
-				style={{
-					display: 'flex',
-					alignItems: 'center',
-					gap: '1rem',
-					flex: '1 0 20%',
-				}}
-			>
-				<Lottie
+					<Lottie
+						style={{
+							width: '110px',
+							filter: 'none',
+							paddingTop: 10,
+							transform: `scale(${iconScaleFactor})`,
+						}}
+						playbackRate={1.5}
+						animationData={illustrationDate}
+					/>
+					<span
+						style={{
+							position: 'relative',
+							bottom: drop,
+							opacity,
+						}}
+					>
+						{date}
+					</span>
+				</div>
+			)}
+			{location && (
+				<div
 					style={{
-						width: '70px',
-						filter: 'none',
-					}}
-					animationData={illustrationLocation}
-				/>
-				<span
-					style={{
-						position: 'relative',
-						bottom: drop,
-						opacity,
+						display: 'flex',
+						alignItems: 'center',
+						gap: '1rem',
 					}}
 				>
-					{location}
-				</span>
-			</div>
+					<Lottie
+						style={{
+							width: '70px',
+							filter: 'none',
+							paddingTop: 10,
+							transform: `scale(${iconScaleFactor})`,
+						}}
+						animationData={illustrationLocation}
+					/>
+					<span
+						style={{
+							position: 'relative',
+							bottom: drop,
+							opacity,
+						}}
+					>
+						{location}
+					</span>
+				</div>
+			)}
 			{time && (
 				<div
 					style={{
@@ -98,13 +103,14 @@ export const Details: React.FC<{
 						justifyContent: 'center',
 						alignItems: 'center',
 						gap: '2rem',
-						flexBasis: '100%',
 					}}
 				>
 					<Lottie
 						style={{
 							width: '50px',
 							filter: 'none',
+							paddingTop: 10,
+							transform: `scale(${iconScaleFactor})`,
 						}}
 						animationData={illustrationHour}
 					/>

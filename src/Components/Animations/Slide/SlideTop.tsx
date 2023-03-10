@@ -5,9 +5,9 @@ export const SlideTop: React.FC<{
 	from: number;
 	to: number;
 	durationInFrames: number;
-	delay: number;
+	delay?: number;
 	children: ReactNode;
-}> = ({from, to, durationInFrames, delay, children}) => {
+}> = ({from, to, durationInFrames, delay = 0, children}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
