@@ -46,7 +46,7 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 					onlinePlatform={onlinePlatform}
 				/>
 			</Sequence>
-			<Sequence name="Categories" from={140}>
+			<Sequence name="Categories" from={140} durationInFrames={120}>
 				<Tribes categories={categories} />
 			</Sequence>
 		</AbsoluteFill>
