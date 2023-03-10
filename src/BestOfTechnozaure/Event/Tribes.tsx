@@ -21,7 +21,7 @@ export const Tribes: React.FC<{
 		>
 			<Sequence name="Title Categories">
 				<FadeIn durationInFrames={20}>
-					<FadeOut startAt={105} durationInFrames={15}>
+					<FadeOut startAt={70} durationInFrames={15}>
 						<Title
 							title="VENEZ ASSISTER À DES CONFÉRENCES TECH"
 							style={{

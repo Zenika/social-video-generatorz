@@ -30,7 +30,7 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 }) => {
 	const frame = useCurrentFrame();
 
-	const gradient = interpolate(frame, [120, 150], [0.1, -0.08], {
+	const gradient = interpolate(frame, [110, 140], [0.1, -0.08], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
@@ -49,10 +49,10 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 					onlinePlatform={onlinePlatform}
 				/>
 			</Sequence>
-			<Sequence name="Categories" from={140} durationInFrames={120}>
+			<Sequence name="Categories" from={130} durationInFrames={100}>
 				<Tribes categories={categories} />
 			</Sequence>
-			<Sequence name="Contact" from={260} durationInFrames={70}>
+			<Sequence name="Contact" from={230} durationInFrames={70}>
 				<Contact contact={contact} />
 			</Sequence>
 		</AbsoluteFill>
