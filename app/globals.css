@@ -37,6 +37,8 @@ body {
 		position: relative;
 		height: 100vh;
 		z-index: 5;
+		padding: 1rem;
+		color: white;
 	}
 }
 
