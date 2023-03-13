@@ -1,21 +1,17 @@
-.main {
-	padding: 1rem;
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	padding: 4rem 0;
+	width: 100%;
+	gap: 50px;
 
-	.center {
+	.preview {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		position: relative;
-		padding: 4rem 0;
-		width: 100%;
-		gap: 50px;
-
-		.preview {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			border: 2px solid white;
-			border-bottom: none;
-		}
+		border: 2px solid white;
+		border-bottom: none;
 	}
 }

@@ -1,0 +1,25 @@
+.editPage {
+	position: relative;
+
+	.backBtn {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		font-size: 1.2rem;
+		left: 50px;
+		top: 20px;
+	}
+
+	h1 {
+		text-align: center;
+		margin: 50px;
+	}
+
+	.editContainer {
+		display: flex;
+		justify-content: center;
+		gap: 50px;
+	}
+}
