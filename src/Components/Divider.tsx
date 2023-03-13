@@ -2,10 +2,9 @@ import React from 'react';
 import {AbsoluteFill} from 'remotion';
 
 export const Divider: React.FC<{
-	style: React.CSSProperties;
+	style?: React.CSSProperties;
 	width?: string | number;
-	height?: number;
-}> = ({style, width = '50%', height = 3}) => {
+}> = ({style, width = '50%'}) => {
 	return (
 		<AbsoluteFill
 			style={{
@@ -17,7 +16,7 @@ export const Divider: React.FC<{
 			<span
 				style={{
 					width,
-					height,
+					height: 3,
 					display: 'block',
 					background:
 						'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%)',

@@ -3,7 +3,7 @@ import {AbsoluteFill} from 'remotion';
 
 export const Title: React.FC<{
 	title: string;
-	style: React.CSSProperties;
+	style?: React.CSSProperties;
 	top: number;
 }> = ({title, style, top}) => {
 	return (
