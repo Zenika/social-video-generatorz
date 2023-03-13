@@ -60,7 +60,7 @@ const displayStyle = {
 
 export default function Home() {
 	return (
-		<main className={styles.main}>
+		<main>
 			<section className={styles.center}>
 				<div>
 					<div className={styles.preview}>
@@ -76,7 +76,7 @@ export default function Home() {
 							style={displayStyle}
 						/>
 					</div>
-					<Link className={`btn ${styles.editLink}`} href="/generate">
+					<Link className={`btn ${styles.editLink}`} href="/BotzEvent">
 						Edit Video
 					</Link>
 				</div>
@@ -94,7 +94,7 @@ export default function Home() {
 							style={displayStyle}
 						/>
 					</div>
-					<Link className={`btn ${styles.editLink}`} href="/generate">
+					<Link className={`btn ${styles.editLink}`} href="/BotzTalk">
 						Edit Video
 					</Link>
 				</div>
