@@ -4,6 +4,8 @@ specifiers:
   '@next/font': 13.1.6
   '@remotion/cli': 3.3.45
   '@remotion/eslint-config': 3.3.53
+  '@remotion/google-fonts': ^3.3.63
+  '@remotion/lottie': ^3.3.63
   '@remotion/player': 3.3.45
   '@types/node': 18.14.0
   '@types/react': 18.0.28
@@ -12,6 +14,7 @@ specifiers:
   cssnano: 5.1.15
   eslint: 8.34.0
   husky: 8.0.3
+  lottie-web: ^5.10.2
   next: 13.1.6
   postcss: 8.4.21
   postcss-nested: 6.0.1
@@ -25,10 +28,13 @@ specifiers:
 dependencies:
   '@next/font': 13.1.6
   '@remotion/cli': 3.3.45_biqbaboplfbrettd7655fr4n2y
+  '@remotion/google-fonts': 3.3.63_biqbaboplfbrettd7655fr4n2y
+  '@remotion/lottie': 3.3.63_gn5hpwitoxbsx6uavhmqddmj5q
   '@remotion/player': 3.3.45_biqbaboplfbrettd7655fr4n2y
   '@types/node': 18.14.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
+  lottie-web: 5.10.2
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -598,6 +604,28 @@ packages:
       - supports-color
       - typescript
     dev: true
+
+  /@remotion/google-fonts/3.3.63_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-QfZHKqF/vPxwrsw5QIVt2z+XCtUxRxt1jALgyJFSdxWlGRkcNh/bSR9wvRRDu7+iYMI79tNaEkHa55Bv5pQtJg==}
+    dependencies:
+      remotion: 3.3.63_biqbaboplfbrettd7655fr4n2y
+    transitivePeerDependencies:
+      - react
+      - react-dom
+    dev: false
+
+  /@remotion/lottie/3.3.63_gn5hpwitoxbsx6uavhmqddmj5q:
+    resolution: {integrity: sha512-KL+MN9BvvjqDCVpNgs9GUZuHfIlU/XzZHLQzF/x6vQx6udteq2q/IFQN5JRl9P4nWXRZ9Jmc+bIn9CQE0mF2Nw==}
+    peerDependencies:
+      lottie-web: ^5
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      lottie-web: 5.10.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      remotion: 3.3.63_biqbaboplfbrettd7655fr4n2y
+    dev: false
 
   /@remotion/media-utils/3.3.45_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-4G99ocBv1K+fy1IZXouQvHsFuTcn5+FDibFa2zjFyvMSHQRAA/NrZFeaLiRtSais9mEhKbyHI5djEHpZ35PnRg==}
@@ -2320,6 +2348,10 @@ packages:
     dependencies:
       js-tokens: 4.0.0
 
+  /lottie-web/5.10.2:
+    resolution: {integrity: sha512-d0PFIGiwuMsJYaF4uPo+qG8dEorlI+xFI2zrrFtE1bGO4WoLIz+NjremxEq1swpR7juR10aeOtmNh3d6G3ub0A==}
+    dev: false
+
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
@@ -3109,6 +3141,16 @@ packages:
 
   /remotion/3.3.45_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-28wVY/1J8nDD4pdMWp57iNR8se2zGyJcqrm6QRGMbu2k4nSGsM49sbfjSgXL4+wPW+PoSg1oxdQ27e00nTNAww==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /remotion/3.3.63_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-uTRXAmFlq382y0lVf/2P2yNXDOYNHA4dQEeHyfubwLxEK2wSomoDE4t/9NiGd+5BjGViqv+96YSzjI26k1zeHQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
