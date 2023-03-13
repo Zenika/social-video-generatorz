@@ -1,31 +1,21 @@
 .main {
-	padding: 6rem;
-	min-height: 100vh;
-}
+	padding: 1rem;
 
-.center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	padding: 4rem 0;
-}
+	.center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		padding: 4rem 0;
+		width: 100%;
+		gap: 50px;
 
-.logo,
-.thirteen {
-	position: relative;
-}
-
-.thirteen {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 75px;
-	height: 75px;
-	padding: 25px 10px;
-	margin-left: 16px;
-	transform: translateZ(0);
-	border-radius: var(--border-radius);
-	overflow: hidden;
-	box-shadow: 0px 2px 8px -1px #0000001a;
+		.preview {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 2px solid white;
+			border-bottom: none;
+		}
+	}
 }
