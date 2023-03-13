@@ -46,13 +46,15 @@ export const Contact: React.FC<{
 					/>
 				</FadeIn>
 			</Sequence>
-			<Sequence name="Contact informations" from={10}>
-				<SlideTop from={830} to={930} durationInFrames={30}>
-					<FadeIn durationInFrames={30}>
-						<DoubleText firstText={contact.mail} secondText={contact.phone} />
-					</FadeIn>
-				</SlideTop>
-			</Sequence>
+			{contact.mail && contact.phone && (
+				<Sequence name="Contact informations" from={10}>
+					<SlideTop from={830} to={930} durationInFrames={30}>
+						<FadeIn durationInFrames={30}>
+							<DoubleText firstText={contact.mail} secondText={contact.phone} />
+						</FadeIn>
+					</SlideTop>
+				</Sequence>
+			)}
 		</AbsoluteFill>
 	);
 };
