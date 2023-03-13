@@ -3,7 +3,7 @@
 import styles from './styles.module.css';
 import Link from 'next/link';
 import {Player} from '@remotion/player';
-import {Monogram} from '@/src/LogoZenika/Monogram';
+import {Monogram} from '../../src/LogoZenika/Monogram';
 
 export default function Page() {
 	return (
