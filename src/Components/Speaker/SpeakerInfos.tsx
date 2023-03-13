@@ -38,7 +38,7 @@ export const SpeakerInfos: React.FC<{
 						{role}
 					</span>
 				)}
-				{location && (
+				{role && location && (
 					<span
 						style={{
 							fontSize: '2.8rem',
