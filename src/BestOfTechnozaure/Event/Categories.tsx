@@ -30,6 +30,7 @@ export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 
 				return (
 					<div
+						key={id}
 						style={{
 							position: 'relative',
 							display: 'flex',
