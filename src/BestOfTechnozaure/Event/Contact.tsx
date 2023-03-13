@@ -1,4 +1,3 @@
-import {loadFont} from '@remotion/google-fonts/Nunito';
 import {AbsoluteFill, Sequence} from 'remotion';
 import {Title} from '../../Components/Title';
 import React from 'react';
@@ -8,8 +7,6 @@ import {Speaker} from '../../Components/Speaker/Speaker';
 import {Divider} from '../../Components/Divider';
 import {DoubleText} from '../../Components/DoubleText';
 import {SlideTop} from '../../Components/Animations/Slide/SlideTop';
-
-const {fontFamily} = loadFont();
 
 export const Contact: React.FC<{
 	contact: SpeakerProps;
