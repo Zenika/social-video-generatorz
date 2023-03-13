@@ -1,4 +1,4 @@
-import {loadFont} from '@remotion/google-fonts/Nunito';
+import React from 'react';
 import {
 	AbsoluteFill,
 	Sequence,
@@ -8,16 +8,13 @@ import {
 } from 'remotion';
 import {Logo} from '../../Components/Logo';
 import {Title} from '../../Components/Title';
-import {Website} from './Website';
 import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
 import {FadeOut} from '../../Components/Animations/Fade/FadeOut';
 import {Location} from './Location';
-import React from 'react';
 import {SlideTop} from '../../Components/Animations/Slide/SlideTop';
 import {Details} from '../../Components/Details';
 import {Divider} from '../../Components/Divider';
-
-const {fontFamily} = loadFont();
+import {Website} from '../../Components/Website';
 
 export const Intro: React.FC<{
 	title: string;
