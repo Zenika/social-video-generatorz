@@ -1,7 +1,3 @@
 module.exports = {
-	plugins: [
-		'postcss-nested',
-		'autoprefixer',
-		'cssnano',
-	]
-}
+	plugins: ['postcss-nested', 'autoprefixer', 'cssnano'],
+};

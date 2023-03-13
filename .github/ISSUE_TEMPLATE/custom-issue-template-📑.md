@@ -4,7 +4,6 @@ about: "Describe this issue template's purpose here \U0001F44B\U0001F3FC"
 title: "\U0001F516 - Title of the task ..."
 labels: ''
 assignees: ''
-
 ---
 
 ## ✍🏼 Description of the task
