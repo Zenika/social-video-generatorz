@@ -44,6 +44,20 @@ export const BotzTalk: React.FC<BotzTalkProps> = ({title, date, speaker}) => {
 				</FadeIn>
 			</Sequence>
 			<Sequence name="Detail" from={60}>
+				<FadeIn durationInFrames={15}>
+					<hr
+						style={{
+							position: 'absolute',
+							width: '5px',
+							height: '80px',
+							border: 'none',
+							background: 'white',
+							left: '50%',
+							bottom: 70,
+							transform: 'translateX(-50%)',
+						}}
+					/>
+				</FadeIn>
 				<LogoDate date={date} />
 			</Sequence>
 		</AbsoluteFill>

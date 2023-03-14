@@ -26,19 +26,6 @@ export const LogoDate: React.FC<{date: string}> = ({date}) => {
 
 	return (
 		<AbsoluteFill>
-			<hr
-				style={{
-					position: 'absolute',
-					width: '5px',
-					height: '80px',
-					border: 'none',
-					background: 'white',
-					left: '50%',
-					bottom: 70,
-					transform: 'translateX(-50%)',
-					opacity,
-				}}
-			/>
 			<div
 				style={{
 					position: 'absolute',
