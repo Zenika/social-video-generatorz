@@ -1,9 +1,9 @@
 import React from 'react';
-import {CategoryProps} from '../../Types';
-import {Category} from '../../Components/Category';
+import {CategoryProps} from '../../Types/CategoryProps';
 import {SlideTop} from '../../Components/Animations/Slide/SlideTop';
 import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
 import {FadeOut} from '../../Components/Animations/Fade/FadeOut';
+import {IconWithText} from '../../Components/IconWithText';
 
 export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 	categories,
@@ -40,22 +40,28 @@ export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 							durationInFrames={durationInFrames}
 							delay={delay}
 						>
-							<FadeIn startAt={delay} durationInFrames={durationInFrames}>
+							<FadeIn startingFrame={delay} durationInFrames={durationInFrames}>
 								<SlideTop
 									from={0}
 									to={90}
 									durationInFrames={durationInFrames}
 									delay={60 + delay}
 								>
-									<FadeOut startAt={60 + delay} durationInFrames={15}>
-										<Category
-											name={category.name}
+									<FadeOut startingFrame={60 + delay} durationInFrames={15}>
+										<IconWithText
+											text={category.name}
 											icon={category.icon}
 											style={{
 												flexDirection: 'column',
 												fontSize: '2.6rem',
+												gap: 20,
 											}}
-											size={200}
+											iconSize={200}
+											iconStyle={{
+												border: '7px solid #BF1D67',
+												background: 'white',
+												padding: '10px',
+											}}
 										/>
 									</FadeOut>
 								</SlideTop>

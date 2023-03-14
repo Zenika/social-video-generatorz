@@ -14,7 +14,7 @@ import {Location} from './Location';
 import {SlideTop} from '../../Components/Animations/Slide/SlideTop';
 import {Details} from '../../Components/Details';
 import {Divider} from '../../Components/Divider';
-import {Website} from '../../Components/Website';
+import {Footer} from '../../Components/Footer';
 
 export const Intro: React.FC<{
 	title: string;
@@ -37,14 +37,14 @@ export const Intro: React.FC<{
 	return (
 		<AbsoluteFill>
 			<Sequence name="Website">
-				<Website url="www.zenika.com" />
+				<Footer content="www.zenika.com" />
 			</Sequence>
 			<Sequence name="Logo">
 				<Logo src="/BestOfTz/BOTZ_LOGO.png" width={sizeDown} top={60} />
 			</Sequence>
 			<Sequence name="Title" from={10}>
 				<FadeIn durationInFrames={20}>
-					<FadeOut startAt={100} durationInFrames={20}>
+					<FadeOut startingFrame={100} durationInFrames={20}>
 						<Title
 							title={title}
 							style={{
@@ -62,7 +62,7 @@ export const Intro: React.FC<{
 			<Sequence name="Dans les locaux" from={5}>
 				<SlideTop from={200} to={525} durationInFrames={30}>
 					<FadeIn durationInFrames={30}>
-						<FadeOut startAt={50} durationInFrames={20}>
+						<FadeOut startingFrame={50} durationInFrames={20}>
 							<Location
 								iconUrl="/mono_zenika.svg"
 								text="Dans les locaux Zenika"
@@ -74,7 +74,7 @@ export const Intro: React.FC<{
 			</Sequence>
 			<Sequence name="Divider" from={10}>
 				<FadeIn durationInFrames={20}>
-					<FadeOut startAt={100} durationInFrames={15}>
+					<FadeOut startingFrame={100} durationInFrames={15}>
 						<Divider
 							style={{
 								top: 970,
@@ -86,7 +86,7 @@ export const Intro: React.FC<{
 			</Sequence>
 			<Sequence name="Details" from={20}>
 				<SlideTop delay={80} from={1025} to={1100} durationInFrames={30}>
-					<FadeOut startAt={80} durationInFrames={5}>
+					<FadeOut startingFrame={80} durationInFrames={5}>
 						<Details
 							date={date}
 							time={time}
@@ -100,8 +100,8 @@ export const Intro: React.FC<{
 				</SlideTop>
 			</Sequence>
 			<Sequence name="Ou en ligne">
-				<FadeIn startAt={70} durationInFrames={15}>
-					<FadeOut startAt={100} durationInFrames={20}>
+				<FadeIn startingFrame={70} durationInFrames={15}>
+					<FadeOut startingFrame={100} durationInFrames={20}>
 						<Location
 							iconUrl="/BestOfTz/workadventure.png"
 							text="Ou en ligne sur"

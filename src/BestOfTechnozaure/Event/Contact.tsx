@@ -1,12 +1,11 @@
+import React from 'react';
 import {AbsoluteFill, Sequence} from 'remotion';
 import {Title} from '../../Components/Title';
-import React from 'react';
-import {SpeakerProps} from '../../Types';
 import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
 import {Speaker} from '../../Components/Speaker/Speaker';
 import {Divider} from '../../Components/Divider';
-import {DoubleText} from '../../Components/DoubleText';
 import {SlideTop} from '../../Components/Animations/Slide/SlideTop';
+import {SpeakerProps} from '../../Types/SpeakerProps';
 
 export const Contact: React.FC<{
 	contact: SpeakerProps;
@@ -49,7 +48,24 @@ export const Contact: React.FC<{
 			<Sequence name="Contact informations" from={10}>
 				<SlideTop from={830} to={930} durationInFrames={30}>
 					<FadeIn durationInFrames={30}>
-						<DoubleText firstText={contact.mail} secondText={contact.phone} />
+						<AbsoluteFill
+							style={{
+								height: 'max-content',
+								alignItems: 'center',
+								fontSize: '2.8rem',
+								textShadow: '0 0 15px rgba(0,0,0,0.6)',
+								gap: 10,
+							}}
+						>
+							<span
+								style={{
+									fontWeight: 700,
+								}}
+							>
+								{contact.mail}
+							</span>
+							<span>{contact.phone}</span>
+						</AbsoluteFill>
 					</FadeIn>
 				</SlideTop>
 			</Sequence>
