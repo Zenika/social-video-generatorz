@@ -1,5 +1,5 @@
 import React from 'react';
-import {IconWithTextProps} from './Types/IconWithTextProps';
+import {IconWithTextProps} from '../Types/IconWithTextProps';
 import {Img, staticFile} from 'remotion';
 
 export const IconWithText: React.FC<IconWithTextProps> = ({
