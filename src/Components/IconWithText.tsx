@@ -17,7 +17,6 @@ export const IconWithText: React.FC<IconWithTextProps> = ({
 				alignItems: 'center',
 				width: 'max-content',
 				height: 'max-content',
-				gap: '100px',
 				...style,
 			}}
 		>
