@@ -15,7 +15,7 @@ export const IconWithText: React.FC<IconWithTextProps> = ({
 				position: 'absolute',
 				display: 'flex',
 				alignItems: 'center',
-				width: 'max-content',
+				width: '100%',
 				height: 'max-content',
 				...style,
 			}}
