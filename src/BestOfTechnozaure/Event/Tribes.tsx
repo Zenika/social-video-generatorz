@@ -15,7 +15,7 @@ export const Tribes: React.FC<{
 				<FadeIn durationInFrames={20}>
 					<FadeOut startingFrame={70} durationInFrames={15}>
 						<Title
-							title="VENEZ ASSISTER À DES CONFÉRENCES TECH"
+							title="Venez assister à des conférences tech"
 							style={{
 								fontSize: '2.2rem',
 								textTransform: 'uppercase',

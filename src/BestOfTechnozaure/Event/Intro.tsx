@@ -44,7 +44,7 @@ export const Intro: React.FC<{
 			</Sequence>
 			<Sequence name="Title" from={10}>
 				<FadeIn durationInFrames={20}>
-					<FadeOut startingFrame={100} durationInFrames={20}>
+					<FadeOut startingFrame={90} durationInFrames={20}>
 						<Title
 							title={title}
 							style={{
