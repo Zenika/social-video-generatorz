@@ -1,6 +1,5 @@
 import React from 'react';
 import {CategoryProps} from '../../Types';
-import {useCurrentFrame, useVideoConfig} from 'remotion';
 import {Category} from '../../Components/Category';
 import {SlideTop} from '../../Components/Animations/Slide/SlideTop';
 import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
@@ -9,9 +8,6 @@ import {FadeOut} from '../../Components/Animations/Fade/FadeOut';
 export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 	categories,
 }) => {
-	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
-
 	return (
 		<div
 			style={{
