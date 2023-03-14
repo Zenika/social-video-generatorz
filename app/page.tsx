@@ -62,8 +62,8 @@ export default function Home() {
 	return (
 		<main>
 			<section className={styles.center}>
-				<div>
-					<div className={styles.preview}>
+				<div className={styles.card}>
+					<div className={styles.videoPreview}>
 						<Player
 							autoPlay
 							loop
@@ -76,12 +76,15 @@ export default function Home() {
 							style={displayStyle}
 						/>
 					</div>
-					<Link className={`btn ${styles.editLink}`} href="/BotzEvent">
-						Edit Video
-					</Link>
+					<div className={styles.cardContent}>
+						<p>Best of TZ - Évènement</p>
+						<Link className="btn btn-black" href="/BotzEvent">
+							Create Video
+						</Link>
+					</div>
 				</div>
 				<div className={styles.card}>
-					<div className={styles.preview}>
+					<div className={styles.videoPreview}>
 						<Player
 							autoPlay
 							loop
@@ -94,9 +97,12 @@ export default function Home() {
 							style={displayStyle}
 						/>
 					</div>
-					<Link className={`btn ${styles.editLink}`} href="/BotzTalk">
-						Edit Video
-					</Link>
+					<div className={styles.cardContent}>
+						<p>Best of TZ - Talk</p>
+						<Link className="btn btn-black" href="/BotzTalk">
+							Create Video
+						</Link>
+					</div>
 				</div>
 			</section>
 		</main>
