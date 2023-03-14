@@ -27,28 +27,30 @@ export const SpeakerInfos: React.FC<{
 			</span>
 			<div>
 				{role && (
-					<span
-						style={{
-							fontSize: '2.8rem',
-							fontWeight: '500',
-							textShadow: '0 0 15px rgba(0,0,0,0.6)',
-							position: 'relative',
-						}}
-					>
-						{role}
-					</span>
-				)}
-				{role && location && (
-					<span
-						style={{
-							fontSize: '2.8rem',
-							fontWeight: '500',
-							textShadow: '0 0 15px rgba(0,0,0,0.6)',
-							position: 'relative',
-						}}
-					>
-						&nbsp;@{location}
-					</span>
+					<>
+						<span
+							style={{
+								fontSize: '2.8rem',
+								fontWeight: '500',
+								textShadow: '0 0 15px rgba(0,0,0,0.6)',
+								position: 'relative',
+							}}
+						>
+							{role}
+						</span>
+						{location && (
+							<span
+								style={{
+									fontSize: '2.8rem',
+									fontWeight: '500',
+									textShadow: '0 0 15px rgba(0,0,0,0.6)',
+									position: 'relative',
+								}}
+							>
+								&nbsp;@{location}
+							</span>
+						)}
+					</>
 				)}
 			</div>
 		</div>

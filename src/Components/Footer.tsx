@@ -1,6 +1,7 @@
+import React from 'react';
 import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
-export const Website: React.FC<{url: string}> = ({url}) => {
+export const Footer: React.FC<{content: string}> = ({content}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
@@ -25,7 +26,7 @@ export const Website: React.FC<{url: string}> = ({url}) => {
 					bottom: slideBottom,
 				}}
 			>
-				{url}
+				{content}
 			</span>
 		</AbsoluteFill>
 	);

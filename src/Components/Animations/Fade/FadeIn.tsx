@@ -2,15 +2,16 @@ import React, {ReactNode} from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
 
 export const FadeIn: React.FC<{
-	startAt?: number;
+	startingFrame?: number;
 	durationInFrames: number;
+	style?: React.CSSProperties;
 	children: ReactNode;
-}> = ({startAt = 0, durationInFrames, children}) => {
+}> = ({startingFrame = 0, durationInFrames, style, children}) => {
 	const frame = useCurrentFrame();
 
 	const opacity = interpolate(
 		frame,
-		[startAt, startAt + durationInFrames],
+		[startingFrame, startingFrame + durationInFrames],
 		[0, 1],
 		{
 			extrapolateRight: 'clamp',
@@ -22,6 +23,7 @@ export const FadeIn: React.FC<{
 		<span
 			style={{
 				opacity,
+				...style,
 			}}
 		>
 			{children}
