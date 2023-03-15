@@ -5,53 +5,8 @@ import styles from './page.module.css';
 import {Player} from '@remotion/player';
 import {BotzEvent} from '../src/BestOfTechnozaure/Event/BotzEvent';
 import {BotzTalk} from '../src/BestOfTechnozaure/Talk/BotzTalk';
-
-const EventDefaultProps = {
-	title: 'L’évenement imaginé par les Techs pour les Techs',
-	city: 'lyon',
-	date: '28 Novembre 2023',
-	time: '17h00',
-	onlinePlatform: 'workadventure',
-	contact: {
-		name: 'Lucas Audart',
-		picture: 'https://ca.slack-edge.com/T02ARLB3P-U02H7C4H6PJ-eb62023feb1e-512',
-		role: 'Consultant frontend',
-		location: 'lyon',
-		mail: 'lucas.audart@zenika.com',
-		phone: '06 57 29 32 64',
-	},
-	categories: [
-		{
-			name: 'Green IT',
-			icon: '/BestOfTz/icons/GreenIT.svg',
-		},
-		{
-			name: 'Sécurité',
-			icon: '/BestOfTz/icons/Sécurité.svg',
-		},
-		{
-			name: 'Cloud',
-			icon: '/BestOfTz/icons/Cloud.svg',
-		},
-		{
-			name: 'Craftsmanship',
-			icon: '/BestOfTz/icons/Dev.svg',
-		},
-	],
-};
-
-const TalkDefaultProps = {
-	title:
-		'Live-coding : d’une archi 3 couches à une archi hexagonale, grâce au TDD',
-	date: '09 novembre 2023',
-	speaker: {
-		name: 'Mickaël Alves',
-		picture:
-			'https://pbs.twimg.com/profile_images/1452247219709566977/5Xzmgun-_400x400.jpg',
-		role: 'Consultant frontend',
-		location: 'lyon',
-	},
-};
+import {EventDefaultProps} from '../src/DefaultProps/EventDefaultProps';
+import {TalkDefaultProps} from '../src/DefaultProps/TalkDefaultProps';
 
 const displayStyle = {
 	width: 400,
