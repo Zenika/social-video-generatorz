@@ -5,32 +5,36 @@ import {useInputChange} from '../../hooks/onInputChanges';
 import {CategoriesList} from '../../../DefaultProps/CategoriesList';
 import {Checkbox} from './Checkbox';
 import {Input} from './Input';
+import {EventDefaultProps} from '../../../DefaultProps/EventDefaultProps';
 
 export const EventForm: React.FC<{
-	defaultData: object;
 	currentTemplate: VideoTemplate;
-}> = ({defaultData, currentTemplate}) => {
-	const [title, setTitle] = useInputChange<string>(
-		'L’évenement imaginé par les Techs pour les Techs'
+}> = ({currentTemplate}) => {
+	const [title, setTitle] = useInputChange<string>(EventDefaultProps.title);
+	const [city, setCity] = useInputChange<string>(EventDefaultProps.city);
+	const [date, setDate] = useInputChange<string>(EventDefaultProps.date);
+	const [time, setTime] = useInputChange<string>(EventDefaultProps.time);
+	const [onlinePlatform, setOnlinePlatform] = useInputChange<string>(
+		EventDefaultProps.onlinePlatform
 	);
-	const [city, setCity] = useInputChange<string>('lyon');
-	const [date, setDate] = useInputChange<string>('28 Novembre 2023');
-	const [time, setTime] = useInputChange<string>('17h00');
-	const [onlinePlatform, setOnlinePlatform] =
-		useInputChange<string>('workadventure');
-	const [contactName, setContactName] = useInputChange<string>('Lucas Audart');
+	const [contactName, setContactName] = useInputChange<string>(
+		EventDefaultProps.contact.name
+	);
 	const [contactPicture, setContactPicture] = useInputChange<string>(
-		'https://ca.slack-edge.com/T02ARLB3P-U02H7C4H6PJ-eb62023feb1e-512'
+		EventDefaultProps.contact.picture
 	);
 	const [contactRole, setContactRole] = useInputChange<string>(
-		'Consultant frontend'
+		EventDefaultProps.contact.role
 	);
-	const [contactLocation, setContactLocation] = useInputChange<string>('lyon');
+	const [contactLocation, setContactLocation] = useInputChange<string>(
+		EventDefaultProps.contact.location
+	);
 	const [contactMail, setContactMail] = useInputChange<string>(
-		'lucas.audart@zenika.com'
+		EventDefaultProps.contact.mail
 	);
-	const [contactPhone, setContactPhone] =
-		useInputChange<string>('06 57 29 32 64');
+	const [contactPhone, setContactPhone] = useInputChange<string>(
+		EventDefaultProps.contact.phone
+	);
 
 	const [categoriesId, setCategoriesId] = useState<Array<string>>([
 		'greenit',
@@ -39,24 +43,9 @@ export const EventForm: React.FC<{
 		'craft',
 	]);
 
-	const [categoriesData, setCategoriesData] = useState<Array<object>>([
-		{
-			name: 'Green IT',
-			icon: '/BestOfTz/icons/GreenIT.svg',
-		},
-		{
-			name: 'Sécurité',
-			icon: '/BestOfTz/icons/Sécurité.svg',
-		},
-		{
-			name: 'Cloud',
-			icon: '/BestOfTz/icons/Cloud.svg',
-		},
-		{
-			name: 'Craftsmanship',
-			icon: '/BestOfTz/icons/Dev.svg',
-		},
-	]);
+	const [categoriesData, setCategoriesData] = useState<Array<object>>(
+		EventDefaultProps.categories
+	);
 
 	const handleAddCategory = (newCategory: string): void => {
 		if (categoriesId.length < 4) {

@@ -6,5 +6,4 @@ export interface VideoTemplate {
 	height: number;
 	compositionName: string;
 	durationInFrames: number;
-	sampleData: object;
 }

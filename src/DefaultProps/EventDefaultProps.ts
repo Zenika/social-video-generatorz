@@ -31,10 +31,3 @@ export const EventDefaultProps = {
 		},
 	],
 };
-
-export const EventFormProps = {
-	id: 'event',
-	intro: ['title', 'city', 'online_platform', 'date', 'time'],
-	categories: {numberOfCategory: 4, fields: ['category_name', 'category_icon']},
-	contact: ['name', 'picture', 'role', 'location', 'mail', 'phone'],
-};

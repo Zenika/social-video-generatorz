@@ -19,8 +19,4 @@ export const CategoriesList: CategoriesListProps = {
 		name: 'Craftsmanship',
 		icon: '/BestOfTz/icons/Dev.svg',
 	},
-	test: {
-		name: 'Test',
-		icon: '/BestOfTz/icons/Dev.svg',
-	},
 };
