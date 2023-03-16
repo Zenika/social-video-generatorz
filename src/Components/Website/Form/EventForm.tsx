@@ -4,6 +4,7 @@ import {VideoTemplate} from '../../../Types/VideoTemplate';
 import {useInputChange} from '../../hooks/onInputChanges';
 import {CategoriesList} from '../../../DefaultProps/CategoriesList';
 import {Checkbox} from './Checkbox';
+import {Input} from './Input';
 
 export const EventForm: React.FC<{
 	defaultData: object;
@@ -78,6 +79,56 @@ export const EventForm: React.FC<{
 		setCategoriesData(categoriesContent);
 	};
 
+	const introInputs = {
+		title: {
+			data: title,
+			setData: setTitle,
+		},
+		city: {
+			data: city,
+			setData: setCity,
+		},
+		date: {
+			data: date,
+			setData: setDate,
+		},
+		time: {
+			data: time,
+			setData: setTime,
+		},
+		onlinePlatform: {
+			data: onlinePlatform,
+			setData: setOnlinePlatform,
+		},
+	};
+
+	const contactInputs = {
+		name: {
+			data: contactName,
+			setData: setContactName,
+		},
+		picture: {
+			data: contactPicture,
+			setData: setContactPicture,
+		},
+		role: {
+			data: contactRole,
+			setData: setContactRole,
+		},
+		location: {
+			data: contactLocation,
+			setData: setContactLocation,
+		},
+		mail: {
+			data: contactMail,
+			setData: setContactMail,
+		},
+		phone: {
+			data: contactPhone,
+			setData: setContactPhone,
+		},
+	};
+
 	const data = {
 		title,
 		city,
@@ -117,7 +168,17 @@ export const EventForm: React.FC<{
 			</div>
 
 			<form>
-				<div>
+				<section>
+					{Object.entries(introInputs).map(([label, input], key) => (
+						<Input
+							key={key}
+							setValue={input.setData}
+							label={label}
+							value={input.data}
+						/>
+					))}
+				</section>
+				<section>
 					{Object.entries(CategoriesList).map(
 						([categoryName, categoryData], key) => (
 							<Checkbox
@@ -132,7 +193,17 @@ export const EventForm: React.FC<{
 							/>
 						)
 					)}
-				</div>
+				</section>
+				<section>
+					{Object.entries(contactInputs).map(([label, input], key) => (
+						<Input
+							key={key}
+							setValue={input.setData}
+							label={label}
+							value={input.data}
+						/>
+					))}
+				</section>
 			</form>
 		</>
 	);
