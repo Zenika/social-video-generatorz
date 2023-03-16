@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {Player} from '@remotion/player';
-import {VideoTemplate} from '../../../Types/VideoTemplate';
-import {useInputChange} from '../../hooks/onInputChanges';
-import {CategoriesList} from '../../../DefaultProps/CategoriesList';
+import {VideoTemplate} from '../../../src/Types/VideoTemplate';
+import {useInputChange} from '../../../src/Components/hooks/onInputChanges';
+import {CategoriesList} from '../../../src/DefaultProps/CategoriesList';
 import {Checkbox} from './Checkbox';
 import {Input} from './Input';
-import {EventDefaultProps} from '../../../DefaultProps/EventDefaultProps';
+import {EventDefaultProps} from '../../../src/DefaultProps/EventDefaultProps';
 
 export const EventForm: React.FC<{
 	currentTemplate: VideoTemplate;
