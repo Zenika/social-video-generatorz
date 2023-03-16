@@ -136,7 +136,7 @@ export const EventForm: React.FC<{
 	}, [categoriesId]);
 
 	return (
-		<>
+		<div className="center">
 			<div>
 				<Player
 					controls
@@ -161,6 +161,6 @@ export const EventForm: React.FC<{
 				/>
 				<InputSection InputList={contactInputs} />
 			</form>
-		</>
+		</div>
 	);
 };
