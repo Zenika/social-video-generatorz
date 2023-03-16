@@ -1,9 +1,9 @@
 import React from 'react';
 import {Player} from '@remotion/player';
-import {VideoTemplate} from '../../../Types/VideoTemplate';
-import {useInputChange} from '../../hooks/onInputChanges';
-import {TalkDefaultProps} from '../../../DefaultProps/TalkDefaultProps';
 import {Input} from './Input';
+import {VideoTemplate} from '../../../src/Types/VideoTemplate';
+import {useInputChange} from '../../../src/Components/hooks/onInputChanges';
+import {TalkDefaultProps} from '../../../src/DefaultProps/TalkDefaultProps';
 
 export const TalkForm: React.FC<{
 	currentTemplate: VideoTemplate;
