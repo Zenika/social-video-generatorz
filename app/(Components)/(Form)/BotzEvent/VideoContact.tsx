@@ -1,5 +1,5 @@
 import React from 'react';
-import {Input} from '../Input';
+import {Input} from '../Inputs/Input';
 
 export const VideoContact: React.FC<{contactInputs: object}> = ({
 	contactInputs,

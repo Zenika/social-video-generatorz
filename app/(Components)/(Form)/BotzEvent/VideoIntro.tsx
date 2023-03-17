@@ -1,7 +1,7 @@
 import React from 'react';
-import {Input} from '../Input';
-import {InputDate} from '../InputDate';
-import {InputTime} from '../InputTime';
+import {Input} from '../Inputs/Input';
+import {InputDate} from '../Inputs/InputDate';
+import {InputTime} from '../Inputs/InputTime';
 
 export const VideoIntro: React.FC<{introInputs: object}> = ({introInputs}) => {
 	return (

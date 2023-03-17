@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {Player} from '@remotion/player';
-import {Input} from './Input';
+import {Input} from './Inputs/Input';
 import {VideoTemplate} from '../../../src/Types/VideoTemplate';
 import {useInputChange} from '../../../src/Components/hooks/onInputChanges';
 import {TalkDefaultProps} from '../../../src/DefaultProps/TalkDefaultProps';
