@@ -13,6 +13,7 @@ import {InputSection} from '../Inputs/InputSection';
 import {VideoCategories} from './VideoCategories';
 import {format} from 'date-fns';
 import fr from 'date-fns/locale/fr';
+import styles from './styles.module.css';
 
 export const EventForm: React.FC<{
 	currentTemplate: VideoTemplate;
@@ -73,18 +74,22 @@ export const EventForm: React.FC<{
 		title: {
 			data: title,
 			setData: setTitle,
+			label: 'Titre',
 		},
 		city: {
 			data: city,
 			setData: setCity,
+			label: 'Ville',
 		},
 		date: {
 			data: date,
 			setData: setDate,
+			label: 'Date',
 		},
 		time: {
 			data: time,
 			setData: setTime,
+			label: 'Heure',
 		},
 	};
 
@@ -92,26 +97,32 @@ export const EventForm: React.FC<{
 		name: {
 			data: contactName,
 			setData: setContactName,
+			label: 'Nom',
 		},
 		picture: {
 			data: contactPicture,
 			setData: setContactPicture,
+			label: 'Photo',
 		},
 		role: {
 			data: contactRole,
 			setData: setContactRole,
+			label: 'Role',
 		},
 		location: {
 			data: contactLocation,
 			setData: setContactLocation,
+			label: 'Ville',
 		},
 		mail: {
 			data: contactMail,
 			setData: setContactMail,
+			label: 'Email',
 		},
 		phone: {
 			data: contactPhone,
 			setData: setContactPhone,
+			label: 'Téléphone',
 		},
 	};
 
@@ -135,8 +146,13 @@ export const EventForm: React.FC<{
 		getCategoriesData();
 	}, [categoriesId]);
 
+	const handleSubmit: React.FormEventHandler = (event) => {
+		event.preventDefault();
+		console.log('Hello there');
+	};
+
 	return (
-		<div className="center">
+		<div className={styles.center}>
 			<div>
 				<Player
 					controls
@@ -152,14 +168,24 @@ export const EventForm: React.FC<{
 				/>
 			</div>
 
-			<form>
-				<InputSection InputList={introInputs} />
-				<VideoCategories
-					categoriesId={categoriesId}
-					addCategory={handleAddCategory}
-					removeCategory={handleRemoveCategory}
-				/>
-				<InputSection InputList={contactInputs} />
+			<div className={styles.formContainer}>
+				<form id={currentTemplate.formId} onSubmit={handleSubmit}>
+					<section>
+						<p>Categories</p>
+						<InputSection InputList={introInputs} />
+					</section>
+					<section>
+						<p>Introduction</p>
+					<VideoCategories
+						categoriesId={categoriesId}
+						addCategory={handleAddCategory}
+						removeCategory={handleRemoveCategory}
+					/>
+					</section>
+					<section>
+						<p>Contact</p>
+					<InputSection InputList={contactInputs} />
+					</section>
 			</form>
 		</div>
 	);

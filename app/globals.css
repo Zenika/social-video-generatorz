@@ -39,9 +39,8 @@ html {
 		top: 0;
 		width: 100%;
 		height: 100%;
-		background-image: url('https://zenika.com/static/images/background-overlay.png');
-		background-repeat: no-repeat;
-		background-size: cover;
+		background: url('https://zenika.com/static/images/background-overlay.png')
+			center bottom no-repeat;
 		opacity: 0.2;
 	}
 }
@@ -49,44 +48,35 @@ html {
 a {
 	color: inherit;
 	text-decoration: none;
-
-	&.btn {
-		background: white;
-		color: var(--black);
-		padding: 10px 20px;
-		display: block;
-		width: 100%;
-		border: 2px solid transparent;
-		transition: all 0.3s ease;
-		text-align: center;
-		border-radius: var(--border-radius);
-		font-weight: 600;
-
-		&:hover {
-			background: var(--black);
-			color: white;
-			border: 2px solid white;
-		}
-
-		&-black {
-			background: var(--black);
-			color: white;
-
-			&:hover {
-				background: white;
-				color: var(--black);
-				border: 2px solid var(--black);
-			}
-		}
-	}
 }
 
-.center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	padding: 4rem 0;
+.btn {
+	background: white;
+	color: var(--black);
+	padding: 10px 20px;
+	display: block;
 	width: 100%;
-	gap: 50px;
+	border: 2px solid transparent;
+	transition: all 0.3s ease;
+	text-align: center;
+	border-radius: var(--border-radius);
+	font-weight: 600;
+
+	&:hover {
+		background: var(--black);
+		color: white;
+		border: 2px solid white;
+		cursor: pointer;
+	}
+
+	&-black {
+		background: var(--black);
+		color: white;
+
+		&:hover {
+			background: white;
+			color: var(--black);
+			border: 2px solid var(--black);
+		}
+	}
 }

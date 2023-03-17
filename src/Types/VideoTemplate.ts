@@ -6,4 +6,5 @@ export interface VideoTemplate {
 	height: number;
 	compositionName: string;
 	durationInFrames: number;
+	formId: string;
 }

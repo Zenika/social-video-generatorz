@@ -1,3 +1,105 @@
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	position: relative;
+	width: 100%;
+	gap: 50px;
+
+	.formContainer {
+		width: 40%;
+		height: 475px;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			bottom: -30px;
+			left: 50%;
+			transform: translateX(-50%);
+			background: url('../../../public/scroll.svg') no-repeat;
+			background-size: 100%;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 80px;
+			background: linear-gradient(0deg, var(--black), rgba(18, 18, 18, 0));
+			bottom: 0;
+			left: 0;
+			pointer-events: none;
+		}
+
+		form {
+			overflow: scroll;
+			width: 100%;
+			height: 100%;
+
+			section {
+				padding: 10px 0;
+
+				&:first-child {
+					padding-top: 0;
+				}
+
+				&:last-child {
+					padding-bottom: 50px;
+				}
+
+				p {
+					text-align: center;
+					text-transform: uppercase;
+					font-weight: bold;
+					font-size: 1.3rem;
+					padding-bottom: 30px;
+					position: relative;
+
+					&:after {
+						content: '';
+						position: absolute;
+						width: 100%;
+						height: 3px;
+						display: block;
+						background: linear-gradient(
+							90deg,
+							rgba(255, 255, 255, 0) 0%,
+							rgb(255, 255, 255) 50%,
+							rgba(255, 255, 255, 0) 100%
+						);
+						bottom: 10px;
+						left: 0;
+					}
+				}
+
+				.categories {
+					padding-top: 10px;
+					padding-bottom: 10px;
+					display: flex;
+					flex-wrap: wrap;
+					gap: 20px;
+
+					label {
+						display: flex;
+						gap: 8px;
+
+						&:hover {
+							cursor: pointer;
+						}
+					}
+				}
+
+				label {
+					padding: 10px 0;
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+
 .label {
 	display: flex;
 	flex-direction: column;
