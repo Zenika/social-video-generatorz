@@ -1,11 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {Player} from '@remotion/player';
-import {VideoTemplate} from '../../../src/Types/VideoTemplate';
-import {useInputChange} from '../../../src/Components/hooks/onInputChanges';
-import {CategoriesList} from '../../../src/DefaultProps/CategoriesList';
-import {Checkbox} from './Checkbox';
-import {Input} from './Input';
-import {EventDefaultProps} from '../../../src/DefaultProps/EventDefaultProps';
+import {VideoTemplate} from '../../../../src/Types/VideoTemplate';
+import {useInputChange} from '../../../../src/Components/hooks/onInputChanges';
+import {CategoriesList} from '../../../../src/DefaultProps/CategoriesList';
+import {
+	EventDefaultCategories,
+	EventDefaultProps,
+} from '../../../../src/DefaultProps/EventDefaultProps';
+import {VideoIntro} from './VideoIntro';
+import {VideoCategories} from './VideoCategories';
+import {VideoContact} from './VideoContact';
 
 export const EventForm: React.FC<{
 	currentTemplate: VideoTemplate;
@@ -36,12 +40,9 @@ export const EventForm: React.FC<{
 		EventDefaultProps.contact.phone
 	);
 
-	const [categoriesId, setCategoriesId] = useState<Array<string>>([
-		'greenit',
-		'securite',
-		'cloud',
-		'craft',
-	]);
+	const [categoriesId, setCategoriesId] = useState<Array<string>>(
+		EventDefaultCategories
+	);
 
 	const [categoriesData, setCategoriesData] = useState<Array<object>>(
 		EventDefaultProps.categories
@@ -157,42 +158,13 @@ export const EventForm: React.FC<{
 			</div>
 
 			<form>
-				<section>
-					{Object.entries(introInputs).map(([label, input], key) => (
-						<Input
-							key={key}
-							setValue={input.setData}
-							label={label}
-							value={input.data}
-						/>
-					))}
-				</section>
-				<section>
-					{Object.entries(CategoriesList).map(
-						([categoryName, categoryData], key) => (
-							<Checkbox
-								key={key}
-								label={categoryData.name}
-								categoryId={categoryName}
-								addCategory={handleAddCategory}
-								removeCategory={handleRemoveCategory}
-								defaultCheck={Boolean(
-									categoriesId.find((category) => category === categoryName)
-								)}
-							/>
-						)
-					)}
-				</section>
-				<section>
-					{Object.entries(contactInputs).map(([label, input], key) => (
-						<Input
-							key={key}
-							setValue={input.setData}
-							label={label}
-							value={input.data}
-						/>
-					))}
-				</section>
+				<VideoIntro introInputs={introInputs} />
+				<VideoCategories
+					categoriesId={categoriesId}
+					addCategory={handleAddCategory}
+					removeCategory={handleRemoveCategory}
+				/>
+				<VideoContact contactInputs={contactInputs} />
 			</form>
 		</>
 	);

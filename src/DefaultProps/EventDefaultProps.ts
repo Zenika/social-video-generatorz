@@ -31,3 +31,5 @@ export const EventDefaultProps = {
 		},
 	],
 };
+
+export const EventDefaultCategories = ['greenit', 'securite', 'cloud', 'craft'];

@@ -1,28 +1,28 @@
 import React, {useState} from 'react';
 
-export const Checkbox: React.FC<{
+interface CheckboxProps {
 	label: string;
 	categoryId: string;
-	addCategory: (newCategory: string) => void;
-	removeCategory: (oldCategory: string) => void;
+	handleChange: (checked: boolean, data: string) => void;
 	defaultCheck?: boolean;
-}> = ({
+}
+
+export const Checkbox: React.FC<CheckboxProps> = ({
 	label,
 	categoryId,
-	addCategory,
-	removeCategory,
+	handleChange,
 	defaultCheck = false,
 }) => {
 	const [checked, setChecked] = useState(defaultCheck);
 
-	const handleChange = () => {
+	const handleCheck = () => {
 		setChecked(!checked);
-		checked ? removeCategory(categoryId) : addCategory(categoryId);
+		handleChange(checked, categoryId);
 	};
 
 	return (
 		<label style={{userSelect: 'none'}}>
-			<input type="checkbox" checked={checked} onChange={handleChange} />
+			<input type="checkbox" checked={checked} onChange={handleCheck} />
 			{label}
 		</label>
 	);
