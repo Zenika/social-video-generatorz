@@ -15,7 +15,6 @@ export interface BotzEventProps {
 	date: string;
 	time: string;
 	city: string;
-	onlinePlatform: string;
 	contact: SpeakerProps;
 	categories: CategoryProps[];
 }
@@ -27,7 +26,6 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 	date,
 	time,
 	city,
-	onlinePlatform,
 	contact,
 	categories,
 }) => {
@@ -44,13 +42,7 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 				gradientAngle={gradient}
 			/>
 			<Sequence name="Intro">
-				<Intro
-					title={title}
-					city={city}
-					date={date}
-					time={time}
-					onlinePlatform={onlinePlatform}
-				/>
+				<Intro title={title} city={city} date={date} time={time} />
 			</Sequence>
 			<Sequence name="Categories" from={130} durationInFrames={100}>
 				<Tribes categories={categories} />

@@ -32,7 +32,6 @@ export const RemotionRoot: React.FC = () => {
 							city: 'lyon',
 							date: '28 Novembre 2023',
 							time: '17h00',
-							onlinePlatform: 'workadventure',
 						}}
 					/>
 					<Composition
@@ -94,7 +93,6 @@ export const RemotionRoot: React.FC = () => {
 							city: 'lyon',
 							date: '28 Novembre 2023',
 							time: '17h00',
-							onlinePlatform: 'workadventure',
 							contact: {
 								name: 'Lucas Audart',
 								picture:

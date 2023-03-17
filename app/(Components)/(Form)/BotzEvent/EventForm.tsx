@@ -20,9 +20,6 @@ export const EventForm: React.FC<{
 	const [city, setCity] = useInputChange<string>(EventDefaultProps.city);
 	const [date, setDate] = useInputChange<string>(EventDefaultProps.date);
 	const [time, setTime] = useInputChange<string>(EventDefaultProps.time);
-	const [onlinePlatform, setOnlinePlatform] = useInputChange<string>(
-		EventDefaultProps.onlinePlatform
-	);
 	const [contactName, setContactName] = useInputChange<string>(
 		EventDefaultProps.contact.name
 	);
@@ -88,10 +85,6 @@ export const EventForm: React.FC<{
 			data: time,
 			setData: setTime,
 		},
-		onlinePlatform: {
-			data: onlinePlatform,
-			setData: setOnlinePlatform,
-		},
 	};
 
 	const contactInputs = {
@@ -126,7 +119,6 @@ export const EventForm: React.FC<{
 		city,
 		date,
 		time,
-		onlinePlatform,
 		categories: categoriesData,
 		contact: {
 			name: contactName,
