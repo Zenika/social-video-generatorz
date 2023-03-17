@@ -12,14 +12,16 @@ import {
 import {VideoIntro} from './VideoIntro';
 import {VideoCategories} from './VideoCategories';
 import {VideoContact} from './VideoContact';
+import {format} from 'date-fns';
+import fr from 'date-fns/locale/fr';
 
 export const EventForm: React.FC<{
 	currentTemplate: VideoTemplate;
 }> = ({currentTemplate}) => {
 	const [title, setTitle] = useInputChange<string>(EventDefaultProps.title);
 	const [city, setCity] = useInputChange<string>(EventDefaultProps.city);
-	const [date, setDate] = useInputChange<string>(EventDefaultProps.date);
-	const [time, setTime] = useInputChange<string>(EventDefaultProps.time);
+	const [date, setDate] = useState(new Date());
+	const [time, setTime] = useState(new Date());
 	const [contactName, setContactName] = useInputChange<string>(
 		EventDefaultProps.contact.name
 	);
@@ -117,8 +119,8 @@ export const EventForm: React.FC<{
 	const data = {
 		title,
 		city,
-		date,
-		time,
+		date: format(date, 'dd MMMM yyyy', {locale: fr}),
+		time: format(time, 'HH:MM'),
 		categories: categoriesData,
 		contact: {
 			name: contactName,
