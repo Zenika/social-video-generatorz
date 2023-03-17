@@ -1,7 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import './globals.css';
+import {Header} from './Header';
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
 	return (
@@ -12,34 +11,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       */}
 			<head />
 			<body>
-				<header
-					style={{
-						position: 'relative',
-						boxShadow: '0 2px 5px rgb(0 0 0 / 20%)',
-						padding: '20px 40px',
-						display: 'flex',
-						justifyContent: 'space-between',
-						alignItems: 'center',
-						color: 'white',
-						zIndex: 5,
-					}}
-				>
-					<Link href="https://zenika.com/">
-						<Image
-							src="/logo_z.svg"
-							alt="Logo Zenika"
-							width={170}
-							height={50}
-						/>
-					</Link>
-					<h1>Social Video Generatorz</h1>
-					<Link
-						href="https://github.com/Zenika/social-video-generatorz"
-						style={{marginLeft: 120}}
-					>
-						<Image src="/github.svg" alt="Logo Github" width={50} height={55} />
-					</Link>
-				</header>
+				<Header />
 				{children}
 			</body>
 		</html>

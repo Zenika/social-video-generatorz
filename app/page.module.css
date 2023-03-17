@@ -1,4 +1,19 @@
-.center {
+.header {
+	position: relative;
+	box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+	padding: 20px 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+	z-index: 5;
+
+	.rightLink {
+		margin-left: 120px;
+	}
+}
+
+.previewContanier {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -22,7 +37,7 @@
 		.cardContent {
 			padding: 10px;
 
-			p {
+			h3 {
 				color: var(--black);
 				font-size: 1.4rem;
 				font-weight: 600;

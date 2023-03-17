@@ -9,11 +9,6 @@ import {BotzTalk} from '../src/BestOfTechnozaure/Talk/BotzTalk';
 import {EventDefaultProps} from '../src/DefaultProps/EventDefaultProps';
 import {TalkDefaultProps} from '../src/DefaultProps/TalkDefaultProps';
 
-const displayStyle = {
-	width: 400,
-	height: 400,
-};
-
 interface PreviewCardProps {
 	durationInFrames: number;
 	compositionWidth: number;
@@ -45,11 +40,11 @@ const PreviewCard: React.FC<PreviewCardProps> = ({
 					compositionHeight={compositionHeight}
 					component={component}
 					inputProps={inputProps}
-					style={displayStyle}
+					style={{width: 400, height: 400}}
 				/>
 			</div>
 			<div className={styles.cardContent}>
-				<p>{title}</p>
+				<h3>{title}</h3>
 				<Link className="btn btn-black" href={link}>
 					Create Video
 				</Link>
@@ -61,7 +56,7 @@ const PreviewCard: React.FC<PreviewCardProps> = ({
 export default function Home() {
 	return (
 		<main>
-			<section className={styles.center}>
+			<section className={styles.previewContanier}>
 				<PreviewCard
 					durationInFrames={300}
 					compositionWidth={1200}
