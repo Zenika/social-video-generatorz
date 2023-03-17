@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import {Player} from '@remotion/player';
 import {Input} from './Input';

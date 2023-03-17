@@ -5,8 +5,8 @@ import {BotzTalk} from '../../src/BestOfTechnozaure/Talk/BotzTalk';
 import Link from 'next/link';
 import Image from 'next/image';
 import {EventForm} from '../(Components)/(Form)/BotzEvent/EventForm';
-import {TalkForm} from '../../src/Components/Website/Form/TalkForm';
 import {VideoTemplate} from '../../src/Types/VideoTemplate';
+import {TalkForm} from '../(Components)/(Form)/TalkForm';
 
 const Template: Record<string, VideoTemplate> = {
 	BotzEvent: {
