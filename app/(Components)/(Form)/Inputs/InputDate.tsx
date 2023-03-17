@@ -18,7 +18,7 @@ export const InputDate: React.FC<InputDateProps> = ({
 	label,
 }) => {
 	return (
-		<label className={styles.label}>
+		<label className={`${styles.label} ${styles.midSize}`}>
 			{label}
 			<DatePicker
 				className={styles.input}

@@ -34,11 +34,6 @@ export const TalkForm: React.FC<{
 			setData: setTitle,
 			label: 'Titre',
 		},
-		date: {
-			data: date,
-			setData: setDate,
-			label: 'Date',
-		},
 		speakerName: {
 			data: speakerName,
 			setData: setSpeakerName,
@@ -58,6 +53,11 @@ export const TalkForm: React.FC<{
 			data: speakerLocation,
 			setData: setSpeakerLocation,
 			label: 'Ville',
+		},
+		date: {
+			data: date,
+			setData: setDate,
+			label: 'Date',
 		},
 	};
 
