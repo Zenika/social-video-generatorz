@@ -1,4 +1,4 @@
-.center {
+.VideoFormContainer {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
@@ -99,17 +99,4 @@
 			}
 		}
 	}
-
-.label {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	font-weight: bold;
-	gap: 10px;
-}
-
-.input {
-	padding: 10px;
-	border-radius: 5px;
-	border: none;
 }

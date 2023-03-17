@@ -27,20 +27,15 @@
 		border-radius: var(--border-radius);
 		overflow: hidden;
 		border: 2px solid white;
-.card {
-	background: white;
-	border-radius: var(--border-radius);
-	overflow: hidden;
-	border: 2px solid white;
 
-	.videoPreview {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+		.videoPreview {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 
-	.cardContent {
-		padding: 10px;
+		.cardContent {
+			padding: 10px;
 
 			h3 {
 				color: var(--black);

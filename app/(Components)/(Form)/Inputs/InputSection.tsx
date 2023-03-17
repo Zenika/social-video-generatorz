@@ -5,7 +5,7 @@ import {InputTime} from './InputTime';
 
 export const InputSection: React.FC<{InputList: object}> = ({InputList}) => {
 	return (
-		<section>
+		<div>
 			{Object.entries(InputList).map(([label, input], key) => {
 				let InputComponent: React.FC<any> = Input;
 				switch (label) {
@@ -28,6 +28,6 @@ export const InputSection: React.FC<{InputList: object}> = ({InputList}) => {
 					/>
 				);
 			})}
-		</section>
+		</div>
 	);
 };

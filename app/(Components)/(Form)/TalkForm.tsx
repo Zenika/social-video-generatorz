@@ -73,7 +73,7 @@ export const TalkForm: React.FC<{
 	};
 
 	return (
-		<div className={styles.center}>
+		<div className={styles.VideoFormContainer}>
 			<div>
 				<Player
 					controls
@@ -91,8 +91,10 @@ export const TalkForm: React.FC<{
 
 			<div className={styles.formContainer}>
 				<form id={currentTemplate.formId}>
-					<InputSection InputList={talkInputs} />
-			</form>
+					<section>
+						<InputSection InputList={talkInputs} />
+					</section>
+				</form>
 			</div>
 		</div>
 	);

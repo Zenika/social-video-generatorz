@@ -1,6 +1,7 @@
 import React from 'react';
 import {CategoriesList} from '../../../../src/DefaultProps/CategoriesList';
 import {Checkbox} from '../Inputs/Checkbox';
+import styles from '../styles.module.css';
 
 export const VideoCategories: React.FC<{
 	categoriesId: string[];
@@ -12,7 +13,7 @@ export const VideoCategories: React.FC<{
 	};
 
 	return (
-		<section>
+		<div className={styles.categories}>
 			{Object.entries(CategoriesList).map(
 				([categoryName, categoryData], key) => (
 					<Checkbox
@@ -26,6 +27,6 @@ export const VideoCategories: React.FC<{
 					/>
 				)
 			)}
-		</section>
+		</div>
 	);
 };

@@ -13,7 +13,7 @@ import {InputSection} from '../Inputs/InputSection';
 import {VideoCategories} from './VideoCategories';
 import {format} from 'date-fns';
 import fr from 'date-fns/locale/fr';
-import styles from './styles.module.css';
+import styles from '../styles.module.css';
 
 export const EventForm: React.FC<{
 	currentTemplate: VideoTemplate;
@@ -152,7 +152,7 @@ export const EventForm: React.FC<{
 	};
 
 	return (
-		<div className={styles.center}>
+		<div className={styles.VideoFormContainer}>
 			<div>
 				<Player
 					controls
@@ -176,17 +176,18 @@ export const EventForm: React.FC<{
 					</section>
 					<section>
 						<p>Introduction</p>
-					<VideoCategories
-						categoriesId={categoriesId}
-						addCategory={handleAddCategory}
-						removeCategory={handleRemoveCategory}
-					/>
+						<VideoCategories
+							categoriesId={categoriesId}
+							addCategory={handleAddCategory}
+							removeCategory={handleRemoveCategory}
+						/>
 					</section>
 					<section>
 						<p>Contact</p>
-					<InputSection InputList={contactInputs} />
+						<InputSection InputList={contactInputs} />
 					</section>
-			</form>
+				</form>
+			</div>
 		</div>
 	);
 };
