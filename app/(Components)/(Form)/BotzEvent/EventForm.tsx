@@ -9,9 +9,8 @@ import {
 	EventDefaultCategories,
 	EventDefaultProps,
 } from '../../../../src/DefaultProps/EventDefaultProps';
-import {VideoIntro} from './VideoIntro';
+import {InputSection} from '../Inputs/InputSection';
 import {VideoCategories} from './VideoCategories';
-import {VideoContact} from './VideoContact';
 import {format} from 'date-fns';
 import fr from 'date-fns/locale/fr';
 
@@ -154,13 +153,13 @@ export const EventForm: React.FC<{
 			</div>
 
 			<form>
-				<VideoIntro introInputs={introInputs} />
+				<InputSection InputList={introInputs} />
 				<VideoCategories
 					categoriesId={categoriesId}
 					addCategory={handleAddCategory}
 					removeCategory={handleRemoveCategory}
 				/>
-				<VideoContact contactInputs={contactInputs} />
+				<InputSection InputList={contactInputs} />
 			</form>
 		</>
 	);

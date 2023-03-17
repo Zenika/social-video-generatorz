@@ -1,17 +1,19 @@
 'use client';
 
-import React from 'react';
+import React, {useState} from 'react';
 import {Player} from '@remotion/player';
-import {Input} from './Inputs/Input';
 import {VideoTemplate} from '../../../src/Types/VideoTemplate';
 import {useInputChange} from '../../../src/Components/hooks/onInputChanges';
 import {TalkDefaultProps} from '../../../src/DefaultProps/TalkDefaultProps';
+import {format} from 'date-fns';
+import fr from 'date-fns/locale/fr';
+import {InputSection} from './Inputs/InputSection';
 
 export const TalkForm: React.FC<{
 	currentTemplate: VideoTemplate;
 }> = ({currentTemplate}) => {
 	const [title, setTitle] = useInputChange<string>(TalkDefaultProps.title);
-	const [date, setDate] = useInputChange<string>(TalkDefaultProps.date);
+	const [date, setDate] = useState(new Date());
 	const [speakerName, setSpeakerName] = useInputChange<string>(
 		TalkDefaultProps.speaker.name
 	);
@@ -54,7 +56,7 @@ export const TalkForm: React.FC<{
 
 	const data = {
 		title,
-		date,
+		date: format(date, 'dd MMMM yyyy', {locale: fr}),
 		speaker: {
 			name: speakerName,
 			picture: speakerPicture,
@@ -81,16 +83,7 @@ export const TalkForm: React.FC<{
 			</div>
 
 			<form>
-				<section>
-					{Object.entries(talkInputs).map(([label, input], key) => (
-						<Input
-							key={key}
-							setValue={input.setData}
-							label={label}
-							value={input.data}
-						/>
-					))}
-				</section>
+				<InputSection InputList={talkInputs} />
 			</form>
 		</>
 	);
