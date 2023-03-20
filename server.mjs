@@ -29,10 +29,8 @@ app.get('/:compositionId/', async (req, res) => {
 	};
 	try {
 		const reqParams = req.params.compositionId;
-		const compositionName = reqParams.match(/(.*?)\&/g)[0].replace('&', '');
-		const compositionId = req.params.compositionId
-			? compositionName
-			: 'Monogram';
+		const compositionName = reqParams.match(/([^&]+)/i)[0].replace('&', '');
+		const compositionId = compositionName ? compositionName : 'Monogram';
 		const bundled = await bundle('src/index.ts');
 		const comps = await getCompositions(bundled, {inputProps: req.query});
 		const video = comps.find((c) => c.id === compositionId);
