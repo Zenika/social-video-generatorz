@@ -15,18 +15,9 @@ import express from 'express';
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
-import cors from 'cors';
 
 const app = express();
 const port = process.env.PORT || 8000;
-
-app.use(
-	cors({
-		origin: 'http://localhost:3000',
-		optionsSuccessStatus: 200,
-		methods: 'GET',
-	})
-);
 
 app.get('/:compositionId/', async (req, res) => {
 	const sendFile = (file) => {
