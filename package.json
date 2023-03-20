@@ -6,7 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "remotion preview ./src/index.tsx",
-		"serv": "node server.mjs"
+		"serve": "node server.mjs"
 	},
 	"dependencies": {
 		"@next/font": "13.1.6",

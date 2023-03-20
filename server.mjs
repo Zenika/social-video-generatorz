@@ -1,6 +1,6 @@
 /**
  * This is an example of a server that returns dynamic video.
- * Run `npm run server` to try it out!
+ * Run `pnpm serve` to try it out!
  * If you don't want to render videos on a server, you can safely
  * delete this file.
  */
@@ -29,8 +29,7 @@ app.get('/:compositionId/', async (req, res) => {
 	};
 	try {
 		const reqParams = req.params.compositionId;
-		const compositionName = reqParams.match(/([^&]+)/i)[0].replace('&', '');
-		const compositionId = compositionName ? compositionName : 'Monogram';
+		const compositionId = reqParams.match(/([^&]+)/i)[0];
 		const bundled = await bundle('src/index.ts');
 		const comps = await getCompositions(bundled, {inputProps: req.query});
 		const video = comps.find((c) => c.id === compositionId);
@@ -86,9 +85,9 @@ console.log(
 		`The server has started on http://localhost:${port}!`,
 		'You can render a video by passing props as URL parameters.',
 		'',
-		'If you are running Hello World, try this:',
+		'To generate a video, try this:',
 		'',
-		`http://localhost:${port}/Trailer?programId=888&backgroundColor=brown`,
+		`http://localhost:${port}/CompositionId&firstProps=myprops&secondprops...`,
 		'',
 	].join('\n')
 );
