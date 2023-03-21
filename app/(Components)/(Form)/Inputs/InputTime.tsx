@@ -19,7 +19,7 @@ export const InputTime: React.FC<InputDateProps> = ({
 				showTimeSelect
 				showTimeSelectOnly
 				timeIntervals={15}
-				dateFormat="HH:MM"
+				dateFormat="HH:mm"
 				locale="fr"
 				className={styles.input}
 				selected={value}
