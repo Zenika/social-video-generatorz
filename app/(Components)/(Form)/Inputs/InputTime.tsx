@@ -3,7 +3,7 @@ import DatePicker, {registerLocale} from 'react-datepicker';
 import fr from 'date-fns/locale/fr';
 import 'react-datepicker/dist/react-datepicker.css';
 import {InputDateProps} from './InputDate';
-import styles from '../styles.module.css';
+import styles from './styles.module.css';
 
 registerLocale('fr', fr);
 
@@ -11,15 +11,16 @@ export const InputTime: React.FC<InputDateProps> = ({
 	value,
 	setValue,
 	label,
+	midWidth = false,
 }) => {
 	return (
-		<label className={styles.label}>
+		<label className={`${styles.label} ${midWidth ? styles.midWidth : ''}`}>
 			{label}
 			<DatePicker
 				showTimeSelect
 				showTimeSelectOnly
 				timeIntervals={15}
-				dateFormat="HH:MM"
+				dateFormat="HH:mm"
 				locale="fr"
 				className={styles.input}
 				selected={value}

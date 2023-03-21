@@ -15,6 +15,7 @@ const Template: Record<string, VideoTemplate> = {
 		width: 1200,
 		height: 1200,
 		durationInFrames: 300,
+		formId: 'eventForm',
 	},
 	BotzTalk: {
 		compositionName: 'BotzTalk',
@@ -22,6 +23,7 @@ const Template: Record<string, VideoTemplate> = {
 		width: 1200,
 		height: 1200,
 		durationInFrames: 150,
+		formId: 'talkForm',
 	},
 };
 export default function Page({params}: {params: {videoName: string}}) {
@@ -31,7 +33,6 @@ export default function Page({params}: {params: {videoName: string}}) {
 		<main className={styles.editPage}>
 			<Link className={styles.backBtn} href="/">
 				<Image src="/arrow_left.svg" alt="Arrow left" width={30} height={30} />
-				Home
 			</Link>
 			<h1>Customize and generate {params.videoName} video</h1>
 			{params.videoName === 'BotzEvent' && (
@@ -40,6 +41,15 @@ export default function Page({params}: {params: {videoName: string}}) {
 			{params.videoName === 'BotzTalk' && (
 				<TalkForm currentTemplate={currentTemplate} />
 			)}
+
+			<div className={styles.generateBtnContainer}>
+				<input
+					type="submit"
+					form={currentTemplate.formId}
+					className="btn"
+					value="Générer la vidéo"
+				/>
+			</div>
 		</main>
 	);
 }

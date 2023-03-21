@@ -22,4 +22,13 @@
 		justify-content: center;
 		gap: 50px;
 	}
+
+	.generateBtnContainer {
+		width: 300px;
+		margin: 40px auto;
+
+		input {
+			font-size: 1.2rem;
+		}
+	}
 }

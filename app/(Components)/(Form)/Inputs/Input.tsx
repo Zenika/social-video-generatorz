@@ -1,5 +1,5 @@
 import React, {FormEvent} from 'react';
-import styles from '../styles.module.css';
+import styles from './styles.module.css';
 
 interface InputProps {
 	type?: string;

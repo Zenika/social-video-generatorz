@@ -8,6 +8,7 @@ import {TalkDefaultProps} from '../../../src/DefaultProps/TalkDefaultProps';
 import {format} from 'date-fns';
 import fr from 'date-fns/locale/fr';
 import {InputSection} from './Inputs/InputSection';
+import styles from './styles.module.css';
 
 export const TalkForm: React.FC<{
 	currentTemplate: VideoTemplate;
@@ -31,26 +32,32 @@ export const TalkForm: React.FC<{
 		title: {
 			data: title,
 			setData: setTitle,
-		},
-		date: {
-			data: date,
-			setData: setDate,
+			label: 'Titre',
 		},
 		speakerName: {
 			data: speakerName,
 			setData: setSpeakerName,
+			label: 'Nom',
 		},
 		speakerPicture: {
 			data: speakerPicture,
 			setData: setSpeakerPicture,
+			label: 'Photo',
 		},
 		speakerRole: {
 			data: speakerRole,
 			setData: setSpeakerRole,
+			label: 'Role',
 		},
 		speakerLocation: {
 			data: speakerLocation,
 			setData: setSpeakerLocation,
+			label: 'Ville',
+		},
+		date: {
+			data: date,
+			setData: setDate,
+			label: 'Date',
 		},
 	};
 
@@ -66,7 +73,7 @@ export const TalkForm: React.FC<{
 	};
 
 	return (
-		<>
+		<div className={styles.VideoFormContainer}>
 			<div>
 				<Player
 					controls
@@ -82,9 +89,13 @@ export const TalkForm: React.FC<{
 				/>
 			</div>
 
-			<form>
-				<InputSection InputList={talkInputs} />
-			</form>
-		</>
+			<div className={styles.formContainer}>
+				<form id={currentTemplate.formId}>
+					<section>
+						<InputSection InputList={talkInputs} />
+					</section>
+				</form>
+			</div>
+		</div>
 	);
 };

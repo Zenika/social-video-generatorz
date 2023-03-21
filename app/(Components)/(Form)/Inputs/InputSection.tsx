@@ -2,10 +2,11 @@ import React from 'react';
 import {Input} from './Input';
 import {InputDate} from './InputDate';
 import {InputTime} from './InputTime';
+import styles from './styles.module.css';
 
 export const InputSection: React.FC<{InputList: object}> = ({InputList}) => {
 	return (
-		<section>
+		<div className={styles.inputList}>
 			{Object.entries(InputList).map(([label, input], key) => {
 				let InputComponent: React.FC<any> = Input;
 				switch (label) {
@@ -25,9 +26,10 @@ export const InputSection: React.FC<{InputList: object}> = ({InputList}) => {
 						value={input.data}
 						setValue={input.setData}
 						label={label}
+						midWidth={input.midWidth}
 					/>
 				);
 			})}
-		</section>
+		</div>
 	);
 };
