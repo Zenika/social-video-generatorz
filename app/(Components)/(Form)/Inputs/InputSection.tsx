@@ -26,6 +26,7 @@ export const InputSection: React.FC<{InputList: object}> = ({InputList}) => {
 						value={input.data}
 						setValue={input.setData}
 						label={label}
+						midWidth={input.midWidth}
 					/>
 				);
 			})}

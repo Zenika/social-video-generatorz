@@ -10,15 +10,17 @@ export interface InputDateProps {
 	value: Date;
 	setValue: (date: Date) => void;
 	label: string;
+	midWidth?: boolean;
 }
 
 export const InputDate: React.FC<InputDateProps> = ({
 	value,
 	setValue,
 	label,
+	midWidth = false,
 }) => {
 	return (
-		<label className={`${styles.label} ${styles.midSize}`}>
+		<label className={`${styles.label} ${midWidth ? styles.midWidth : ''}`}>
 			{label}
 			<DatePicker
 				className={styles.input}

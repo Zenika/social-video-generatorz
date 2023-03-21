@@ -11,9 +11,10 @@ export const InputTime: React.FC<InputDateProps> = ({
 	value,
 	setValue,
 	label,
+	midWidth = false,
 }) => {
 	return (
-		<label className={`${styles.label} ${styles.midSize}`}>
+		<label className={`${styles.label} ${midWidth ? styles.midWidth : ''}`}>
 			{label}
 			<DatePicker
 				showTimeSelect

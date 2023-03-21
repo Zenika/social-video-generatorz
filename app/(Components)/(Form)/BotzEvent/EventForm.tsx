@@ -14,7 +14,6 @@ import {VideoCategories} from './VideoCategories';
 import {format} from 'date-fns';
 import fr from 'date-fns/locale/fr';
 import styles from '../styles.module.css';
-import inputStyles from '../Inputs/styles.module.css';
 
 export const EventForm: React.FC<{
 	currentTemplate: VideoTemplate;
@@ -86,11 +85,13 @@ export const EventForm: React.FC<{
 			data: date,
 			setData: setDate,
 			label: 'Date',
+			midWidth: true,
 		},
 		time: {
 			data: time,
 			setData: setTime,
 			label: 'Heure',
+			midWidth: true,
 		},
 	};
 
@@ -169,7 +170,7 @@ export const EventForm: React.FC<{
 				/>
 			</div>
 
-			<div className={`${styles.formContainer} ${inputStyles.eventForm}`}>
+			<div className={styles.formContainer}>
 				<form id={currentTemplate.formId} onSubmit={handleSubmit}>
 					<section>
 						<p>Introduction</p>
