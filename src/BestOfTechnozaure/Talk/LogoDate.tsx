@@ -8,7 +8,7 @@ import {
 } from 'remotion';
 import {Lottie} from '@remotion/lottie';
 import React from 'react';
-import {useLottie} from '../../Components/hooks/useLotttie';
+import {useLottie} from '../../Components/hooks/useLottie';
 
 export const LogoDate: React.FC<{date: string}> = ({date}) => {
 	const frame = useCurrentFrame();

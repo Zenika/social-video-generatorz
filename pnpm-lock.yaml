@@ -11,6 +11,7 @@ specifiers:
   '@remotion/renderer': ^3.3.78
   '@types/node': 18.14.0
   '@types/react': 18.0.28
+  '@types/react-datepicker': ^4.10.0
   '@types/react-dom': 18.0.11
   autoprefixer: 10.4.13
   cssnano: 5.1.15
@@ -24,6 +25,7 @@ specifiers:
   prettier: 2.8.4
   pretty-quick: 3.1.3
   react: 18.2.0
+  react-datepicker: ^4.10.0
   react-dom: 18.2.0
   remotion: 3.3.63
   typescript: 4.9.5
@@ -49,6 +51,7 @@ dependencies:
 
 devDependencies:
   '@remotion/eslint-config': 3.3.53_7kw3g6rralp5ps6mg3uyzz6azm
+  '@types/react-datepicker': 4.10.0_biqbaboplfbrettd7655fr4n2y
   autoprefixer: 10.4.13_postcss@8.4.21
   cssnano: 5.1.15_postcss@8.4.21
   eslint: 8.34.0
@@ -57,6 +60,7 @@ devDependencies:
   postcss-nested: 6.0.1_postcss@8.4.21
   prettier: 2.8.4
   pretty-quick: 3.1.3_prettier@2.8.4
+  react-datepicker: 4.10.0_biqbaboplfbrettd7655fr4n2y
 
 packages:
 
@@ -478,6 +482,10 @@ packages:
       fastq: 1.15.0
     dev: true
 
+  /@popperjs/core/2.11.6:
+    resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
+    dev: true
+
   /@remotion/bundler/3.3.63_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-GlxuNbYLZYUQ22W1GVOQJFxHTFsr0uJsGGSul0gjc+LIfDyayCdKhEsopOIAhtCj9uq6DmWw/Suhv9rwmHk/tg==}
     peerDependencies:
@@ -827,7 +835,18 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
-    dev: false
+
+  /@types/react-datepicker/4.10.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Cq+ks20vBIU6XN67TbkCHu8M7V46Y6vJrKE2n+8q/GfueJyWWTIKeC3Z7cz/d+qxGDq/VCrqA929R0U4lNuztg==}
+    dependencies:
+      '@popperjs/core': 2.11.6
+      '@types/react': 18.0.28
+      date-fns: 2.29.3
+      react-popper: 2.3.0_r6q5zrenym2zg7je7hgi674bti
+    transitivePeerDependencies:
+      - react
+      - react-dom
+    dev: true
 
   /@types/react-dom/18.0.11:
     resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
@@ -841,11 +860,9 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
       csstype: 3.1.1
-    dev: false
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: false
 
   /@types/yauzl/2.10.0:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
@@ -1337,6 +1354,10 @@ packages:
     engines: {node: '>=6.0'}
     dev: false
 
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: true
+
   /client-only/0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
     dev: false
@@ -1541,7 +1562,11 @@ packages:
 
   /csstype/3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
-    dev: false
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
+    dev: true
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -3483,6 +3508,22 @@ packages:
       unpipe: 1.0.0
     dev: false
 
+  /react-datepicker/4.10.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-6IfBCZyWj54ZZGLmEZJ9c4Yph0s9MVfEGDC2evOvf9AmVz+RRcfP2Czqad88Ff9wREbcbqa4dk7IFYeXF1d3Ag==}
+    peerDependencies:
+      react: ^16.9.0 || ^17 || ^18
+      react-dom: ^16.9.0 || ^17 || ^18
+    dependencies:
+      '@popperjs/core': 2.11.6
+      classnames: 2.3.2
+      date-fns: 2.29.3
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-onclickoutside: 6.12.2_biqbaboplfbrettd7655fr4n2y
+      react-popper: 2.3.0_r6q5zrenym2zg7je7hgi674bti
+    dev: true
+
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
@@ -3491,10 +3532,37 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
-    dev: false
+
+  /react-fast-compare/3.2.1:
+    resolution: {integrity: sha512-xTYf9zFim2pEif/Fw16dBiXpe0hoy5PxcD8+OwBnTtNLfIm3g6WxhKNurY+6OmdH1u6Ta/W/Vl6vjbYP1MFnDg==}
+    dev: true
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: true
+
+  /react-onclickoutside/6.12.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-NMXGa223OnsrGVp5dJHkuKxQ4czdLmXSp5jSV9OqiCky9LOpPATn3vLldc+q5fK3gKbEHvr7J1u0yhBh/xYkpA==}
+    peerDependencies:
+      react: ^15.5.x || ^16.x || ^17.x || ^18.x
+      react-dom: ^15.5.x || ^16.x || ^17.x || ^18.x
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: true
+
+  /react-popper/2.3.0_r6q5zrenym2zg7je7hgi674bti:
+    resolution: {integrity: sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q==}
+    peerDependencies:
+      '@popperjs/core': ^2.0.0
+      react: ^16.8.0 || ^17 || ^18
+      react-dom: ^16.8.0 || ^17 || ^18
+    dependencies:
+      '@popperjs/core': 2.11.6
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-fast-compare: 3.2.1
+      warning: 4.0.3
     dev: true
 
   /react-refresh/0.9.0:
@@ -3507,7 +3575,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /regexp.prototype.flags/1.4.3:
     resolution: {integrity: sha512-fjggEOO3slI6Wvgjwflkc4NFRCTZAu5CnNfBd5qOMYhWdn67nJBBu34/TkD++eeFmd8C9r9jfXJ27+nSiRkSUA==}
@@ -3595,7 +3662,6 @@ packages:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /schema-utils/3.1.1:
     resolution: {integrity: sha512-Y5PQxS4ITlC+EahLuXaY86TXfR7Dc5lw294alXOq86JAHCihAIZfqv8nNCWvaEJvaC51uN9hbLGeV0cFBdH+Fw==}
@@ -4038,6 +4104,12 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
     dev: false
+
+  /warning/4.0.3:
+    resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: true
 
   /watchpack/2.4.0:
     resolution: {integrity: sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg==}

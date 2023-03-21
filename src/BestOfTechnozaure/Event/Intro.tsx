@@ -21,8 +21,7 @@ export const Intro: React.FC<{
 	city: string;
 	date: string;
 	time: string;
-	onlinePlatform: string;
-}> = ({title, city, date, time, onlinePlatform}) => {
+}> = ({title, city, date, time}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
@@ -105,7 +104,7 @@ export const Intro: React.FC<{
 						<Location
 							iconUrl="/BestOfTz/workadventure.png"
 							text="Ou en ligne sur"
-							location={onlinePlatform}
+							location="workadventure"
 							style={{
 								top: 525,
 							}}
