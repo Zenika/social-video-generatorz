@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {EventForm} from '../(Components)/(Form)/BotzEvent/EventForm';
 import {VideoTemplate} from '../../src/Types/VideoTemplate';
+import {TalkForm} from '../(Components)/(Form)/TalkForm';
 
 const Template: Record<string, VideoTemplate> = {
 	BotzEvent: {
@@ -35,6 +36,9 @@ export default function Page({params}: {params: {videoName: string}}) {
 			<h1>Customize and generate {params.videoName} video</h1>
 			{params.videoName === 'BotzEvent' && (
 				<EventForm currentTemplate={currentTemplate} />
+			)}
+			{params.videoName === 'BotzTalk' && (
+				<TalkForm currentTemplate={currentTemplate} />
 			)}
 		</main>
 	);

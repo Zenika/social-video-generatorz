@@ -1,6 +1,6 @@
 import React from 'react';
 import {CategoriesList} from '../../../../src/DefaultProps/CategoriesList';
-import {Checkbox} from '../Checkbox';
+import {Checkbox} from '../Inputs/Checkbox';
 
 export const VideoCategories: React.FC<{
 	categoriesId: string[];

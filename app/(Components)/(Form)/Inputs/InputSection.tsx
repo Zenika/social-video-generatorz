@@ -1,12 +1,12 @@
 import React from 'react';
-import {Input} from '../Input';
-import {InputDate} from '../InputDate';
-import {InputTime} from '../InputTime';
+import {Input} from './Input';
+import {InputDate} from './InputDate';
+import {InputTime} from './InputTime';
 
-export const VideoIntro: React.FC<{introInputs: object}> = ({introInputs}) => {
+export const InputSection: React.FC<{InputList: object}> = ({InputList}) => {
 	return (
 		<section>
-			{Object.entries(introInputs).map(([label, input], key) => {
+			{Object.entries(InputList).map(([label, input], key) => {
 				let InputComponent: React.FC<any> = Input;
 				switch (label) {
 					case 'date':
