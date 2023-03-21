@@ -18,6 +18,9 @@ import styles from '../styles.module.css';
 export const EventForm: React.FC<{
 	currentTemplate: VideoTemplate;
 }> = ({currentTemplate}) => {
+	const [videoData, setVideoData] = useState(null);
+	const [isLoading, setLoading] = useState(false);
+
 	const [title, setTitle] = useInputChange<string>(EventDefaultProps.title);
 	const [city, setCity] = useInputChange<string>(EventDefaultProps.city);
 	const [date, setDate] = useState(new Date());
@@ -40,11 +43,9 @@ export const EventForm: React.FC<{
 	const [contactPhone, setContactPhone] = useInputChange<string>(
 		EventDefaultProps.contact.phone
 	);
-
 	const [categoriesId, setCategoriesId] = useState<Array<string>>(
 		EventDefaultCategories
 	);
-
 	const [categoriesData, setCategoriesData] = useState<Array<object>>(
 		EventDefaultProps.categories
 	);
@@ -128,7 +129,7 @@ export const EventForm: React.FC<{
 		},
 	};
 
-	const data = {
+	const data: object = {
 		title,
 		city,
 		date: format(date, 'dd MMMM yyyy', {locale: fr}),
@@ -151,8 +152,20 @@ export const EventForm: React.FC<{
 	const handleSubmit: React.FormEventHandler = (event) => {
 		event.preventDefault();
 		console.log('Hello there');
-	};
 
+		setLoading(true);
+
+		fetch(
+			'https://social-video-generatorz-server.cleverapps.io/BotzEvent',
+			data
+		)
+			.then((res) => res.json())
+			.then((data) => {
+				setVideoData(data);
+				setLoading(false);
+				console.log(videoData);
+			});
+	};
 	return (
 		<div className={styles.VideoFormContainer}>
 			<div>
