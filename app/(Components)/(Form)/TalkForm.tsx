@@ -9,10 +9,15 @@ import {format} from 'date-fns';
 import fr from 'date-fns/locale/fr';
 import {InputSection} from './Inputs/InputSection';
 import styles from './styles.module.css';
+import {continueRender, delayRender} from 'remotion';
 
 export const TalkForm: React.FC<{
 	currentTemplate: VideoTemplate;
-}> = ({currentTemplate}) => {
+	setLoading: (data: boolean) => void;
+	setVideoUrl: (data: string) => void;
+}> = ({currentTemplate, setLoading, setVideoUrl}) => {
+	const [handle] = useState(() => delayRender());
+
 	const [title, setTitle] = useInputChange<string>(TalkDefaultProps.title);
 	const [date, setDate] = useState(new Date());
 	const [speakerName, setSpeakerName] = useInputChange<string>(
@@ -61,7 +66,7 @@ export const TalkForm: React.FC<{
 		},
 	};
 
-	const data = {
+	const data: object = {
 		title,
 		date: format(date, 'dd MMMM yyyy', {locale: fr}),
 		speaker: {
@@ -70,6 +75,20 @@ export const TalkForm: React.FC<{
 			role: speakerRole,
 			location: speakerLocation,
 		},
+	};
+
+	const handleSubmit: React.FormEventHandler = (event) => {
+		event.preventDefault();
+		setLoading(true);
+
+		fetch('https://social-video-generatorz-server.cleverapps.io/BotzTalk', data)
+			.then((res) => res.blob())
+			.then((blob) => {
+				continueRender(handle);
+				const fileURL = URL.createObjectURL(blob);
+				setVideoUrl(fileURL);
+				setLoading(false);
+			});
 	};
 
 	return (
@@ -90,7 +109,7 @@ export const TalkForm: React.FC<{
 			</div>
 
 			<div className={styles.formContainer}>
-				<form id={currentTemplate.formId}>
+				<form id={currentTemplate.formId} onSubmit={handleSubmit}>
 					<section>
 						<InputSection InputList={talkInputs} />
 					</section>

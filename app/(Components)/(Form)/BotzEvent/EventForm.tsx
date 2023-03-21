@@ -17,10 +17,9 @@ import styles from '../styles.module.css';
 
 export const EventForm: React.FC<{
 	currentTemplate: VideoTemplate;
-}> = ({currentTemplate}) => {
-	const [videoData, setVideoData] = useState(null);
-	const [isLoading, setLoading] = useState(false);
-
+	setLoading: (data: boolean) => void;
+	setVideoUrl: (data: string) => void;
+}> = ({currentTemplate, setLoading, setVideoUrl}) => {
 	const [title, setTitle] = useInputChange<string>(EventDefaultProps.title);
 	const [city, setCity] = useInputChange<string>(EventDefaultProps.city);
 	const [date, setDate] = useState(new Date());
@@ -151,19 +150,17 @@ export const EventForm: React.FC<{
 
 	const handleSubmit: React.FormEventHandler = (event) => {
 		event.preventDefault();
-		console.log('Hello there');
-
 		setLoading(true);
 
 		fetch(
 			'https://social-video-generatorz-server.cleverapps.io/BotzEvent',
 			data
 		)
-			.then((res) => res.json())
-			.then((data) => {
-				setVideoData(data);
+			.then((res) => res.blob())
+			.then((blob) => {
+				const fileURL = URL.createObjectURL(blob);
+				setVideoUrl(fileURL);
 				setLoading(false);
-				console.log(videoData);
 			});
 	};
 	return (

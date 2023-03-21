@@ -24,11 +24,45 @@
 	}
 
 	.generateBtnContainer {
-		width: 300px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
 		margin: 40px auto;
 
-		input {
+		input,
+		span,
+		a {
 			font-size: 1.2rem;
+			width: 300px;
+
+			&.disabled {
+				pointer-events: none;
+				position: relative;
+				background: #a5a5a5;
+				color: #121212ad;
+			}
+		}
+
+		span {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 30px;
+			pointer-events: none;
+			background: #df2147;
+			color: white;
+			padding: 6px 20px;
+
+			svg {
+				width: 30px;
+				height: 30px;
+			}
+		}
+
+		a {
+			background: #089408;
+			color: white;
 		}
 	}
 }
