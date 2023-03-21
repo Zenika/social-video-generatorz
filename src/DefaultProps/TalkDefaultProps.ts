@@ -4,8 +4,7 @@ export const TalkDefaultProps = {
 	date: '09 novembre 2023',
 	speaker: {
 		name: 'Mickaël Alves',
-		picture:
-			'https://pbs.twimg.com/profile_images/1452247219709566977/5Xzmgun-_400x400.jpg',
+		picture: 'https://ca.slack-edge.com/T02ARLB3P-U01RYH31HLY-54c884b9fd7a-512',
 		role: 'Consultant frontend',
 		location: 'lyon',
 	},

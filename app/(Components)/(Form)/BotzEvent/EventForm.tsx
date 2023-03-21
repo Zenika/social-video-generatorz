@@ -172,11 +172,11 @@ export const EventForm: React.FC<{
 			<div className={`${styles.formContainer} ${inputStyles.eventForm}`}>
 				<form id={currentTemplate.formId} onSubmit={handleSubmit}>
 					<section>
-						<p>Categories</p>
+						<p>Introduction</p>
 						<InputSection InputList={introInputs} />
 					</section>
 					<section>
-						<p>Introduction</p>
+						<p>Categories</p>
 						<VideoCategories
 							categoriesId={categoriesId}
 							addCategory={handleAddCategory}
