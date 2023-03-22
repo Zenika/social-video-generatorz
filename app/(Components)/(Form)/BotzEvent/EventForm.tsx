@@ -167,7 +167,7 @@ export const EventForm: React.FC<{
 		event.preventDefault();
 		setLoading(true);
 
-		fetch('https://social-video-generatorz-server.cleverapps.io/BotzEven', {
+		fetch('https://social-video-generatorz-server.cleverapps.io/BotzEvent', {
 			headers: {
 				'Content-Type': 'application/json',
 			},
