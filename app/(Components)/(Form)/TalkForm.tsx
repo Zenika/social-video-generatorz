@@ -66,7 +66,16 @@ export const TalkForm: React.FC<{
 		},
 	};
 
-	const data: object = {
+	const data: {
+		title: string;
+		date: string;
+		speaker: {
+			name: string;
+			picture: string;
+			role: string;
+			location: string;
+		};
+	} = {
 		title,
 		date: format(date, 'dd MMMM yyyy', {locale: fr}),
 		speaker: {
@@ -81,7 +90,13 @@ export const TalkForm: React.FC<{
 		event.preventDefault();
 		setLoading(true);
 
-		fetch('https://social-video-generatorz-server.cleverapps.io/BotzTalk', data)
+		fetch('https://social-video-generatorz-server.cleverapps.io/BotzTalk', {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			method: 'POST',
+			body: JSON.stringify(data),
+		})
 			.then((res) => res.blob())
 			.then((blob) => {
 				continueRender(handle);

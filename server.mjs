@@ -16,9 +16,13 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 
 const app = express();
 const port = process.env.PORT || 8000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(
 	cors({
@@ -28,7 +32,7 @@ app.use(
 	})
 );
 
-app.get('/:compositionId/', async (req, res) => {
+app.post('/:compositionId/', async (req, res) => {
 	const sendFile = (file) => {
 		fs.createReadStream(file)
 			.pipe(res)
@@ -40,7 +44,7 @@ app.get('/:compositionId/', async (req, res) => {
 		const reqParams = req.params.compositionId;
 		const compositionId = reqParams.match(/([^&]+)/i)[0];
 		const bundled = await bundle('src/index.ts');
-		const comps = await getCompositions(bundled, {inputProps: req.query});
+		const comps = await getCompositions(bundled, {inputProps: req.body});
 		const video = comps.find((c) => c.id === compositionId);
 		if (!video) {
 			throw new Error(`No video called ${compositionId}`);
@@ -53,15 +57,15 @@ app.get('/:compositionId/', async (req, res) => {
 		const {assetsInfo} = await renderFrames({
 			config: video,
 			webpackBundle: bundled,
-			onStart: () => console.log(req.query, 'Rendering frames...'),
+			onStart: () => console.log(req.body, 'Rendering frames...'),
 			onFrameUpdate: (f) => {
 				if (f % 10 === 0) {
-					console.log(req.query, `Rendered frame ${f}`);
+					console.log(req.body, `Rendered frame ${f}`);
 				}
 			},
 			parallelism: null,
 			outputDir: tmpDir,
-			inputProps: req.query,
+			inputProps: req.body,
 			compositionId,
 			imageFormat: 'jpeg',
 		});
@@ -78,7 +82,7 @@ app.get('/:compositionId/', async (req, res) => {
 			assetsInfo,
 		});
 		sendFile(finalOutput);
-		console.log(req.query, 'Video rendered and sent!');
+		console.log(req.body, 'Video rendered and sent!');
 	} catch (err) {
 		console.error(err);
 		res.json({

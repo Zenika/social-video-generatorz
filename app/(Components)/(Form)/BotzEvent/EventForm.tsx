@@ -128,11 +128,25 @@ export const EventForm: React.FC<{
 		},
 	};
 
-	const data: object = {
+	const data: {
+		title: string;
+		city: string;
+		date: string;
+		time: string;
+		categories: object[];
+		contact: {
+			name: string;
+			picture: string;
+			role: string;
+			location: string;
+			mail: string;
+			phone: string;
+		};
+	} = {
 		title,
 		city,
 		date: format(date, 'dd MMMM yyyy', {locale: fr}),
-		time: format(time, 'HH:MM'),
+		time: format(time, 'HH:mm'),
 		categories: categoriesData,
 		contact: {
 			name: contactName,
@@ -152,10 +166,13 @@ export const EventForm: React.FC<{
 		event.preventDefault();
 		setLoading(true);
 
-		fetch(
-			'https://social-video-generatorz-server.cleverapps.io/BotzEvent',
-			data
-		)
+		fetch('https://social-video-generatorz-server.cleverapps.io/BotzEvent', {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			method: 'POST',
+			body: JSON.stringify(data),
+		})
 			.then((res) => res.blob())
 			.then((blob) => {
 				const fileURL = URL.createObjectURL(blob);
