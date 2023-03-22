@@ -17,7 +17,10 @@ import styles from '../styles.module.css';
 
 export const EventForm: React.FC<{
 	currentTemplate: VideoTemplate;
-}> = ({currentTemplate}) => {
+	setLoading: (data: boolean) => void;
+	setVideoUrl: (data: string) => void;
+	setError: (data: string) => void;
+}> = ({currentTemplate, setLoading, setVideoUrl, setError}) => {
 	const [title, setTitle] = useInputChange<string>(EventDefaultProps.title);
 	const [city, setCity] = useInputChange<string>(EventDefaultProps.city);
 	const [date, setDate] = useState(new Date());
@@ -40,11 +43,9 @@ export const EventForm: React.FC<{
 	const [contactPhone, setContactPhone] = useInputChange<string>(
 		EventDefaultProps.contact.phone
 	);
-
 	const [categoriesId, setCategoriesId] = useState<Array<string>>(
 		EventDefaultCategories
 	);
-
 	const [categoriesData, setCategoriesData] = useState<Array<object>>(
 		EventDefaultProps.categories
 	);
@@ -128,11 +129,25 @@ export const EventForm: React.FC<{
 		},
 	};
 
-	const data = {
+	const data: {
+		title: string;
+		city: string;
+		date: string;
+		time: string;
+		categories: object[];
+		contact: {
+			name: string;
+			picture: string;
+			role: string;
+			location: string;
+			mail: string;
+			phone: string;
+		};
+	} = {
 		title,
 		city,
 		date: format(date, 'dd MMMM yyyy', {locale: fr}),
-		time: format(time, 'HH:MM'),
+		time: format(time, 'HH:mm'),
 		categories: categoriesData,
 		contact: {
 			name: contactName,
@@ -150,9 +165,28 @@ export const EventForm: React.FC<{
 
 	const handleSubmit: React.FormEventHandler = (event) => {
 		event.preventDefault();
-		console.log('Hello there');
-	};
+		setLoading(true);
 
+		fetch('https://social-video-generatorz-server.cleverapps.io/BotzEvent', {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			method: 'POST',
+			body: JSON.stringify(data),
+		})
+			.then((res) => res.blob())
+			.then((blob) => {
+				const fileURL = URL.createObjectURL(blob);
+				setVideoUrl(fileURL);
+				setLoading(false);
+			})
+			.catch(() => {
+				setLoading(false);
+				setError(
+					'/!\\ Une erreur est survenu ! Veuillez patienter quelques instants et essayer à nouveaux. /!\\'
+				);
+			});
+	};
 	return (
 		<div className={styles.VideoFormContainer}>
 			<div>

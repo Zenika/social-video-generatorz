@@ -12,7 +12,10 @@ import styles from './styles.module.css';
 
 export const TalkForm: React.FC<{
 	currentTemplate: VideoTemplate;
-}> = ({currentTemplate}) => {
+	setLoading: (data: boolean) => void;
+	setVideoUrl: (data: string) => void;
+	setError: (data: string) => void;
+}> = ({currentTemplate, setLoading, setVideoUrl, setError}) => {
 	const [title, setTitle] = useInputChange<string>(TalkDefaultProps.title);
 	const [date, setDate] = useState(new Date());
 	const [speakerName, setSpeakerName] = useInputChange<string>(
@@ -61,7 +64,16 @@ export const TalkForm: React.FC<{
 		},
 	};
 
-	const data = {
+	const data: {
+		title: string;
+		date: string;
+		speaker: {
+			name: string;
+			picture: string;
+			role: string;
+			location: string;
+		};
+	} = {
 		title,
 		date: format(date, 'dd MMMM yyyy', {locale: fr}),
 		speaker: {
@@ -70,6 +82,31 @@ export const TalkForm: React.FC<{
 			role: speakerRole,
 			location: speakerLocation,
 		},
+	};
+
+	const handleSubmit: React.FormEventHandler = (event) => {
+		event.preventDefault();
+		setLoading(true);
+
+		fetch('https://social-video-generatorz-server.cleverapps.io/BotzTalk', {
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			method: 'POST',
+			body: JSON.stringify(data),
+		})
+			.then((res) => res.blob())
+			.then((blob) => {
+				const fileURL = URL.createObjectURL(blob);
+				setVideoUrl(fileURL);
+				setLoading(false);
+			})
+			.catch(() => {
+				setLoading(false);
+				setError(
+					'/!\\ Une erreur est survenu ! Veuillez patienter quelques instants et essayer à nouveaux. /!\\'
+				);
+			});
 	};
 
 	return (
@@ -90,7 +127,7 @@ export const TalkForm: React.FC<{
 			</div>
 
 			<div className={styles.formContainer}>
-				<form id={currentTemplate.formId}>
+				<form id={currentTemplate.formId} onSubmit={handleSubmit}>
 					<section>
 						<InputSection InputList={talkInputs} />
 					</section>
