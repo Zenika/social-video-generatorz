@@ -41,43 +41,47 @@ export default function Page({params}: {params: {videoName: string}}) {
 				<Image src="/arrow_left.svg" alt="Arrow left" width={30} height={30} />
 			</Link>
 			<h1>Customize and generate {params.videoName} video</h1>
-			{params.videoName === 'BotzEvent' && (
-				<EventForm
-					currentTemplate={currentTemplate}
-					setLoading={setLoading}
-					setVideoUrl={setVideoUrl}
-					setError={setError}
-				/>
-			)}
-			{params.videoName === 'BotzTalk' && (
-				<TalkForm
-					currentTemplate={currentTemplate}
-					setLoading={setLoading}
-					setVideoUrl={setVideoUrl}
-					setError={setError}
-				/>
-			)}
+			{currentTemplate && (
+				<>
+					{params.videoName === 'BotzEvent' && (
+						<EventForm
+							currentTemplate={currentTemplate}
+							setLoading={setLoading}
+							setVideoUrl={setVideoUrl}
+							setError={setError}
+						/>
+					)}
+					{params.videoName === 'BotzTalk' && (
+						<TalkForm
+							currentTemplate={currentTemplate}
+							setLoading={setLoading}
+							setVideoUrl={setVideoUrl}
+							setError={setError}
+						/>
+					)}
 
-			<div className={styles.generateBtnContainer}>
-				<input
-					disabled={isLoading}
-					type="submit"
-					form={currentTemplate.formId}
-					className={`btn ${isLoading ? styles.disabled : ''}`}
-					value="Générer la vidéo"
-				/>
-				{isLoading && (
-					<span className="btn">
-						Loading <Loader />
-					</span>
-				)}
-				{!isLoading && videoUrl && (
-					<a href={videoUrl} className="btn" target="_blank">
-						Télécharger
-					</a>
-				)}
-			</div>
-			{error && <p className={styles.error}>{error}</p>}
+					<div className={styles.generateBtnContainer}>
+						<input
+							disabled={isLoading}
+							type="submit"
+							form={currentTemplate.formId}
+							className={`btn ${isLoading ? styles.disabled : ''}`}
+							value="Générer la vidéo"
+						/>
+						{isLoading && (
+							<span className="btn">
+								Loading <Loader />
+							</span>
+						)}
+						{!isLoading && videoUrl && (
+							<a href={videoUrl} className="btn" target="_blank">
+								Télécharger
+							</a>
+						)}
+					</div>
+					{error && <p className={styles.error}>{error}</p>}
+				</>
+			)}
 		</main>
 	);
 }
