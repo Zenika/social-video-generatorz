@@ -12,17 +12,6 @@
 		top: 20px;
 	}
 
-	h1 {
-		text-align: center;
-		margin: 50px;
-	}
-
-	.editContainer {
-		display: flex;
-		justify-content: center;
-		gap: 50px;
-	}
-
 	.generateBtnContainer {
 		display: flex;
 		justify-content: center;

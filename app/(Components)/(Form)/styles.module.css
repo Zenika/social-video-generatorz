@@ -4,12 +4,14 @@
 	align-items: flex-start;
 	position: relative;
 	width: 100%;
-	gap: 50px;
+	gap: 70px;
+	margin-top: 20px;
 
 	.formContainer {
 		width: 40%;
 		height: 475px;
 		position: relative;
+		background: var(--black);
 
 		&:before {
 			content: '';
