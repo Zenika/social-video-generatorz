@@ -40,7 +40,6 @@ export default function Page({params}: {params: {videoName: string}}) {
 			<Link className={styles.backBtn} href="/">
 				<Image src="/arrow_left.svg" alt="Arrow left" width={30} height={30} />
 			</Link>
-			<h1>Customize and generate {params.videoName} video</h1>
 			{currentTemplate && (
 				<>
 					{params.videoName === 'BotzEvent' && (
