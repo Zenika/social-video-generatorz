@@ -9,15 +9,12 @@ import {format} from 'date-fns';
 import fr from 'date-fns/locale/fr';
 import {InputSection} from './Inputs/InputSection';
 import styles from './styles.module.css';
-import {continueRender, delayRender} from 'remotion';
 
 export const TalkForm: React.FC<{
 	currentTemplate: VideoTemplate;
 	setLoading: (data: boolean) => void;
 	setVideoUrl: (data: string) => void;
 }> = ({currentTemplate, setLoading, setVideoUrl}) => {
-	const [handle] = useState(() => delayRender());
-
 	const [title, setTitle] = useInputChange<string>(TalkDefaultProps.title);
 	const [date, setDate] = useState(new Date());
 	const [speakerName, setSpeakerName] = useInputChange<string>(
@@ -99,7 +96,6 @@ export const TalkForm: React.FC<{
 		})
 			.then((res) => res.blob())
 			.then((blob) => {
-				continueRender(handle);
 				const fileURL = URL.createObjectURL(blob);
 				setVideoUrl(fileURL);
 				setLoading(false);
