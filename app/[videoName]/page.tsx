@@ -33,6 +33,7 @@ export default function Page({params}: {params: {videoName: string}}) {
 	const currentTemplate = Template[params.videoName];
 	const [isLoading, setLoading] = useState<boolean>(false);
 	const [videoUrl, setVideoUrl] = useState<string>();
+	const [error, setError] = useState<string>();
 
 	return (
 		<main className={styles.editPage}>
@@ -45,6 +46,7 @@ export default function Page({params}: {params: {videoName: string}}) {
 					currentTemplate={currentTemplate}
 					setLoading={setLoading}
 					setVideoUrl={setVideoUrl}
+					setError={setError}
 				/>
 			)}
 			{params.videoName === 'BotzTalk' && (
@@ -52,6 +54,7 @@ export default function Page({params}: {params: {videoName: string}}) {
 					currentTemplate={currentTemplate}
 					setLoading={setLoading}
 					setVideoUrl={setVideoUrl}
+					setError={setError}
 				/>
 			)}
 
@@ -74,6 +77,7 @@ export default function Page({params}: {params: {videoName: string}}) {
 					</a>
 				)}
 			</div>
+			{error && <p className={styles.error}>{error}</p>}
 		</main>
 	);
 }

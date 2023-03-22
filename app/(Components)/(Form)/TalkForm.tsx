@@ -14,7 +14,8 @@ export const TalkForm: React.FC<{
 	currentTemplate: VideoTemplate;
 	setLoading: (data: boolean) => void;
 	setVideoUrl: (data: string) => void;
-}> = ({currentTemplate, setLoading, setVideoUrl}) => {
+	setError: (data: string) => void;
+}> = ({currentTemplate, setLoading, setVideoUrl, setError}) => {
 	const [title, setTitle] = useInputChange<string>(TalkDefaultProps.title);
 	const [date, setDate] = useState(new Date());
 	const [speakerName, setSpeakerName] = useInputChange<string>(
@@ -99,6 +100,12 @@ export const TalkForm: React.FC<{
 				const fileURL = URL.createObjectURL(blob);
 				setVideoUrl(fileURL);
 				setLoading(false);
+			})
+			.catch(() => {
+				setLoading(false);
+				setError(
+					'/!\\ Une erreur est survenu ! Veuillez patienter quelques instants et essayer à nouveaux. /!\\'
+				);
 			});
 	};
 

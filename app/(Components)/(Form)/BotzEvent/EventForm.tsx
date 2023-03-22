@@ -19,7 +19,8 @@ export const EventForm: React.FC<{
 	currentTemplate: VideoTemplate;
 	setLoading: (data: boolean) => void;
 	setVideoUrl: (data: string) => void;
-}> = ({currentTemplate, setLoading, setVideoUrl}) => {
+	setError: (data: string) => void;
+}> = ({currentTemplate, setLoading, setVideoUrl, setError}) => {
 	const [title, setTitle] = useInputChange<string>(EventDefaultProps.title);
 	const [city, setCity] = useInputChange<string>(EventDefaultProps.city);
 	const [date, setDate] = useState(new Date());
@@ -166,7 +167,7 @@ export const EventForm: React.FC<{
 		event.preventDefault();
 		setLoading(true);
 
-		fetch('https://social-video-generatorz-server.cleverapps.io/BotzEvent', {
+		fetch('https://social-video-generatorz-server.cleverapps.io/BotzEven', {
 			headers: {
 				'Content-Type': 'application/json',
 			},
@@ -178,6 +179,12 @@ export const EventForm: React.FC<{
 				const fileURL = URL.createObjectURL(blob);
 				setVideoUrl(fileURL);
 				setLoading(false);
+			})
+			.catch(() => {
+				setLoading(false);
+				setError(
+					'/!\\ Une erreur est survenu ! Veuillez patienter quelques instants et essayer à nouveaux. /!\\'
+				);
 			});
 	};
 	return (
