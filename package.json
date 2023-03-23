@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
+		"start:app": "next start",
 		"start": "remotion preview ./src/index.tsx",
 		"serve": "node server.mjs"
 	},
