@@ -26,9 +26,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(
 	cors({
-		origin: 'https://social-video-generatorz.cleverapps.io/',
+		origin: 'https://social-video-generatorz.cleverapps.io',
 		optionsSuccessStatus: 200,
-		methods: 'GET',
+		methods: 'POST',
 	})
 );
 

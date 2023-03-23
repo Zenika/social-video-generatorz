@@ -45,7 +45,7 @@ export const RemotionRoot: React.FC = () => {
 							categories: [
 								{
 									name: 'Green IT',
-									icon: '/BestOfTz/icons/GreenIT.svg',
+									icon: '/BestOfTz/icons/greenit.svg',
 								},
 								{
 									name: 'Sécurité',
@@ -53,11 +53,11 @@ export const RemotionRoot: React.FC = () => {
 								},
 								{
 									name: 'Cloud',
-									icon: '/BestOfTz/icons/Cloud.svg',
+									icon: '/BestOfTz/icons/cloud.svg',
 								},
 								{
 									name: 'Craftsmanship',
-									icon: '/BestOfTz/icons/Dev.svg',
+									icon: '/BestOfTz/icons/dev.svg',
 								},
 							],
 						}}
@@ -105,19 +105,19 @@ export const RemotionRoot: React.FC = () => {
 							categories: [
 								{
 									name: 'Green IT',
-									icon: '/BestOfTz/icons/GreenIT.svg',
+									icon: '/BestOfTz/icons/greenit.svg',
 								},
 								{
 									name: 'Sécurité',
-									icon: '/BestOfTz/icons/Sécurité.svg',
+									icon: '/BestOfTz/icons/securite.svg',
 								},
 								{
 									name: 'Cloud',
-									icon: '/BestOfTz/icons/Cloud.svg',
+									icon: '/BestOfTz/icons/cloud.svg',
 								},
 								{
 									name: 'Craftsmanship',
-									icon: '/BestOfTz/icons/Dev.svg',
+									icon: '/BestOfTz/icons/dev.svg',
 								},
 							],
 						}}
