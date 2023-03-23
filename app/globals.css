@@ -22,7 +22,6 @@ body {
 
 	main {
 		position: relative;
-		height: calc(100vh - 100px);
 		z-index: 5;
 		padding: 1rem;
 		color: white;
@@ -39,8 +38,8 @@ html {
 		top: 0;
 		width: 100%;
 		height: 100%;
-		background: url('https://zenika.com/static/images/background-overlay.png');
-		background-size: cover;
+		background: url('https://zenika.com/static/images/background-overlay.png')
+			center -110px / cover;
 		opacity: 0.2;
 	}
 }

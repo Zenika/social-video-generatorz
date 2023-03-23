@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
+import styles from './styles.module.css';
 
 interface CheckboxProps {
 	label: string;
 	categoryId: string;
 	handleChange: (checked: boolean, data: string) => void;
 	defaultCheck?: boolean;
+	disabled?: boolean;
 }
 
 export const Checkbox: React.FC<CheckboxProps> = ({
@@ -12,6 +14,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 	categoryId,
 	handleChange,
 	defaultCheck = false,
+	disabled = false,
 }) => {
 	const [checked, setChecked] = useState(defaultCheck);
 
@@ -21,8 +24,15 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 	};
 
 	return (
-		<label style={{userSelect: 'none'}}>
-			<input type="checkbox" checked={checked} onChange={handleCheck} />
+		<label
+			className={`${styles.checkbox} ${disabled ? styles.inputDisabled : ''}`}
+		>
+			<input
+				type="checkbox"
+				checked={checked}
+				disabled={disabled}
+				onChange={handleCheck}
+			/>
 			{label}
 		</label>
 	);

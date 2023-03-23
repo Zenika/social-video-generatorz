@@ -6,10 +6,23 @@
 	justify-content: space-between;
 	align-items: center;
 	color: white;
-	z-index: 5;
+	background: var(--black);
+	z-index: 10;
 
 	.rightLink {
 		margin-left: 120px;
+	}
+}
+
+.introduction {
+	text-align: justify;
+	padding: 0 20px 20px 20px;
+	margin: 0 auto;
+	width: 80%;
+
+	p:not(:last-child) {
+		margin-bottom: 20px;
+		line-height: 1.5;
 	}
 }
 
@@ -18,7 +31,7 @@
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	padding: 4rem 0;
+	padding: 1rem 0;
 	width: 100%;
 	gap: 50px;
 
@@ -45,6 +58,32 @@
 				margin-top: 10px;
 				margin-bottom: 20px;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.header {
+		a {
+			display: none;
+		}
+
+		h1 {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	.introduction {
+		width: 100%;
+	}
+
+	.previewContanier {
+		flex-direction: column;
+		gap: 0;
+
+		.card {
+			transform: scale(0.9);
 		}
 	}
 }

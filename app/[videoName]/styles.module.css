@@ -10,6 +10,7 @@
 		font-size: 1.2rem;
 		left: 50px;
 		top: 20px;
+		z-index: 10;
 	}
 
 	.generateBtnContainer {
@@ -27,10 +28,13 @@
 			width: 300px;
 
 			&.disabled {
-				pointer-events: none;
 				position: relative;
 				background: #a5a5a5;
 				color: #121212ad;
+
+				&:hover {
+					cursor: not-allowed;
+				}
 			}
 		}
 

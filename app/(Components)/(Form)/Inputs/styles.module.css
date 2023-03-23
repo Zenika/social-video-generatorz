@@ -5,12 +5,12 @@
 	font-weight: bold;
 	gap: 10px;
 }
-
 .input {
 	width: 100%;
 	padding: 10px;
 	border-radius: 5px;
 	border: none;
+	font-size: 1rem;
 }
 
 .inputList {
@@ -21,4 +21,16 @@
 
 .midWidth {
 	width: 45%;
+}
+
+.checkbox {
+	&:hover {
+		cursor: pointer;
+	}
+
+	&.inputDisabled {
+		&:hover {
+			cursor: not-allowed;
+		}
+	}
 }
