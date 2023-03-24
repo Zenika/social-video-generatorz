@@ -55,7 +55,7 @@ const PreviewCard: React.FC<PreviewCardProps> = ({
 
 export default function Home() {
 	return (
-		<main>
+		<main className={styles.home}>
 			<div className={styles.introduction}>
 				<p>
 					Bienvenue sur Social Video Generatorz ! Cet outil est fait pour vous

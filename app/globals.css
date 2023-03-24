@@ -16,6 +16,7 @@
 html,
 body {
 	max-width: 100vw;
+	height: 100%;
 	overflow-x: hidden;
 	font-family: var(--font-mono);
 	background: var(--black);
@@ -25,11 +26,13 @@ body {
 		z-index: 5;
 		padding: 1rem;
 		color: white;
+		height: calc(100% - 100px);
 	}
 }
 
 html {
 	position: relative;
+	min-height: 100vh;
 
 	&::after {
 		content: '';

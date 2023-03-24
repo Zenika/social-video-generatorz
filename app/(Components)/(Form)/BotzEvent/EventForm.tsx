@@ -76,23 +76,27 @@ export const EventForm: React.FC<{
 			data: title,
 			setData: setTitle,
 			label: 'Titre',
+			placeholder: EventDefaultProps.title,
 		},
 		city: {
 			data: city,
 			setData: setCity,
 			label: 'Ville',
+			placeholder: EventDefaultProps.city,
 		},
 		date: {
 			data: date,
 			setData: setDate,
 			label: 'Date',
 			midWidth: true,
+			placeholder: EventDefaultProps.date,
 		},
 		time: {
 			data: time,
 			setData: setTime,
 			label: 'Heure',
 			midWidth: true,
+			placeholder: EventDefaultProps.time,
 		},
 	};
 
@@ -101,31 +105,37 @@ export const EventForm: React.FC<{
 			data: contactName,
 			setData: setContactName,
 			label: 'Nom',
+			placeholder: EventDefaultProps.contact.name,
 		},
 		picture: {
 			data: contactPicture,
 			setData: setContactPicture,
 			label: 'Photo',
+			placeholder: EventDefaultProps.contact.picture,
 		},
 		role: {
 			data: contactRole,
 			setData: setContactRole,
 			label: 'Role',
+			placeholder: EventDefaultProps.contact.role,
 		},
 		location: {
 			data: contactLocation,
 			setData: setContactLocation,
 			label: 'Ville',
+			placeholder: EventDefaultProps.contact.location,
 		},
 		mail: {
 			data: contactMail,
 			setData: setContactMail,
 			label: 'Email',
+			placeholder: EventDefaultProps.contact.mail,
 		},
 		phone: {
 			data: contactPhone,
 			setData: setContactPhone,
 			label: 'Téléphone',
+			placeholder: EventDefaultProps.contact.phone,
 		},
 	};
 
@@ -204,25 +214,27 @@ export const EventForm: React.FC<{
 				/>
 			</div>
 
-			<div className={styles.formContainer}>
-				<form id={currentTemplate.formId} onSubmit={handleSubmit}>
-					<section>
-						<p>Introduction</p>
-						<InputSection InputList={introInputs} />
-					</section>
-					<section>
-						<p>Categories</p>
-						<VideoCategories
-							categoriesId={categoriesId}
-							addCategory={handleAddCategory}
-							removeCategory={handleRemoveCategory}
-						/>
-					</section>
-					<section>
-						<p>Contact</p>
-						<InputSection InputList={contactInputs} />
-					</section>
-				</form>
+			<div className={`${styles.formContainer} ${styles.arrowDown}`}>
+				<div>
+					<form id={currentTemplate.formId} onSubmit={handleSubmit}>
+						<section>
+							<p>Introduction</p>
+							<InputSection InputList={introInputs} />
+						</section>
+						<section>
+							<p>Categories</p>
+							<VideoCategories
+								categoriesId={categoriesId}
+								addCategory={handleAddCategory}
+								removeCategory={handleRemoveCategory}
+							/>
+						</section>
+						<section>
+							<p>Contact</p>
+							<InputSection InputList={contactInputs} />
+						</section>
+					</form>
+				</div>
 			</div>
 		</div>
 	);
