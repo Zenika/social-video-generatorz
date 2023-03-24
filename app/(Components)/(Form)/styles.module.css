@@ -1,7 +1,7 @@
 .VideoFormContainer {
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
 	position: relative;
 	width: 100%;
 	gap: 70px;
