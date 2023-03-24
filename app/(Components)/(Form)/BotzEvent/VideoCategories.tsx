@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useMemo} from 'react';
 import {CategoriesList} from '../../../../src/DefaultProps/CategoriesList';
 import {Checkbox} from '../Inputs/Checkbox';
 import styles from '../styles.module.css';
@@ -8,14 +8,11 @@ export const VideoCategories: React.FC<{
 	addCategory: (newCategory: string) => void;
 	removeCategory: (oldCategory: string) => void;
 }> = ({categoriesId, addCategory, removeCategory}) => {
-	const [maxSelected, setMaxSelected] = useState<boolean>(true);
 	const handleAddRemoveCategory = (checked: boolean, categoryId: string) => {
 		checked ? removeCategory(categoryId) : addCategory(categoryId);
 	};
 
-	useEffect(() => {
-		categoriesId.length < 4 ? setMaxSelected(false) : setMaxSelected(true);
-	}, [categoriesId]);
+	const maxSelected = useMemo(() => categoriesId.length >= 4, [categoriesId]);
 
 	return (
 		<div className={styles.categories}>
