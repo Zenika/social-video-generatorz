@@ -59,4 +59,8 @@ export const CategoriesList: CategoriesListProps = {
 		name: 'IA',
 		icon: '/BestOfTz/icons/ia.svg',
 	},
+	surprise: {
+		name: 'Surprise',
+		icon: '/BestOfTz/icons/surprise.svg',
+	},
 };

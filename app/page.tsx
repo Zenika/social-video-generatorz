@@ -46,7 +46,7 @@ const PreviewCard: React.FC<PreviewCardProps> = ({
 			<div className={styles.cardContent}>
 				<h3>{title}</h3>
 				<Link className="btn btn-black" href={link}>
-					Create Video
+					Créer la Video
 				</Link>
 			</div>
 		</div>
@@ -55,7 +55,25 @@ const PreviewCard: React.FC<PreviewCardProps> = ({
 
 export default function Home() {
 	return (
-		<main>
+		<main className={styles.home}>
+			<div className={styles.introduction}>
+				<p>
+					Bienvenue sur Social Video Generatorz ! Cet outil est fait pour vous
+					aider à éditer et à générer rapidement des vidéos pour vos
+					communications. Le projet ne contient, pour l'instant, que des
+					templates pour les annonces des Best Of Technozaure.
+				</p>
+				<p>
+					Si vous souhaitez ajouter de nouveaux temlpates, vous pouvez nous
+					contacter sur Slack dans le groupe #project-social-video-generator, ou
+					contribuer directement sur Github.
+				</p>
+				<p>
+					Vous trouverez, juste après les templates des vidéos pré-faites, vous
+					n'avez qu'a cliquer sur "Créer la vidéo" pour changer les paramètres.
+					Enfin, vous pourrez télécharger la vidéo une fois configurée !
+				</p>
+			</div>
 			<section className={styles.previewContanier}>
 				<PreviewCard
 					durationInFrames={300}

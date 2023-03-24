@@ -36,31 +36,37 @@ export const TalkForm: React.FC<{
 			data: title,
 			setData: setTitle,
 			label: 'Titre',
+			placeholder: TalkDefaultProps.title,
 		},
 		speakerName: {
 			data: speakerName,
 			setData: setSpeakerName,
 			label: 'Nom',
+			placeholder: TalkDefaultProps.speaker.name,
 		},
 		speakerPicture: {
 			data: speakerPicture,
 			setData: setSpeakerPicture,
 			label: 'Photo',
+			placeholder: TalkDefaultProps.speaker.picture,
 		},
 		speakerRole: {
 			data: speakerRole,
 			setData: setSpeakerRole,
 			label: 'Role',
+			placeholder: TalkDefaultProps.speaker.role,
 		},
 		speakerLocation: {
 			data: speakerLocation,
 			setData: setSpeakerLocation,
 			label: 'Ville',
+			placeholder: TalkDefaultProps.speaker.location,
 		},
 		date: {
 			data: date,
 			setData: setDate,
 			label: 'Date',
+			placeholder: TalkDefaultProps.date,
 		},
 	};
 
@@ -127,11 +133,13 @@ export const TalkForm: React.FC<{
 			</div>
 
 			<div className={styles.formContainer}>
-				<form id={currentTemplate.formId} onSubmit={handleSubmit}>
-					<section>
-						<InputSection InputList={talkInputs} />
-					</section>
-				</form>
+				<div>
+					<form id={currentTemplate.formId} onSubmit={handleSubmit}>
+						<section>
+							<InputSection InputList={talkInputs} />
+						</section>
+					</form>
+				</div>
 			</div>
 		</div>
 	);
