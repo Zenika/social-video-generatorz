@@ -46,8 +46,8 @@
 				width: 100%;
 				height: 100%;
 
-			section {
-				padding: 10px 1rem;
+				section {
+					padding: 10px 1rem;
 
 					&:first-child {
 						padding-top: 0;
@@ -109,7 +109,7 @@
 	.VideoFormContainer {
 		flex-direction: column;
 		align-items: center;
-		padding: 20px 50px;
+		padding: 20px 0;
 
 		.formContainer {
 			width: 100%;
