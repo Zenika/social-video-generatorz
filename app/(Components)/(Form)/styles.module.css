@@ -116,3 +116,16 @@
 		}
 	}
 }
+
+@media screen and (max-width: 500px) {
+	.VideoFormContainer {
+		> div:first-child {
+			transform: scale(0.7);
+			transform-origin: center top;
+		}
+
+		.formContainer {
+			transform: translateY(-100px);
+		}
+	}
+}
