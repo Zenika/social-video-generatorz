@@ -37,18 +37,23 @@ export const TalkForm: React.FC<{
 			setData: setTitle,
 			label: 'Titre',
 			placeholder: TalkDefaultProps.title,
+			required: true,
 		},
 		speakerName: {
 			data: speakerName,
 			setData: setSpeakerName,
 			label: 'Nom',
 			placeholder: TalkDefaultProps.speaker.name,
+			required: true,
 		},
 		speakerPicture: {
 			data: speakerPicture,
 			setData: setSpeakerPicture,
-			label: 'Photo',
+			label: "URL de l'image",
 			placeholder: TalkDefaultProps.speaker.picture,
+			tooltipText:
+				'Nous vous conseillons d\'ajouter votre photo slack: Il vous suffit de faire "clique droit" sur votre photo de profil, puis "copier l\'url de l\'image".',
+			required: true,
 		},
 		speakerRole: {
 			data: speakerRole,
@@ -67,6 +72,7 @@ export const TalkForm: React.FC<{
 			setData: setDate,
 			label: 'Date',
 			placeholder: TalkDefaultProps.date,
+			required: true,
 		},
 	};
 
