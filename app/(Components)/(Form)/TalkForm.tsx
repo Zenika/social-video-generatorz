@@ -52,7 +52,7 @@ export const TalkForm: React.FC<{
 			label: "URL de l'image",
 			placeholder: TalkDefaultProps.speaker.picture,
 			tooltipText:
-				'Nous vous conseillons d\'ajouter votre photo slack: Il vous suffit de faire "clique droit" sur votre photo de profil, puis "copier l\'url de l\'image".',
+				'Nous vous conseillons d\'ajouter votre photo slack (format 1/1 si possible): Il vous suffit de faire "clique droit" sur votre photo de profil, puis "copier l\'url de l\'image".',
 			required: true,
 		},
 		speakerRole: {
