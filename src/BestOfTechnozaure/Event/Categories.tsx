@@ -14,7 +14,7 @@ export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 				position: 'absolute',
 				width: '100%',
 				display: 'grid',
-				gridTemplateColumns: `repeat(${categories.length / 2}, 1fr)`,
+				gridTemplateColumns: `repeat(${Math.ceil(categories.length / 2)}, 1fr)`,
 				rowGap: 132,
 				padding: '0 70px',
 				top: 350,
