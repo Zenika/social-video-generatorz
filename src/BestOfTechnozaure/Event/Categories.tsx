@@ -13,11 +13,14 @@ export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 			style={{
 				position: 'absolute',
 				width: '100%',
-				display: 'grid',
-				gridTemplateColumns: `repeat(${Math.ceil(categories.length / 2)}, 1fr)`,
-				rowGap: 132,
+				display: 'flex',
+				justifyContent: 'center',
+				alignItems: 'center',
+				flexWrap: 'wrap',
+				gap: 132,
 				padding: '0 70px',
 				top: 350,
+				height: 662,
 			}}
 		>
 			{categories.map((category, id) => {
@@ -32,6 +35,7 @@ export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 							display: 'flex',
 							justifyContent: 'center',
 							height: 275,
+							width: '40%',
 						}}
 					>
 						<SlideTop
