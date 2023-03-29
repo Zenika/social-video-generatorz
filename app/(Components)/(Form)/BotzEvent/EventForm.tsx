@@ -22,6 +22,9 @@ export const EventForm: React.FC<{
 	setError: (data: string) => void;
 }> = ({currentTemplate, setLoading, setVideoUrl, setError}) => {
 	const [title, setTitle] = useInputChange<string>(EventDefaultProps.title);
+	const [remoteOnly, setRemoteOnly] = useState<boolean>(
+		EventDefaultProps.remoteOnly
+	);
 	const [city, setCity] = useInputChange<string>(EventDefaultProps.city);
 	const [date, setDate] = useState(new Date());
 	const [time, setTime] = useState(new Date());
@@ -72,6 +75,12 @@ export const EventForm: React.FC<{
 	};
 
 	const introInputs = {
+		remoteOnly: {
+			data: remoteOnly,
+			setData: setRemoteOnly,
+			label: 'À distance uniquement',
+			required: true,
+		},
 		title: {
 			data: title,
 			setData: setTitle,
@@ -85,6 +94,7 @@ export const EventForm: React.FC<{
 			label: 'Ville',
 			placeholder: EventDefaultProps.city,
 			required: true,
+			disabled: remoteOnly,
 		},
 		date: {
 			data: date,
@@ -149,6 +159,7 @@ export const EventForm: React.FC<{
 
 	const data: {
 		title: string;
+		remoteOnly: boolean;
 		city: string;
 		date: string;
 		time: string;
@@ -163,6 +174,7 @@ export const EventForm: React.FC<{
 		};
 	} = {
 		title,
+		remoteOnly,
 		city,
 		date: format(date, 'dd MMMM yyyy', {locale: fr}),
 		time: format(time, 'HH:mm'),

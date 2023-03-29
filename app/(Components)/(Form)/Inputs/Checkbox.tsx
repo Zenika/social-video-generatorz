@@ -3,15 +3,15 @@ import styles from './styles.module.css';
 
 interface CheckboxProps {
 	label: string;
-	categoryId: string;
-	handleChange: (checked: boolean, data: string) => void;
+	categoryId?: string;
+	handleChange: (checked: boolean, data?: string) => void;
 	defaultCheck?: boolean;
 	disabled?: boolean;
 }
 
 export const Checkbox: React.FC<CheckboxProps> = ({
 	label,
-	categoryId,
+	categoryId = '',
 	handleChange,
 	defaultCheck = false,
 	disabled = false,

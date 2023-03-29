@@ -57,6 +57,20 @@ export const IntroRemoteOnly: React.FC<{
 					</FadeOut>
 				</FadeIn>
 			</Sequence>
+			<Sequence name="En ligne">
+				<FadeIn startingFrame={10} durationInFrames={15}>
+					<FadeOut startingFrame={80} durationInFrames={20}>
+						<Location
+							iconUrl="/BestOfTz/workadventure.png"
+							text="En ligne sur"
+							location="workadventure"
+							style={{
+								top: 525,
+							}}
+						/>
+					</FadeOut>
+				</FadeIn>
+			</Sequence>
 			<Sequence name="Divider" from={10}>
 				<FadeIn durationInFrames={20}>
 					<FadeOut startingFrame={80} durationInFrames={15}>
@@ -83,20 +97,6 @@ export const IntroRemoteOnly: React.FC<{
 						/>
 					</FadeOut>
 				</SlideTop>
-			</Sequence>
-			<Sequence name="Ou en ligne">
-				<FadeIn startingFrame={10} durationInFrames={15}>
-					<FadeOut startingFrame={80} durationInFrames={20}>
-						<Location
-							iconUrl="/BestOfTz/workadventure.png"
-							text="Ou en ligne sur"
-							location="workadventure"
-							style={{
-								top: 525,
-							}}
-						/>
-					</FadeOut>
-				</FadeIn>
 			</Sequence>
 		</AbsoluteFill>
 	);
