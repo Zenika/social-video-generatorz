@@ -48,10 +48,9 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 				gradientAngle={gradient}
 			/>
 			<Sequence name="Intro">
-				{remoteOnly && (
+				{remoteOnly ? (
 					<IntroRemoteOnly title={title} date={date} time={time} />
-				)}
-				{!remoteOnly && (
+				) : (
 					<Intro title={title} city={city} date={date} time={time} />
 				)}
 			</Sequence>
