@@ -8,12 +8,13 @@ import {CategoryProps} from '../../Types/CategoryProps';
 
 export const Tribes: React.FC<{
 	categories: CategoryProps[];
-}> = ({categories}) => {
+	endIntroDelta?: number;
+}> = ({categories, endIntroDelta = 0}) => {
 	return (
 		<AbsoluteFill>
 			<Sequence name="Title Categories">
 				<FadeIn durationInFrames={20}>
-					<FadeOut startingFrame={70} durationInFrames={15}>
+					<FadeOut startingFrame={70 + endIntroDelta} durationInFrames={15}>
 						<Title
 							title="Venez assister à des conférences tech"
 							style={{
@@ -26,7 +27,7 @@ export const Tribes: React.FC<{
 				</FadeIn>
 			</Sequence>
 			<Sequence name="Categories" from={10}>
-				<Categories categories={categories} />
+				<Categories categories={categories} endIntroDelta={endIntroDelta} />
 			</Sequence>
 		</AbsoluteFill>
 	);

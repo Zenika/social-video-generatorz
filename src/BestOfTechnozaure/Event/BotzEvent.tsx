@@ -9,9 +9,11 @@ import {Tribes} from './Tribes';
 import {Contact} from './Contact';
 import {SpeakerProps} from '../../Types/SpeakerProps';
 import {CategoryProps} from '../../Types/CategoryProps';
+import {IntroRemoteOnly} from './IntroRemoteOnly';
 
 export interface BotzEventProps {
 	title: string;
+	remoteOnly: boolean;
 	date: string;
 	time: string;
 	city: string;
@@ -23,6 +25,7 @@ const {fontFamily} = loadFont();
 
 export const BotzEvent: React.FC<BotzEventProps> = ({
 	title,
+	remoteOnly,
 	date,
 	time,
 	city,
@@ -35,6 +38,9 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
+
+	const endIntroDelta = remoteOnly ? 15 : 0;
+
 	return (
 		<AbsoluteFill style={{color: 'white', fontFamily}}>
 			<Background
@@ -42,12 +48,25 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 				gradientAngle={gradient}
 			/>
 			<Sequence name="Intro">
-				<Intro title={title} city={city} date={date} time={time} />
+				{remoteOnly && (
+					<IntroRemoteOnly title={title} date={date} time={time} />
+				)}
+				{!remoteOnly && (
+					<Intro title={title} city={city} date={date} time={time} />
+				)}
 			</Sequence>
-			<Sequence name="Categories" from={130} durationInFrames={100}>
-				<Tribes categories={categories} />
+			<Sequence
+				name="Categories"
+				from={130 - endIntroDelta * 2}
+				durationInFrames={100 + endIntroDelta}
+			>
+				<Tribes categories={categories} endIntroDelta={endIntroDelta} />
 			</Sequence>
-			<Sequence name="Contact" from={230} durationInFrames={70}>
+			<Sequence
+				name="Contact"
+				from={230 - endIntroDelta}
+				durationInFrames={70 + endIntroDelta}
+			>
 				<Contact contact={contact} />
 			</Sequence>
 		</AbsoluteFill>
