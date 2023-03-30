@@ -29,7 +29,7 @@ specifiers:
   react: 18.2.0
   react-datepicker: 4.10.0
   react-dom: 18.2.0
-  react-tooltip: 5.10.1
+  react-tooltip: 5.8.3
   remotion: 3.3.63
   typescript: 4.9.5
 
@@ -57,7 +57,7 @@ dependencies:
   react: 18.2.0
   react-datepicker: 4.10.0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
-  react-tooltip: 5.10.1_biqbaboplfbrettd7655fr4n2y
+  react-tooltip: 5.8.3_biqbaboplfbrettd7655fr4n2y
   remotion: 3.3.63_biqbaboplfbrettd7655fr4n2y
   typescript: 4.9.5
 
@@ -289,8 +289,8 @@ packages:
     resolution: {integrity: sha512-qrcbyfnRVziRlB6IYwjCopYhO7Vud750JlJyuljruIXcPxr22y8zdckcJGsuOdnQ639uVD1tTXddrcH3t3QYIQ==}
     dev: false
 
-  /@floating-ui/dom/1.2.5:
-    resolution: {integrity: sha512-+sAUfpQ3Frz+VCbPCqj+cZzvEESy3fjSeT/pDWkYCWOBXYNNKZfuVsHuv8/JO2zze8+Eb/Q7a6hZVgzS81fLbQ==}
+  /@floating-ui/dom/1.1.1:
+    resolution: {integrity: sha512-TpIO93+DIujg3g7SykEAGZMDtbJRrmnYRCNYSjJlvIbGhBjRSNTLVbNeDQBrzy9qDgUbiWdc7KA0uZHZ2tJmiw==}
     dependencies:
       '@floating-ui/core': 1.2.5
     dev: false
@@ -3641,13 +3641,13 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /react-tooltip/5.10.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-bfEc3L0yTcjW2jTu69AJo+GVy5F88MgN3gmFo6vQnq2i6GNlCZlagQp60Vf8LFbr36fjV0TYJzF3QYmwG7ItaA==}
+  /react-tooltip/5.8.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-h7maAlm2Xeymc14gWKhhrzsENeB83N65EzZ+AcQIGrOpNE0yefVRJIHhNcWHEJ0FEtf7VZXxtsj5glVXKxEtvA==}
     peerDependencies:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
     dependencies:
-      '@floating-ui/dom': 1.2.5
+      '@floating-ui/dom': 1.1.1
       classnames: 2.3.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
