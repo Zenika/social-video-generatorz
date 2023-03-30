@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 interface CheckboxProps {
 	label: string;
 	categoryId?: string;
-	handleChange: (checked: boolean, data?: string) => void;
+	handleChange: (checked: boolean, data: string) => void;
 	defaultCheck?: boolean;
 	disabled?: boolean;
 }

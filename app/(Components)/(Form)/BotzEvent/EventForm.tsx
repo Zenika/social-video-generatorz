@@ -75,26 +75,12 @@ export const EventForm: React.FC<{
 	};
 
 	const introInputs = {
-		remoteOnly: {
-			data: remoteOnly,
-			setData: setRemoteOnly,
-			label: 'À distance uniquement',
-			required: true,
-		},
 		title: {
 			data: title,
 			setData: setTitle,
 			label: 'Titre',
 			placeholder: EventDefaultProps.title,
 			required: true,
-		},
-		city: {
-			data: city,
-			setData: setCity,
-			label: 'Ville',
-			placeholder: EventDefaultProps.city,
-			required: true,
-			hidden: remoteOnly,
 		},
 		date: {
 			data: date,
@@ -111,6 +97,19 @@ export const EventForm: React.FC<{
 			midWidth: true,
 			placeholder: EventDefaultProps.time,
 			required: true,
+		},
+		remoteOnly: {
+			data: remoteOnly,
+			setData: setRemoteOnly,
+			label: 'À distance uniquement',
+		},
+		city: {
+			data: city,
+			setData: setCity,
+			label: 'Ville',
+			placeholder: EventDefaultProps.city,
+			required: true,
+			displayed: remoteOnly,
 		},
 	};
 
