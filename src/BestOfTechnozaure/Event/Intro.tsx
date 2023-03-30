@@ -10,23 +10,27 @@ import {Logo} from '../../Components/Logo';
 import {Title} from '../../Components/Title';
 import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
 import {FadeOut} from '../../Components/Animations/Fade/FadeOut';
-import {Location} from './Location';
 import {SlideTop} from '../../Components/Animations/Slide/SlideTop';
 import {Details} from '../../Components/Details';
 import {Divider} from '../../Components/Divider';
 import {Footer} from '../../Components/Footer';
+import {RemoteOnly} from './RemoteOnly';
+import {AgencyAndRemote} from './AgencyAndRemote';
 
 export const Intro: React.FC<{
 	title: string;
 	city: string;
 	date: string;
 	time: string;
-}> = ({title, city, date, time}) => {
+	remoteOnly: boolean;
+}> = ({title, city, date, time, remoteOnly}) => {
+	const remoteOnlyDelta = remoteOnly ? 20 : 0;
+
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
 	const sizeDown = spring({
-		frame: frame - 100,
+		frame: frame - (100 - remoteOnlyDelta),
 		from: 650,
 		to: 250,
 		fps,
@@ -43,7 +47,7 @@ export const Intro: React.FC<{
 			</Sequence>
 			<Sequence name="Title" from={10}>
 				<FadeIn durationInFrames={20}>
-					<FadeOut startingFrame={90} durationInFrames={20}>
+					<FadeOut startingFrame={90 - remoteOnlyDelta} durationInFrames={20}>
 						<Title
 							title={title}
 							style={{
@@ -58,22 +62,10 @@ export const Intro: React.FC<{
 					</FadeOut>
 				</FadeIn>
 			</Sequence>
-			<Sequence name="Dans les locaux" from={5}>
-				<SlideTop from={200} to={525} durationInFrames={30}>
-					<FadeIn durationInFrames={30}>
-						<FadeOut startingFrame={50} durationInFrames={20}>
-							<Location
-								iconUrl="/mono_zenika.svg"
-								text="Dans les locaux Zenika"
-								location={city}
-							/>
-						</FadeOut>
-					</FadeIn>
-				</SlideTop>
-			</Sequence>
+			{remoteOnly ? <RemoteOnly /> : <AgencyAndRemote city={city} />}
 			<Sequence name="Divider" from={10}>
 				<FadeIn durationInFrames={20}>
-					<FadeOut startingFrame={100} durationInFrames={15}>
+					<FadeOut startingFrame={100 - remoteOnlyDelta} durationInFrames={15}>
 						<Divider
 							style={{
 								top: 970,
@@ -84,8 +76,16 @@ export const Intro: React.FC<{
 				</FadeIn>
 			</Sequence>
 			<Sequence name="Details" from={20}>
-				<SlideTop delay={80} from={1025} to={1100} durationInFrames={30}>
-					<FadeOut startingFrame={80} durationInFrames={5}>
+				<SlideTop
+					delay={80 - remoteOnlyDelta / 2}
+					from={1025}
+					to={1100}
+					durationInFrames={30}
+				>
+					<FadeOut
+						startingFrame={80 - remoteOnlyDelta / 2}
+						durationInFrames={5}
+					>
 						<Details
 							date={date}
 							time={time}
@@ -97,20 +97,6 @@ export const Intro: React.FC<{
 						/>
 					</FadeOut>
 				</SlideTop>
-			</Sequence>
-			<Sequence name="Ou en ligne">
-				<FadeIn startingFrame={70} durationInFrames={15}>
-					<FadeOut startingFrame={100} durationInFrames={20}>
-						<Location
-							iconUrl="/BestOfTz/workadventure.png"
-							text="Ou en ligne sur"
-							location="workadventure"
-							style={{
-								top: 525,
-							}}
-						/>
-					</FadeOut>
-				</FadeIn>
 			</Sequence>
 		</AbsoluteFill>
 	);

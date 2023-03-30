@@ -9,7 +9,6 @@ import {Tribes} from './Tribes';
 import {Contact} from './Contact';
 import {SpeakerProps} from '../../Types/SpeakerProps';
 import {CategoryProps} from '../../Types/CategoryProps';
-import {IntroRemoteOnly} from './IntroRemoteOnly';
 
 export interface BotzEventProps {
 	title: string;
@@ -48,11 +47,13 @@ export const BotzEvent: React.FC<BotzEventProps> = ({
 				gradientAngle={gradient}
 			/>
 			<Sequence name="Intro">
-				{remoteOnly ? (
-					<IntroRemoteOnly title={title} date={date} time={time} />
-				) : (
-					<Intro title={title} city={city} date={date} time={time} />
-				)}
+				<Intro
+					title={title}
+					city={city}
+					date={date}
+					time={time}
+					remoteOnly={remoteOnly}
+				/>
 			</Sequence>
 			<Sequence
 				name="Categories"

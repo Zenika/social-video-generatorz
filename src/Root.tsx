@@ -6,7 +6,6 @@ import {Intro} from './BestOfTechnozaure/Event/Intro';
 import {BotzEvent} from './BestOfTechnozaure/Event/BotzEvent';
 import {Tribes} from './BestOfTechnozaure/Event/Tribes';
 import {Contact} from './BestOfTechnozaure/Event/Contact';
-import {IntroRemoteOnly} from './BestOfTechnozaure/Event/IntroRemoteOnly';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -33,19 +32,7 @@ export const RemotionRoot: React.FC = () => {
 							city: 'lyon',
 							date: '28 Novembre 2023',
 							time: '17h00',
-						}}
-					/>
-					<Composition
-						id="IntroRemote"
-						component={IntroRemoteOnly}
-						width={1200}
-						height={1200}
-						fps={30}
-						durationInFrames={140}
-						defaultProps={{
-							title: 'Venez assister à des conférences techs',
-							date: '28 Novembre 2023',
-							time: '17h00',
+							remoteOnly: false,
 						}}
 					/>
 					<Composition
