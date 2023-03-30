@@ -60,6 +60,10 @@
 }
 
 .checkbox {
+	display: flex;
+	gap: 8px;
+	user-select: none;
+
 	&:hover {
 		cursor: pointer;
 	}

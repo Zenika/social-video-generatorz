@@ -88,11 +88,6 @@
 						display: flex;
 						flex-wrap: wrap;
 						gap: 20px;
-
-						label {
-							display: flex;
-							gap: 8px;
-						}
 					}
 
 					label {

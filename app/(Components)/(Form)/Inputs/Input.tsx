@@ -11,6 +11,7 @@ interface InputProps {
 	placeholder?: string;
 	tooltipText?: string;
 	required?: boolean;
+	displayed?: boolean;
 }
 
 export const Input = ({
@@ -21,38 +22,43 @@ export const Input = ({
 	placeholder,
 	tooltipText,
 	required = false,
+	displayed = false,
 }: InputProps) => {
 	const labelId = label.substring(0, 3);
 	return (
-		<label className={styles.label}>
-			<div>
-				{label}
-				{tooltipText && (
-					<>
-						<span
-							className={styles.info}
-							data-tooltip-id={labelId}
-							data-tooltip-content={tooltipText}
-							data-tooltip-variant="info"
-						>
-							?
-						</span>
-						<Tooltip id={labelId} />
-					</>
-				)}
-				{required === false && (
-					<span className={styles.notRequired}>(Facultatif)</span>
-				)}
-			</div>
-			<input
-				required
-				className={styles.input}
-				type={type}
-				name={label}
-				placeholder={placeholder}
-				value={value}
-				onChange={setValue}
-			/>
-		</label>
+		<>
+			{!displayed && (
+				<label className={styles.label}>
+					<div>
+						{label}
+						{tooltipText && (
+							<>
+								<span
+									className={styles.info}
+									data-tooltip-id={labelId}
+									data-tooltip-content={tooltipText}
+									data-tooltip-variant="info"
+								>
+									?
+								</span>
+								<Tooltip id={labelId} />
+							</>
+						)}
+						{required === false && (
+							<span className={styles.notRequired}>(Facultatif)</span>
+						)}
+					</div>
+					<input
+						required
+						className={styles.input}
+						type={type}
+						name={label}
+						placeholder={placeholder}
+						value={value}
+						onChange={setValue}
+					/>
+				</label>
+			)}
+		</>
 	);
 };

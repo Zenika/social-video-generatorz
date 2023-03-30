@@ -32,6 +32,7 @@ export const RemotionRoot: React.FC = () => {
 							city: 'lyon',
 							date: '28 Novembre 2023',
 							time: '17h00',
+							remoteOnly: false,
 						}}
 					/>
 					<Composition
@@ -90,6 +91,7 @@ export const RemotionRoot: React.FC = () => {
 						durationInFrames={300}
 						defaultProps={{
 							title: 'L’évenement imaginé par les Techs pour les Techs',
+							remoteOnly: false,
 							city: 'lyon',
 							date: '28 Novembre 2023',
 							time: '17h00',

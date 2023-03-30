@@ -5,9 +5,10 @@ import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
 import {FadeOut} from '../../Components/Animations/Fade/FadeOut';
 import {IconWithText} from '../../Components/IconWithText';
 
-export const Categories: React.FC<{categories: CategoryProps[]}> = ({
-	categories,
-}) => {
+export const Categories: React.FC<{
+	categories: CategoryProps[];
+	endIntroDelta?: number;
+}> = ({categories, endIntroDelta = 0}) => {
 	return (
 		<div
 			style={{
@@ -49,9 +50,12 @@ export const Categories: React.FC<{categories: CategoryProps[]}> = ({
 									from={0}
 									to={90}
 									durationInFrames={durationInFrames}
-									delay={60 + delay}
+									delay={60 + delay + endIntroDelta}
 								>
-									<FadeOut startingFrame={60 + delay} durationInFrames={15}>
+									<FadeOut
+										startingFrame={60 + delay + endIntroDelta}
+										durationInFrames={15}
+									>
 										<IconWithText
 											text={category.name}
 											icon={category.icon}
