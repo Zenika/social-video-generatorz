@@ -81,10 +81,3 @@
 		}
 	}
 }
-
-@media screen and (max-width: 500px) {
-	.generateBtnContainer,
-	.error {
-		transform: translateY(-100px);
-	}
-}

@@ -98,3 +98,9 @@
 		}
 	}
 }
+
+@media screen and (max-width: 500px) {
+	.header {
+		font-size: 0.5rem;
+	}
+}

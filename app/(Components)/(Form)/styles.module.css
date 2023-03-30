@@ -118,13 +118,12 @@
 
 @media screen and (max-width: 500px) {
 	.VideoFormContainer {
+		gap: 0;
+
 		> div:first-child {
 			transform: scale(0.7);
 			transform-origin: center top;
-		}
-
-		.formContainer {
-			transform: translateY(-100px);
+			height: 400px;
 		}
 	}
 }
