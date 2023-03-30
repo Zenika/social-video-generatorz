@@ -11,7 +11,7 @@ interface InputProps {
 	placeholder?: string;
 	tooltipText?: string;
 	required?: boolean;
-	disabled?: boolean;
+	hidden?: boolean;
 }
 
 export const Input = ({
@@ -22,12 +22,12 @@ export const Input = ({
 	placeholder,
 	tooltipText,
 	required = false,
-	disabled = false,
+	hidden = false,
 }: InputProps) => {
 	const labelId = label.substring(0, 3);
 	return (
 		<>
-			{!disabled && (
+			{!hidden && (
 				<label className={styles.label}>
 					<div>
 						{label}

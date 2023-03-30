@@ -40,7 +40,7 @@ export const InputSection: React.FC<{InputList: object}> = ({InputList}) => {
 						tooltipText={input.tooltipText}
 						required={input.required}
 						handleChange={handleRemoteOnlyEvent}
-						disabled={input.disabled}
+						hidden={input.hidden}
 					/>
 				);
 			})}

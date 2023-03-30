@@ -94,7 +94,7 @@ export const EventForm: React.FC<{
 			label: 'Ville',
 			placeholder: EventDefaultProps.city,
 			required: true,
-			disabled: remoteOnly,
+			hidden: remoteOnly,
 		},
 		date: {
 			data: date,
