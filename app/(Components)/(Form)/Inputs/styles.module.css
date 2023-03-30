@@ -1,10 +1,46 @@
 .label {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	font-weight: bold;
 	gap: 10px;
+
+	&::first-letter {
+		text-transform: capitalize;
+	}
+
+	div[role='tooltip'] {
+		width: 400px;
+		font-size: 0.8rem;
+		opacity: 1;
+		text-transform: lowercase;
+
+		&::first-letter {
+			text-transform: capitalize;
+		}
+	}
+
+	.info {
+		position: absolute;
+		top: 10px;
+		right: 0;
+		background: white;
+		color: var(--black);
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.notRequired {
+		font-size: 0.7rem;
+		padding-left: 10px;
+	}
 }
+
 .input {
 	width: 100%;
 	padding: 10px;

@@ -28,6 +28,8 @@ export const InputSection: React.FC<{InputList: object}> = ({InputList}) => {
 						label={input.label}
 						midWidth={input.midWidth}
 						placeholder={input.placeholder}
+						tooltipText={input.tooltipText}
+						required={input.required}
 					/>
 				);
 			})}

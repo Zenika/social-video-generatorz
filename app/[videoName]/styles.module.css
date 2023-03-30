@@ -70,3 +70,14 @@
 		color: #f30028;
 	}
 }
+
+@media screen and (max-width: 900px) {
+	.editPage {
+		justify-content: flex-start;
+
+		.backBtn {
+			left: 20px;
+			top: 10px;
+		}
+	}
+}

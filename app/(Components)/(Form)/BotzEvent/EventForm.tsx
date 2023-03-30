@@ -77,12 +77,14 @@ export const EventForm: React.FC<{
 			setData: setTitle,
 			label: 'Titre',
 			placeholder: EventDefaultProps.title,
+			required: true,
 		},
 		city: {
 			data: city,
 			setData: setCity,
 			label: 'Ville',
 			placeholder: EventDefaultProps.city,
+			required: true,
 		},
 		date: {
 			data: date,
@@ -90,6 +92,7 @@ export const EventForm: React.FC<{
 			label: 'Date',
 			midWidth: true,
 			placeholder: EventDefaultProps.date,
+			required: true,
 		},
 		time: {
 			data: time,
@@ -97,6 +100,7 @@ export const EventForm: React.FC<{
 			label: 'Heure',
 			midWidth: true,
 			placeholder: EventDefaultProps.time,
+			required: true,
 		},
 	};
 
@@ -106,12 +110,16 @@ export const EventForm: React.FC<{
 			setData: setContactName,
 			label: 'Nom',
 			placeholder: EventDefaultProps.contact.name,
+			required: true,
 		},
 		picture: {
 			data: contactPicture,
 			setData: setContactPicture,
-			label: 'Photo',
+			label: "URL de l'image",
 			placeholder: EventDefaultProps.contact.picture,
+			tooltipText:
+				'Nous vous conseillons d\'ajouter votre photo slack (format 1/1 si possible): Il vous suffit de faire "clique droit" sur votre photo de profil, puis "copier l\'url de l\'image".',
+			required: true,
 		},
 		role: {
 			data: contactRole,
