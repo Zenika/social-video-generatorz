@@ -64,7 +64,7 @@ export default function Home() {
 					templates pour les annonces des Best Of Technozaure.
 				</p>
 				<p>
-					Si vous souhaitez ajouter de nouveaux temlpates, vous pouvez nous
+					Si vous souhaitez ajouter de nouveaux templates, vous pouvez nous
 					contacter sur Slack dans le groupe #project-social-video-generator, ou
 					contribuer directement sur Github.
 				</p>
