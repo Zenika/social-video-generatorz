@@ -35,16 +35,18 @@ export const Contact: React.FC<{
 					}}
 				/>
 			</Sequence>
-			<Sequence name="Divider" from={10}>
-				<FadeIn durationInFrames={30}>
-					<Divider
-						style={{
-							top: 870,
-						}}
-						width="40%"
-					/>
-				</FadeIn>
-			</Sequence>
+			{(contact.mail || contact.phone) && (
+				<Sequence name="Divider" from={10}>
+					<FadeIn durationInFrames={30}>
+						<Divider
+							style={{
+								top: 870,
+							}}
+							width="40%"
+						/>
+					</FadeIn>
+				</Sequence>
+			)}
 			<Sequence name="Contact informations" from={10}>
 				<SlideTop from={830} to={930} durationInFrames={30}>
 					<FadeIn durationInFrames={30}>

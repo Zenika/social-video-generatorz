@@ -49,7 +49,7 @@ export const Input = ({
 						)}
 					</div>
 					<input
-						required
+						required={required}
 						className={styles.input}
 						type={type}
 						name={label}
