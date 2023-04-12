@@ -16,6 +16,7 @@ import {Divider} from '../../Components/Divider';
 import {Footer} from '../../Components/Footer';
 import {RemoteOnly} from './RemoteOnly';
 import {AgencyAndRemote} from './AgencyAndRemote';
+import {ZenikaLogo} from './ZenikaLogo';
 
 export const Intro: React.FC<{
 	title: string;
@@ -42,8 +43,9 @@ export const Intro: React.FC<{
 			<Sequence name="Website">
 				<Footer content="www.zenika.com" />
 			</Sequence>
-			<Sequence name="Logo">
+			<Sequence name="Logos">
 				<Logo src="/BestOfTz/BOTZ_LOGO.png" width={sizeDown} top={60} />
+				<ZenikaLogo />
 			</Sequence>
 			<Sequence name="Title" from={10}>
 				<FadeIn durationInFrames={20}>
