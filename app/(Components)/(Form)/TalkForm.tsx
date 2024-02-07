@@ -100,25 +100,27 @@ export const TalkForm: React.FC<{
 		event.preventDefault();
 		setLoading(true);
 
-		fetch('https://social-video-generatorz-server.cleverapps.io/BotzTalk', {
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			method: 'POST',
-			body: JSON.stringify(data),
-		})
-			.then((res) => res.blob())
-			.then((blob) => {
-				const fileURL = URL.createObjectURL(blob);
-				setVideoUrl(fileURL);
-				setLoading(false);
-			})
-			.catch(() => {
-				setLoading(false);
-				setError(
-					'/!\\ Une erreur est survenu ! Veuillez patienter quelques instants et essayer à nouveaux. /!\\'
-				);
-			});
+		console.log(data)
+
+		// fetch('https://social-video-generatorz-server.cleverapps.io/BotzTalk', {
+		// 	headers: {
+		// 		'Content-Type': 'application/json',
+		// 	},
+		// 	method: 'POST',
+		// 	body: JSON.stringify(data),
+		// })
+		// 	.then((res) => res.blob())
+		// 	.then((blob) => {
+		// 		const fileURL = URL.createObjectURL(blob);
+		// 		setVideoUrl(fileURL);
+		// 		setLoading(false);
+		// 	})
+		// 	.catch(() => {
+		// 		setLoading(false);
+		// 		setError(
+		// 			'/!\\ Une erreur est survenu ! Veuillez patienter quelques instants et essayer à nouveaux. /!\\'
+		// 		);
+		// 	});
 	};
 
 	return (

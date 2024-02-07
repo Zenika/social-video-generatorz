@@ -3,7 +3,16 @@
 import React from 'react';
 import {loadFont} from '@remotion/google-fonts/Nunito';
 
-import {AbsoluteFill, Sequence} from 'remotion';
+import {
+	AbsoluteFill,
+	Sequence,
+	staticFile,
+	Audio,
+	interpolate,
+	useCurrentFrame,
+	useVideoConfig,
+	spring
+} from 'remotion';
 import {Background} from '../../Components/Background';
 import {Speaker} from '../../Components/Speaker/Speaker';
 import {Title} from '../../Components/Title';
@@ -24,28 +33,31 @@ export interface BotzTalkProps {
 export const BotzTalk: React.FC<BotzTalkProps> = ({title, date, speaker}) => {
 	return (
 		<AbsoluteFill style={{color: 'white', fontFamily}}>
-			<Background url="/BestOfTz/background_carre.png" />
+			<Audio
+				volume={(f) =>
+					interpolate(f, [0, 300, 370], [1, 1, 0], { extrapolateLeft: "clamp" })
+				}
+				src={staticFile("/sounds/intro.mp3")} />
+			<Background url="/BestOfTz/background.png" />
 			<Footer content="www.zenika.com" />
-			<Sequence name="Logo">
-				<Logo src="/BestOfTz/BOTZ_LOGO.png" width={650} top={80} />
+			<Sequence name="Logo" from={130}>
+				<Logo src="/technozaure.svg" width={650} top={80} />
 			</Sequence>
-			<Sequence name="Speaker" from={15}>
+			<Sequence name="Speaker" from={50}>
 				<Speaker
-					picture={speaker.picture}
-					name={speaker.name}
+					pictures={speaker.pictures}
+					names={speaker.names}
 					role={speaker.role}
 					location={speaker.location}
 					style={{
-						top: 300,
+						top: 240,
 					}}
 				/>
 			</Sequence>
-			<Sequence name="Title" from={40}>
-				<FadeIn durationInFrames={30}>
-					<Title title={title} style={{fontSize: '3.6rem'}} top={800} />
-				</FadeIn>
+			<Sequence name="Title" from={20}>
+				<Title title={title} style={{fontSize: '3.6rem'}} top={650} />
 			</Sequence>
-			<Sequence name="Detail" from={60}>
+			<Sequence name="Detail" from={250}>
 				<FadeIn durationInFrames={15}>
 					<hr
 						style={{

@@ -40,7 +40,7 @@ const PreviewCard: React.FC<PreviewCardProps> = ({
 					compositionHeight={compositionHeight}
 					component={component}
 					inputProps={inputProps}
-					style={{width: 400, height: 400}}
+					style={{width: 400, aspectRatio: '9/16'}}
 				/>
 			</div>
 			<div className={styles.cardContent}>

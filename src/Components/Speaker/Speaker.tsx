@@ -6,12 +6,12 @@ import {FadeIn} from '../Animations/Fade/FadeIn';
 import {SlideTop} from '../Animations/Slide/SlideTop';
 
 export const Speaker: React.FC<{
-	name: string;
-	picture: string;
+	names: string[];
+	pictures: string[];
 	location?: string;
 	role?: string;
 	style?: React.CSSProperties;
-}> = ({name, picture, location, role, style}) => {
+}> = ({names, pictures, location, role, style}) => {
 	return (
 		<AbsoluteFill
 			style={{
@@ -20,16 +20,16 @@ export const Speaker: React.FC<{
 				...style,
 			}}
 		>
-			<SlideTop from={-100} to={0} durationInFrames={20}>
-				<FadeIn durationInFrames={20}>
-					<SpeakerPicture src={picture} />
+				<FadeIn durationInFrames={20} style={{width: '100%', marginTop: "21px"}}>
+					<div style={{display: 'flex', width: '100%', justifyContent: 'center', gap: '300px'}}>
+						{pictures.map(picture => <SpeakerPicture key={picture} src={picture} />)}
+					</div>
 				</FadeIn>
-			</SlideTop>
-			<SlideTop from={230} to={330} durationInFrames={20}>
-				<FadeIn durationInFrames={20}>
-					<SpeakerInfos name={name} location={location} role={role} />
+				<FadeIn durationInFrames={20} style={{width: '100%', marginTop: "21px"}}>
+					<div style={{display: 'grid', gridTemplateColumns: `repeat(${names.length}, 1fr)`, maxWidth: '60%', margin: 'auto'}}>
+						{names.map(name => <SpeakerInfos key={name} name={name} location={location} role={role} />)}
+					</div>
 				</FadeIn>
-			</SlideTop>
 		</AbsoluteFill>
 	);
 };

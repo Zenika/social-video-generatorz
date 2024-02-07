@@ -1,6 +1,6 @@
 export interface SpeakerProps {
-	picture: string;
-	name: string;
+	pictures: string[];
+	names: string[];
 	role?: string;
 	location?: string;
 	mail?: string;
