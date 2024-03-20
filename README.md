@@ -29,6 +29,10 @@ pnpm build
 pnpm start:app
 ```
 
+✨ You can use [Gitpod](https://gitpod.io) to contribute on this project. Click on this button and your workspace will be ready to use: 
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Zenika/social-video-generatorz)   
+
 When you run the dev server or the builded app :
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
