@@ -1,5 +1,5 @@
 import React from 'react';
-import {Teaser} from './ZenikastComm/Teaser';
+import {Teaser} from './Zenikast/TeaserEpisode';
 import { Monogram } from './LogoZenika/Monogram';
 import {Composition, Folder} from 'remotion';
 import {BotzTalk} from './BestOfTechnozaure/Talk/BotzTalk';
@@ -150,12 +150,32 @@ export const RemotionRoot: React.FC = () => {
 
 			<Folder name="Zenikast">
 				<Composition
-					id="ZenikastCom"
+					id="TeaserEpisode"
 					component={Teaser}
 					durationInFrames={60}
 					fps={30}
 					width={1200}
 					height={1200}
+					defaultProps={{
+						title: 'L\'usage de l\'IA au quotidien pour développer et concevoir nos applications',
+						publishDate: '14 Juin 2024',
+						speakers: [
+							{
+								name: 'Mickaël Alves',
+								picture:
+									'https://pbs.twimg.com/profile_images/1452247219709566977/5Xzmgun-_400x400.jpg',
+								role: 'Consultant frontend',
+								company: 'Zenika'
+							},
+							{
+								name: 'Other people',
+								picture:
+									'https://pbs.twimg.com/profile_images/1452247219709566977/5Xzmgun-_400x400.jpg',
+								role: 'DevRel',
+								company: 'GitHub'
+							}
+						]
+					}}
 				/>
 			</Folder>
 		</>

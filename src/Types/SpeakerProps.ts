@@ -5,4 +5,5 @@ export interface SpeakerProps {
 	location?: string;
 	mail?: string;
 	phone?: string;
+	company?: string;
 }

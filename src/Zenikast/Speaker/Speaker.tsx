@@ -2,8 +2,8 @@ import React from 'react';
 import {SpeakerInfos} from './SpeakerInfos';
 import {SpeakerPicture} from './SpeakerPicture';
 import {AbsoluteFill} from 'remotion';
-import {FadeIn} from '../Animations/Fade/FadeIn';
-import {SlideTop} from '../Animations/Slide/SlideTop';
+import {FadeIn} from '../../Components/Animations/Fade/FadeIn';
+import {SlideTop} from '../../Components/Animations/Slide/SlideTop';
 
 export const Speaker: React.FC<{
 	name: string;
@@ -26,11 +26,13 @@ export const Speaker: React.FC<{
 					<SpeakerPicture src={picture} />
 				</FadeIn>
 			</SlideTop>
+
 			<SlideTop from={230} to={330} durationInFrames={20}>
 				<FadeIn durationInFrames={20}>
 					<SpeakerInfos name={name} location={location} role={role} company={company} />
 				</FadeIn>
 			</SlideTop>
+			
 		</AbsoluteFill>
 	);
 };
