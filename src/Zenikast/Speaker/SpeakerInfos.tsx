@@ -19,7 +19,7 @@ export const SpeakerInfos: React.FC<{
 			<span
 				style={{
 					fontSize: '2.8rem',
-					fontWeight: '700',
+					fontWeight: '600',
 					textShadow: '0 0 15px rgba(0,0,0,0.6)',
 					position: 'relative',
 				}}
