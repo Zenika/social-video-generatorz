@@ -6,8 +6,17 @@ export const Background: React.FC<{url: string; gradientAngle?: number}> = ({
 	gradientAngle = 0.85,
 }) => {
 	return (
-		<div style={{position: 'relative'}}>
-			<Img src={staticFile(url)} />
+		<div>
+			<Img
+				src={staticFile(url)}
+				style={{
+					position: 'absolute',
+					width: '100%',
+					height: '100%',
+					objectFit: 'cover',
+					transform: 'scale(1.1)',
+				}}
+			/>
 			<span
 				style={{
 					display: 'block',

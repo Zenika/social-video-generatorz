@@ -14,6 +14,7 @@ export const Title: React.FC<{
 				height: 'max-content',
 				transformOrigin: 'center',
 				fontWeight: 700,
+				textWrap: 'balance',
 				top,
 				...style,
 			}}

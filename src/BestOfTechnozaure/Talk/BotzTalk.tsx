@@ -27,7 +27,7 @@ export const BotzTalk: React.FC<BotzTalkProps> = ({title, date, speaker}) => {
 			<Background url="/BestOfTz/background_carre.png" />
 			<Footer content="www.zenika.com" />
 			<Sequence name="Logo">
-				<Logo src="/BestOfTz/BOTZ_LOGO.png" width={650} top={80} />
+				<Logo src="/BestOfTz/BOTZ_LOGO.png" width={350} top={50} />
 			</Sequence>
 			<Sequence name="Speaker" from={15}>
 				<Speaker
@@ -35,9 +35,6 @@ export const BotzTalk: React.FC<BotzTalkProps> = ({title, date, speaker}) => {
 					name={speaker.name}
 					role={speaker.role}
 					location={speaker.location}
-					style={{
-						top: 300,
-					}}
 				/>
 			</Sequence>
 			<Sequence name="Title" from={40}>
