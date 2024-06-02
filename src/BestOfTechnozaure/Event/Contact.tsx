@@ -20,7 +20,7 @@ export const Contact: React.FC<{
 							fontSize: '2.2rem',
 							textTransform: 'uppercase',
 						}}
-						top={215}
+						top={765}
 					/>
 				</FadeIn>
 			</Sequence>
@@ -30,9 +30,6 @@ export const Contact: React.FC<{
 					name={contact.name}
 					location={contact.location}
 					role={contact.role}
-					style={{
-						top: 350,
-					}}
 				/>
 			</Sequence>
 			{(contact.mail || contact.phone) && (
