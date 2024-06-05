@@ -15,8 +15,8 @@ dependencies:
     specifier: 3.3.63
     version: 3.3.63(react-dom@18.2.0)(react@18.2.0)
   '@remotion/google-fonts':
-    specifier: 3.3.63
-    version: 3.3.63(react-dom@18.2.0)(react@18.2.0)
+    specifier: 4.0.168
+    version: 4.0.168(react-dom@18.2.0)(react@18.2.0)
   '@remotion/lottie':
     specifier: 3.3.63
     version: 3.3.63(lottie-web@5.10.2)(react-dom@18.2.0)(react@18.2.0)
@@ -744,10 +744,10 @@ packages:
       - typescript
     dev: true
 
-  /@remotion/google-fonts@3.3.63(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-QfZHKqF/vPxwrsw5QIVt2z+XCtUxRxt1jALgyJFSdxWlGRkcNh/bSR9wvRRDu7+iYMI79tNaEkHa55Bv5pQtJg==}
+  /@remotion/google-fonts@4.0.168(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-zWsSXzAfSDbLzvK3e/RDymS4nA5pqYgXn76ZhPjids3t7hUDZeBYlcMD1z9F7JhX1+tvOsWbOP/NxLc4TtHgPg==}
     dependencies:
-      remotion: 3.3.63(react-dom@18.2.0)(react@18.2.0)
+      remotion: 4.0.168(react-dom@18.2.0)(react@18.2.0)
     transitivePeerDependencies:
       - react
       - react-dom
@@ -3719,6 +3719,16 @@ packages:
 
   /remotion@3.3.78(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-v1zbcD2fVHvqWuYBoYCMRdFdxlw4gUoI4NdNsbFUy5MyarsY8hWSo5pdD22nviyrGPcpAoi4Vg9MokFTj1Dw9Q==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /remotion@4.0.168(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-vvlf/0S3wm+5kSnODkEaG61S9RGDT8mQ83ZLhf9L1wugcaaEO0H77c5kMyEEdShIuesH/ixXceSfxw7egdwtvA==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
