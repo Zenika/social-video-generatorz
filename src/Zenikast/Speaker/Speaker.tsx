@@ -21,18 +21,20 @@ export const Speaker: React.FC<{
 				...style,
 			}}
 		>
-			<SlideTop from={-100} to={0} durationInFrames={20}>
+			
+			<SlideTop from={-100} to={500} durationInFrames={20}>
 				<FadeIn durationInFrames={20}>
 					<SpeakerPicture src={picture} />
 				</FadeIn>
 			</SlideTop>
 
-			<SlideTop from={230} to={330} durationInFrames={20}>
+			<SlideTop from={230} to={730} durationInFrames={20}>
 				<FadeIn durationInFrames={20}>
 					<SpeakerInfos name={name} location={location} role={role} company={company} />
 				</FadeIn>
 			</SlideTop>
 			
+
 		</AbsoluteFill>
 	);
 };

@@ -36,14 +36,16 @@ export const Teaser: React.FC<TeaserEpisodeProps> = ({
 
 			<Sequence name="Title" from={10}>
 				<FadeIn durationInFrames={30}>
-					<Title title={title} style={{fontSize: '3.6rem'}} top={80} />
+					<Title title={title} style={{fontSize: '3.6rem'}} top={100} />
 				</FadeIn>
 			</Sequence>
 
-			<Sequence name="Speakers" from={15}> 
-				{speakers.map((speaker, index) => (
-					<Speaker 
-						picture={speaker.picture}
+			<Sequence name="Speakers" from={15} style={{
+				display: 'flex',
+				flexWrap: 'wrap'
+			}}> 
+				{speakers.map((speaker) => (
+					<Speaker picture={speaker.picture}
 						name={speaker.name}
 						role={speaker.role}
 						location={speaker.location}
@@ -53,8 +55,8 @@ export const Teaser: React.FC<TeaserEpisodeProps> = ({
 
 			</Sequence>
 			
-			<Sequence name="publishDate" from={20}>
-				<FadeIn durationInFrames={30}>
+			<Sequence name="publishDate" from={10}>
+				<FadeIn durationInFrames={20}>
 						<Footer content={publishDate} />
 				</FadeIn>
 			</Sequence>
