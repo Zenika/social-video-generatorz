@@ -13,7 +13,7 @@
 		"@next/font": "13.1.6",
 		"@remotion/bundler": "3.3.78",
 		"@remotion/cli": "3.3.63",
-		"@remotion/google-fonts": "3.3.63",
+		"@remotion/google-fonts": "4.0.178",
 		"@remotion/lottie": "3.3.63",
 		"@remotion/player": "3.3.63",
 		"@remotion/renderer": "3.3.78",
